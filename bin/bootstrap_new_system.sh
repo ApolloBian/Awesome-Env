@@ -48,6 +48,9 @@ elif [[ `uname` == 'Linux' ]];then
 fi
 
 
+
+
+
 # pyenv_dir=$HOME/.pyenv
 # if [[ ! -d $pyenv_dir ]];then
 #     echo "Pyenv not found, Installing..."
@@ -59,10 +62,16 @@ fi
 
 echo 'Symlinking config files...'
 source 'bin/symlink-dotfiles.sh'
+
+
+# setting up vim 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall
+
+
 # TODO: maybe try space vim 
 # echo "Installing Space-Vim ..."
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
-
 
 
 
