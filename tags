@@ -1,8 +1,0 @@
-!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
-cmd	/home/slhome/tlb96/dotfiles/setup.py	/^	cmd = "ln -s %s %s" % (realfiles[i], linkfiles[i])$/;"	v	language:Python
-cmd	/home/slhome/tlb96/dotfiles/setup.py	/^	cmd = "rm %s " % linkfiles[i]$/;"	v	language:Python
-currentpath	/home/slhome/tlb96/dotfiles/setup.py	/^currentpath = sys.path[0]$/;"	v	language:Python
-filetmp	/home/slhome/tlb96/dotfiles/setup.py	/^filetmp = os.listdir('.')$/;"	v	language:Python
-homepath	/home/slhome/tlb96/dotfiles/setup.py	/^homepath = os.path.expanduser('~')$/;"	v	language:Python
-linkfiles	/home/slhome/tlb96/dotfiles/setup.py	/^linkfiles= [os.path.join(homepath, ".%s" % name) for name in filetmp]$/;"	v	language:Python
-realfiles	/home/slhome/tlb96/dotfiles/setup.py	/^realfiles= [os.path.join(currentpath,  name) for name in filetmp]$/;"	v	language:Python

@@ -7,6 +7,7 @@ In order to set up working environment easily, and to share my configurations, I
  - [ ] finish vim related part:
     - vundle
     - ycm update submodule
+    - fcitx
  - [ ] finish oh-my-zsh part:
     - move custom theme to oh-my-zsh/custom
 
