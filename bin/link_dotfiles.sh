@@ -20,7 +20,7 @@ link() {
 }
 
 for file in $(find dotfiles -name '*'); do
-  # file="${location##*/}"
+  file="${file##*/}"
   # file="${file%.sh}"
   link "$(pwd)/dotfiles/$file" "$HOME/.$file"
 done
@@ -28,9 +28,13 @@ done
 
 
 # git config
-cp config/gitconfig $HOME/.gieconfig
 # for git, I haven't came up with a good solution
+cp config/gitconfig $HOME/.gitconfig
 git config --global user.name "Tianling@$HOST"
+
+
+rm -rf $HOME/.oh-my-zsh
+ln -s $(pwd)/config/oh-my-zsh $HOME/.oh-my-zsh
 
 
 # Link Fish Config

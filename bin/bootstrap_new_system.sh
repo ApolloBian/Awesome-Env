@@ -59,14 +59,24 @@ fi
 
 # curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
+mkdir -p config/oh-my-zsh/custom/themes/
+cp resources/custom.zsh-theme config/oh-my-zsh/custom/themes/
 
 echo 'Symlinking config files...'
 source 'bin/link_dotfiles.sh'
 
-
 # setting up vim 
+rm -rf ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.py --clang-completer
 vim +PluginInstall
+if [[ `uname` == 'Darwin' ]]; then
+    mv $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/
+fi
+ 
 
 
 # TODO: maybe try space vim 
@@ -74,10 +84,3 @@ vim +PluginInstall
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
 
 
-
-# -------------- post install
-mkdir -p dotfiles/oh-my-zsh/custom/themes
-cp resources/custom.zsh-theme dotfiles/oh-my-zsh/custom/themes
-
-# for git, I haven't came up with a good solution
-git config --global user.name "Tianling@$HOST"
