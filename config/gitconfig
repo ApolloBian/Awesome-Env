@@ -1,7 +1,6 @@
 [color]
 	ui = true
 [user]
-	name = Tianling_ApolloMarkV
 	email = bian_tianling@sjtu.edu.cn
 
 # [merge]
@@ -17,6 +16,5 @@
 # 
 # [diff]
 #     external = extDiff
-
 [core]
 	autocrlf = input
