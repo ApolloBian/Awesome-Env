@@ -1,0 +1,52 @@
+# Kernel related
+make localmodconfig 
+
+
+# Nvidia driver
+apt-cache search nvidia
+
+# Hidpi
+edit /etc/lightdm/lightdm.conf.d/dpi.conf
+
+
+
+# Installed packets
+Anaconda: /anaconda
+Torch: ~/Developer/toolKit/torch (uninstall: just remove it)
+pyTorch: Installing
+
+
+# Vim related:
+Plugin YouCompleteMe: MUST compile with /usr/bin/python instead of /anaconda/bin/python
+
+
+# Map capslock to esc
+xmodmap -pke
+Config file is ~/.Xmodmap
+edit ~/.xinitrc
+
+# Themes, icons, etc
+# Good for unity
+Theme: Arc-flatabulous, Flattice
+modify transparancy: blog.csdn.net/scylhy/article/details/52550070
+Icons: Papirus,Ultra-flat, Macos, la-capitaine
+# Combination2
+Theme: Ant
+Icon: Xenlism wildfire
+Icon: Boston Icons
+
+
+# Poweroff time too long:
+sudo apt-get install watchdog
+sudo systemctl enable watchdog.service
+sudo systemctl start watchdog.service
+
+# Hidpi 
+try: sddm dpi settings (wiki.archlinux.org)
+! it works great ! set dpi to 156 (for scale ratio 1.33, equivalent to 1080p display)
+
+
+# Rescuing system
+Read these articles
+https://wiki.archlinux.org/index.php/Disk_cloning#Create_disk_image
+https://wiki.archlinux.org/index.php/Fdisk#Backup_and_restore_partition_table

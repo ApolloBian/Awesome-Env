@@ -1,0 +1,22 @@
+[color]
+	ui = true
+[user]
+	name = Tianling_ApolloMarkV
+	email = bian_tianling@sjtu.edu.cn
+
+# [merge]
+#     tool = extp4merge
+# 
+# [mergetool "extp4merge"]
+# 	cmd = extp4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+# [mergetool]
+#     trustExitCode = false
+#     keepTemporaries = false     
+#     keepBackup = true     
+#     prompt = false
+# 
+# [diff]
+#     external = extDiff
+
+[core]
+	autocrlf = input
