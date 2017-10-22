@@ -61,7 +61,7 @@ fi
 
 
 echo 'Symlinking config files...'
-source 'bin/symlink-dotfiles.sh'
+source 'bin/link_dotfiles.sh'
 
 
 # setting up vim 
