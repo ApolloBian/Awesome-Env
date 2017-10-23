@@ -72,12 +72,13 @@ PROMPT=$'${time}$(ssh_connection)$USER_SERVER$PATH_PROMPT_SHORT$(my_git_prompt)$
 
 CYAN_FG="%{$fg[cyan]%}"
 RED_FG="%{$fg[red]%}"
-# GREEN_FG="%{$fg[green]%}"
-GREEN_FG="%{$FG[040]%}"
+GREEN_FG="%{$fg[green]%}"
+# GREEN_FG="%{$FG[040]%}"
 WHITE_FG="%{$fg[white]%}"
-YELLOW_FG="%{$FG[226]%}"
-# BLUE_FG="%{$fg[blue]%}"
-BLUE_FG="%{$FG[033]%}"
+# YELLOW_FG="%{$FG[226]%}"
+YELLOW_FG="%{$fg[yellow]%}"
+BLUE_FG="%{$fg[blue]%}"
+# BLUE_FG="%{$FG[033]%}"
 RESET_COLOR="%{$reset_color%}"
 
 # CMD_PROMPT="$WHITE_FG %(!.#.$) $RESET_COLOR"

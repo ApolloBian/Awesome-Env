@@ -20,4 +20,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
 
  - [ ] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
+    - independent, editable enviroment ( which does not effect configurations on other machines)
  - [ ] merge MaintainNotes into README.md
