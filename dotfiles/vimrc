@@ -5,14 +5,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+Plugin 'tomasr/molokai' 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
@@ -26,10 +26,15 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-c0'
 Plugin 'jez/vim-ispc'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'lilydjwg/fcitx.vim'                     " need to modify according to git repo readme
-Plugin 'Valloric/YouCompleteMe'                     " need to modify according to git repo readme
+Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
+Plugin 'Valloric/YouCompleteMe'                     
+
+" *** Deprecated settings ***
+" Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
+
+
 
 " ----- General Settings  -----------------------------------------------------
 
@@ -85,7 +90,7 @@ let &t_Co=256
 let g:solarized_termtrans=1
 let g:solarized_bold=0
 set encoding=utf-8
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12  " :set guifont? | this cmd gives current font
 set laststatus=2      " always show status bar
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
@@ -98,13 +103,12 @@ let g:airline#extensions#tabline#enabled = 1
 " ----- Plugin Nerdtree -----------------------------------------------
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
-map <C-n> :NERDTreeToggle<CR>                        
 let NERDTreeIgnore=['\.pyc$', '\~$']                  " ignore files in NERDTree
 let NERDTreeShowHidden=0                              " show hidden files
 
 
 " ----- Plugin Syntastic ----------------------------------------------
-let g:syntastic_error_symbol = '✘'
+let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = "▲"
 augroup mySyntastic
   au!
@@ -121,6 +125,22 @@ let g:syntastic_quiet_messages = {"type" : "style"}
 let g:syntastic_python_checker = ['flake8']
 
 
+" ----- Plugin ale ------------------------------------------------------
+"始终开启标志列
+" let g:ale_sign_column_always = 1
+" let g:ale_set_highlights = 1
+"自定义error和warning图标
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '▲'
+"在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['✗ %d', '▲ %d', '✔ OK']
+"显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = '✗'
+let g:ale_echo_msg_warning_str = '▲'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+
 
 " ----- Plugin vim-easytags ---------------------------------------------
 set tags=./tags;,~/.vimtags
@@ -134,7 +154,6 @@ let g:easytags_suppress_ctags_warning = 1
 " ----- Plugin tagbar ----------------------------------------
 " Open/close tagbar with \b
 " nmap <silent> <leader>b :TagbarToggle<CR>
-map <C-t> :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
@@ -155,7 +174,22 @@ augroup END
 
 
 " ----- Plugin vim-superman ---------------------------------------------
-noremap K :SuperMan <cword><CR>
 
 " ----- Plugin Youcompleteme -------------------------------------------
 let g:ycm_python_binary_path = '/usr/bin/python3'
+
+" ----- important keymaps ----------------------------------------------------
+map <C-t> :TagbarToggle<CR>
+nmap <S-p> <Plug>(ale_previous_wrap)
+nmap <S-n> <Plug>(ale_next_wrap)
+"普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+"<Leader>s触发/关闭语法检查
+" nmap <Leader>s :ALEToggle<CR>
+"<Leader>d查看错误或警告的详细信息
+" nmap <Leader>d :ALEDetail<CR>
+noremap M :SuperMan <cword><CR>
+map <C-n> :NERDTreeToggle<CR>                        
+" Ctrl p search files
+
+" #TODO:
+" scroll between buffer ? liu chen yu's vimrc

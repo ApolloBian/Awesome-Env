@@ -27,6 +27,8 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
+  sudo easy_install pip
+  sudo -H pip install flake8 ipython
   brew update
   brew install htop ruby tmux cmake git fcitx-remote-for-osx
   open "https://github.com/CodeFalling/fcitx-remote-for-osx"

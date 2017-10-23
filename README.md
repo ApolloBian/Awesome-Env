@@ -17,6 +17,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
  - [x] finish oh-my-zsh part:
     - move custom theme to oh-my-zsh/custom
 
+ - [ ] learn about vim tagbar
+ - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
 
  - [ ] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
