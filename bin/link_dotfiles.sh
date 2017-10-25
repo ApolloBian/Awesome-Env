@@ -30,7 +30,7 @@ done
 # git config
 # for git, I haven't came up with a good solution
 cp config/gitconfig $HOME/.gitconfig
-git config --global user.name "Tianling@$HOST"
+git config --global user.name Tianling@"$HOST"
 
 
 rm -rf $HOME/.oh-my-zsh
