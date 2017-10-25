@@ -20,6 +20,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
 
+ - [ ] Ant
+ - [ ] Boston
  - [ ] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
     - independent, editable enviroment ( which does not effect configurations on other machines)
