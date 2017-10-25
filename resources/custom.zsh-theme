@@ -63,7 +63,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=" %{$fg_bold[white]%}›%{$reset_color%}"
 
 
 # local time, color coded by last return code
-time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})<%*>%{$reset_color%}"
+time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})‹%*›%{$reset_color%}"
 time_disabled="%{$fg[green]%}<%*>%{$reset_color%}"
 time=$time_enabled
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # A simple script for setting up dev environment.
 
+
 dev="$HOME/oh-my-dotfiles"
 pushd .
 mkdir -p $dev
@@ -10,9 +11,9 @@ cd $dev
 
 sudo vim /etc/hosts
 
-pub=$HOME/.ssh/id_rsa.pub
-echo 'Checking for SSH key, generating one if it does not exist...'
-[[ -f $pub ]] || ssh-keygen -t rsa
+# pub=$HOME/.ssh/id_rsa.pub
+# echo 'Checking for SSH key, generating one if it does not exist...'
+# [[ -f $pub ]] || ssh-keygen -t rsa
 
 
 # echo 'Copying public key to clipboard. Paste it into your Github account...'
@@ -35,23 +36,31 @@ if [[ `uname` == 'Darwin' ]]; then
 
 
 # TODO: modify Linux part
-elif [[ `uname` == 'Linux' ]];then
-    which brew
-    if [[ $? != 0 ]];then
-        echo 'Installing Linux Brew...'
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-        echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$HOME/.linuxbrew/bin:$PATH"' >>~/.bashrc
-        echo 'export MANPATH="/home/linuxbrew/.linuxbrew/bin:$HOME/.linuxbrew/share/man:$MANPATH"' >>~/.bashrc
-        echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/bin:$HOME/.linuxbrew/share/info:$INFOPATH"' >>~/.bashrc
-        source ~/.bashrc
-        brew update
-        brew install htop ruby grc fish tmux vim cmake git
-    fi
+
+elif [[ `uname` == 'Linux' ]]; then
+    echo "Tweaking Linux, note that you should manage dependencies yourself!"
+    wget -P /tmp https://dl.opendesktop.org/api/files/download/id/1508559201/Ant.tar.xz 
+    xz -d /tmp/Ant.tar.xz
+    tar -xvf /tmp/Ant.tar
+    mkdir -p ~/.themes
+    mv Ant ~/.themes/
+    gsettings set org.gnome.desktop.interface gtk-theme Ant
+    gsettings set org.gnome.desktop.wm.preferences theme Ant
+    mkdir -p ~/.icons
+    unzip resources/boston.zip
+    mv Boston ~/.icons/
 fi
 
 
 
 
+
+
+
+
+
+echo 'Symlinking config files...'
+sh 'bin/link_dotfiles.sh'
 
 # pyenv_dir=$HOME/.pyenv
 # if [[ ! -d $pyenv_dir ]];then
@@ -64,8 +73,6 @@ fi
 mkdir -p config/oh-my-zsh/custom/themes/
 cp resources/custom.zsh-theme config/oh-my-zsh/custom/themes/
 
-echo 'Symlinking config files...'
-source 'bin/link_dotfiles.sh'
 
 # setting up vim 
 rm -rf ~/.vim
