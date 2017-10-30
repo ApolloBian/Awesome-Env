@@ -143,7 +143,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 
 " ----- Plugin vim-easytags ---------------------------------------------
-set tags=./tags;,~/.vimtags
+" set tags=./tags;,~/.vimtags
 " Sensible defaults
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1

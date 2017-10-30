@@ -60,7 +60,7 @@ fi
 
 
 echo 'Symlinking config files...'
-sh 'bin/link_dotfiles.sh'
+bash 'bin/link_dotfiles.sh'
 
 # pyenv_dir=$HOME/.pyenv
 # if [[ ! -d $pyenv_dir ]];then
