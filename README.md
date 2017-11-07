@@ -9,6 +9,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
 ```
 
 # TODO:
+ - [x] bundle latest version of vim
  - [x] submodule init
  - [x] finish vim related part:
     - vundle
@@ -16,12 +17,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
     - fcitx
  - [x] finish oh-my-zsh part:
     - move custom theme to oh-my-zsh/custom
- - [ ] modulization
- - [ ] ship latest version of vim !
+ - [x] modulization
+ - [x] ship latest version of vim !
 
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
-
  - [ ] Ant
  - [ ] Boston
  - [ ] system dependent settings
