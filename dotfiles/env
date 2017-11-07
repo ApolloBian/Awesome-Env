@@ -1,17 +1,1 @@
-# added by Anaconda2 4.1.1 installer
-export PATH=$PATH:/usr/local/cuda/bin
-# export PATH=/usr/local/bin:$PATH
-# brew installed priority:
-# export PATH=~/bin:$PATH
 export EDITOR=vim
-export DISPLAY=:0
-export LD_LIBRARY_PATH=/usr/local/cuda:$LD_LIBRARY_PATH
-export PYTHONPATH=$PYTHONPATH:/home/apollo/asreader/asreader/asreader
-# export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:/lib
-
-export DISABLE_AUTO_UPDATE=true
-
-
-# Anaconda 
-export PATH="/slwork/users/tlb96/applications/anaconda2/bin:$PATH"
-export PATH="/slwork/users/tlb96/applications/vim/bin:$PATH"

@@ -35,6 +35,7 @@ git config --global user.name Tianling@"$HOST"
 
 rm -rf $HOME/.oh-my-zsh
 ln -s $(pwd)/config/oh-my-zsh $HOME/.oh-my-zsh
+touch ~/.local_env
 
 
 # Link Fish Config

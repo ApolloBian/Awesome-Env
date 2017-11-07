@@ -6,6 +6,7 @@
 
 source ~/.alias
 source ~/.env
+source ~/.local_env # localized environment
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="custom"

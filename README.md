@@ -16,6 +16,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
     - fcitx
  - [x] finish oh-my-zsh part:
     - move custom theme to oh-my-zsh/custom
+ - [ ] modulization
+ - [ ] ship latest version of vim !
 
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
@@ -24,5 +26,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
  - [ ] Boston
  - [ ] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
-    - independent, editable enviroment ( which does not effect configurations on other machines)
+    - [x]independent, editable enviroment ( which does not effect configurations on other machines)
  - [ ] merge MaintainNotes into README.md
