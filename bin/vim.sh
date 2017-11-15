@@ -1,20 +1,20 @@
 # compile vim
-cd $HOME/oh-my-dotfiles/resources/vim
-./configure --with-features=huge \
-    --enable-multibyte \
-    --enable-rubyinterp=yes \
-    --enable-pythoninterp=yes \
-    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-    --enable-perlinterp=yes \
-    --enable-luainterp=yes \
-    --enable-gui=gtk2 \
-    --enable-cscope \
-    --prefix=$HOME/oh-my-dotfiles/app/vim/
 
-make -j$(cat /proc/cpuinfo| grep "processor"| wc -l)
-make install
+# cd $HOME/oh-my-dotfiles/resources/vim
+# ./configure --with-features=huge \
+#     --enable-multibyte \
+#     --enable-rubyinterp=yes \
+#     --enable-pythoninterp=yes \
+#     --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+#     --enable-perlinterp=yes \
+#     --enable-luainterp=yes \
+#     --enable-gui=gtk2 \
+#     --enable-cscope \
+#     --prefix=$HOME/oh-my-dotfiles/app/vim/
+# 
+# make -j$(cat /proc/cpuinfo| grep "processor"| wc -l)
+# make install
 
-exit
 
 # setting up vim plugins
 rm -rf ~/.vim
