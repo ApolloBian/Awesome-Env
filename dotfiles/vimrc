@@ -106,6 +106,14 @@ let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always 
 let NERDTreeIgnore=['\.pyc$', '\~$']                  " ignore files in NERDTree
 let NERDTreeShowHidden=0                              " show hidden files
 
+" ----- Plugin Nerdtree-git-plugin------------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"    : "M",
+    \ "Staged"      : "S",
+    \ "Untracked"   : "U"
+    \ }
+
+
 
 " ----- Plugin Syntastic ----------------------------------------------
 let g:syntastic_error_symbol = '✗'
