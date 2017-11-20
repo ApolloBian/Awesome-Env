@@ -108,9 +108,9 @@ let NERDTreeShowHidden=0                              " show hidden files
 
 " ----- Plugin Nerdtree-git-plugin------------------------------------
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"    : "M",
-    \ "Staged"      : "S",
-    \ "Untracked"   : "U"
+    \ "Modified"    : "○",
+    \ "Staged"      : "●",
+    \ "Untracked"   : "×",
     \ }
 
 
