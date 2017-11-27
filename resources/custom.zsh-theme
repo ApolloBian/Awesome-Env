@@ -50,7 +50,7 @@ local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
 
 
 ZSH_THEME_PROMPT_RETURNCODE_PREFIX="%{$fg_bold[red]%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}‹%{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%}‹%{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[magenta]%}↑"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[white]%}●"

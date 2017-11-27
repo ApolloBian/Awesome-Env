@@ -4,10 +4,6 @@
 # Path to your oh-my-zsh installation.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-source ~/.alias
-source ~/.env
-source ~/.local_env # localized environment
-export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="custom"
 # ZSH_THEME="random"
@@ -88,3 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+source ~/.alias
+source ~/.env
+source ~/.local_env # localized environment
+export ZSH=~/.oh-my-zsh

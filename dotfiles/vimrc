@@ -104,7 +104,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ----- Plugin Nerdtree -----------------------------------------------
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
-let NERDTreeIgnore=['\.pyc$', '\~$']                  " ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
 let NERDTreeShowHidden=0                              " show hidden files
 
 " ----- Plugin Nerdtree-git-plugin------------------------------------
@@ -148,7 +148,8 @@ let g:ale_statusline_format = ['✗ %d', '▲ %d', '✔ OK']
 let g:ale_echo_msg_error_str = '✗'
 let g:ale_echo_msg_warning_str = '▲'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
+" flake8 相关设置
+let g:ale_python_flake8_args="--ignore=E402"
 
 
 " ----- Plugin vim-easytags ---------------------------------------------
