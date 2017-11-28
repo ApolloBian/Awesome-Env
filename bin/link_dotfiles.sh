@@ -30,6 +30,7 @@ done
 # git config
 # for git, I haven't came up with a good solution
 cp config/gitconfig $HOME/.gitconfig
+HOST=`cat /proc/sys/kernel/hostname`
 git config --global user.name Tianling@"$HOST"
 
 
