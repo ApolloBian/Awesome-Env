@@ -93,7 +93,8 @@ let g:solarized_bold=0
 set encoding=utf-8
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12  " :set guifont? | this cmd gives current font
 set laststatus=2      " always show status bar
-let g:airline_theme='solarized'
+" let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "

@@ -52,6 +52,7 @@ ZSH_THEME="custom"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -87,4 +88,3 @@ source $ZSH/oh-my-zsh.sh
 source ~/.alias
 source ~/.env
 source ~/.local_env # localized environment
-export ZSH=~/.oh-my-zsh

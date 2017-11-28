@@ -31,6 +31,8 @@ function my_git_prompt() {
 
   if [[ -n $STATUS ]]; then
     STATUS=" $STATUS"
+  else
+    STATUS=" $STATUS$ZSH_THEME_GIT_PROMPT_PUSHED"
   fi
 
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(my_current_branch)$STATUS$ZSH_THEME_GIT_PROMPT_SUFFIX"
@@ -52,10 +54,11 @@ local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
 ZSH_THEME_PROMPT_RETURNCODE_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%}‹%{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[magenta]%}↑"
+ZSH_THEME_GIT_PROMPT_PUSHED="%{$fg_bold[cyan]%}✓"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[white]%}●"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✕"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✗"
 ZSH_THEME_GIT_PROMPT_SUFFIX=" %{$fg_bold[white]%}›%{$reset_color%}"
 
 
