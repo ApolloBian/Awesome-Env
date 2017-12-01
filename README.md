@@ -8,6 +8,38 @@ In order to set up working environment easily, and to share my configurations, I
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/master/install.sh)"
 ```
 
+# Reconstruction Plans
+ - new branch: modulization
+    - [ ] system dependent profiles:
+        - [ ] macos
+    - [ ] oh-my-zsh
+    - [ ] vim
+    - [ ] termbase
+
+ - dir organization:?
+    oh-my-dotfiles
+    |_install.sh
+    |_update_config.sh
+    |_profile : modules -> script
+    | |_macos
+    | |_ubuntu
+    | |_archlinux
+    |
+    |_script (module installation)
+    | |_foo.sh
+    |
+    |_resources
+    | |_vim8.0
+    | |_oh-my-zsh
+    | |_gitconfig    
+    | |_fonts
+    | | |_powerline-fonts (not necessary if using lightline)
+    | | 
+    | |_icons
+    | |_themes
+
+
+
 # TODO:
  - [x] bundle latest version of vim
  - [x] submodule init
