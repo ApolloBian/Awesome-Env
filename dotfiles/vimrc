@@ -112,7 +112,7 @@ let g:lightline = {
 
 " ----- Plugin Nerdtree -----------------------------------------------
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
+let g:nerdtree_tabs_open_on_console_startup = 1       " To have NERDTree always open on startup
 let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
 let NERDTreeShowHidden=0                              " show hidden files
 
