@@ -6,7 +6,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai' 
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
@@ -91,14 +92,21 @@ let &t_Co=256
 let g:solarized_termtrans=1
 let g:solarized_bold=0
 set encoding=utf-8
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12  " :set guifont? | this cmd gives current font
+set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12  " :set guifont? | this cmd gives current font
 set laststatus=2      " always show status bar
+set noshowmode  " work with status lines, disable --insert-- prompt"
+
+" airline
 " let g:airline_theme='solarized'
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-"
+" powerline-status
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
+" set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ }
 
 
 
