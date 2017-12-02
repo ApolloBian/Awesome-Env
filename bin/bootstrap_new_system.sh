@@ -14,7 +14,7 @@ if [[ `uname` == 'Darwin' ]]; then
   sudo easy_install pip
   sudo -H pip install flake8 ipython
   brew update
-  brew install htop ruby tmux cmake git fcitx-remote-for-osx
+  brew install htop ruby tmux cmake git fcitx-remote-for-osx wget
   open "https://github.com/CodeFalling/fcitx-remote-for-osx"
 elif [[ `uname` == 'Linux' ]]; then
     # Need to detect sudo
