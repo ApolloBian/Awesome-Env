@@ -1,3 +1,9 @@
+# Some futher references:
+# http://liuchengxu.org/posts/use-vim-as-a-python-ide/
+# TODO: multi-platform support
+
+
+
 # compile vim
 
 # cd $HOME/oh-my-dotfiles/resources/vim
