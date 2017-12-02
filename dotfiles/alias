@@ -37,7 +37,7 @@ alias sson='export http_proxy=http://localhost:8123'
 alias ssoff='unset http_proxy'
 alias ipinfo='curl ip.gs'
 ignore_option='-I "*pyc" -I __pycache__ -I tags'
-alias ls='ls '$ignore_option' --color=auto'
-alias tree='tree '$ignore_option
+# alias ls='ls '$ignore_option' --color=auto'
+# alias tree='tree '$ignore_option
 alias la='ls -a'
 alias lh='ls -lh'
