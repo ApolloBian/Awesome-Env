@@ -87,7 +87,7 @@ endif
 " ----- Make Vim look good ----------------------------------------------
 
 " colorscheme solarized
-" let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY!!! fix italic issue for terminal gruvbox 
+let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY!!! fix italic issue for terminal gruvbox 
 " more about true colors ':help xterm-true-color'
 set termguicolors
 colorscheme gruvbox
