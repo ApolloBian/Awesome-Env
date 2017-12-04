@@ -1,0 +1,36 @@
+# Basic System package installation:
+- pacman
+    - [x] arch-pacman.sh # update pacman 
+    - [x] arch-yaourt.sh # install yaourt
+- ZSH
+    - [x] arch-zsh.sh # install & chsh
+- Python
+    - [x] arch-python.sh # install python3
+    - [ ] core-pip.sh
+    - conflict, select ONE:
+        - [ ] local_pip
+        - [ ] server_pip
+    - [ ] pip_virtualenv_py3
+- $HOME essential dirs
+    - [x] core-home_bin # $HOME/bin
+- Vim Binary
+    - [ ] vim_compile
+    - [ ] macvim
+
+# System Look
+- Install Gnome
+    - [ ] arch_gnome
+# Themes
+- Gnome Themes
+    - [ ] themes 
+# Fonts
+#
+
+# SSH keys
+- SSH
+    - [ ] ssh-update-private-keys
+
+# dotfile settings
+- General Dotfiles
+    - [ ] core_dotfiles # vimrc, etc. Link
+    - [ ] gitconfig

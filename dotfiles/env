@@ -1,2 +1,3 @@
 export EDITOR=vim
-export PATH=/home/tlbian/oh-my-dotfiles/app/vim/bin:$PATH
+export PATH=$HOME/oh-my-dotfiles/app/vim/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH

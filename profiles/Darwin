@@ -1,19 +1,19 @@
-# Basic System software installation:
+# Basic System package installation:
 - Homebrew
     - [x] homebrew
     - [x] homebrew_software
 - ZSH
     - [x] zsh-darwin
 - Python
-    - [x] pip
     - [ ] pip_sudo
     - [ ] pip_server
-    - [x] pip_virtualenv_py3
-- $HOME essential dirs
-    - [x] home_bin # $HOME/bin
+    - [ ] pip_
 - Vim Binary
     - [ ] vim_compile
     - [ ] macvim
+
+- $HOME essential dirs
+    - [x] home_bin # $HOME/bin
 - Gnome Themes
     - [ ] themes 
 
