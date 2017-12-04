@@ -1,0 +1,27 @@
+# Basic System software installation:
+- Homebrew
+    - [x] homebrew
+    - [x] homebrew_software
+- ZSH
+    - [x] zsh-darwin
+- Python
+    - [x] pip
+    - [ ] pip_sudo
+    - [ ] pip_server
+    - [x] pip_virtualenv_py3
+- $HOME essential dirs
+    - [x] home_bin # $HOME/bin
+- Vim Binary
+    - [ ] vim_compile
+    - [ ] macvim
+- Gnome Themes
+    - [ ] themes 
+
+# SSH keys
+- SSH
+    - [ ] ssh-update-private-keys
+
+# dotfile settings
+- General Dotfiles
+    - [ ] core_dotfiles # vimrc, etc. Link
+    - [ ] gitconfig

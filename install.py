@@ -37,7 +37,7 @@ def select_profile(uname, no_sudo):
 def parse_profile(profile_name):
     print("Reading profile: %s" % profile_name)
     with open(os.path.join('profiles', selected_profile)) as f:
-        configure = f.readlines()
+        configure = [line.split("#")[0] for line in f.readlines()]
     selected_modules = [line.split()[-1] for line in configure
                         if '[x]' in line]
     print("Listing selected modules for profile %s" % profile_name)
