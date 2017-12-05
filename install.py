@@ -70,7 +70,7 @@ if __name__ == '__main__':
         selected_profile = args.config_file
     module_list = parse_profile(selected_profile)
 
-    if max(map(os.system, module_list)) != 0:
+    if max(map(lambda script: os.system("bash %s" % script), module_list)) != 0:
         logging.error('Execution fail! Please check system requirements!')
     else:
         logging.info('Execution complete!')

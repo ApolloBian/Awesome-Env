@@ -1,1 +1,1 @@
-sudo easy_install pip
+easy_install --user pip

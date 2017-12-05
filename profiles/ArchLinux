@@ -1,21 +1,26 @@
 # Basic System package installation:
 - pacman
-    - [x] arch-pacman.sh # update pacman 
-    - [x] arch-yaourt.sh # install yaourt
+    - [x] arch-pacman # update pacman 
+    - [ ] arch-pacman_essential
+    - [x] arch-yaourt # install yaourt
 - ZSH
-    - [x] arch-zsh.sh # install & chsh
-- Python
-    - [x] arch-python.sh # install python3
-    - [ ] core-pip.sh
-    - conflict, select ONE:
-        - [ ] local_pip
-        - [ ] server_pip
-    - [ ] pip_virtualenv_py3
-- $HOME essential dirs
-    - [x] core-home_bin # $HOME/bin
+    - [x] arch-zsh # install & chsh
+- Python version # use no sudo as much possible
+    - [x] arch-python # install python3
+
+# Environment, dotfiles
+- Dotfiles
+    - [x] core-dotfiles
+
+# Develop environment: Avoid using sudo
+- Pip
+    - [x] core-pip
+    - Pypi mirror 
+        - [x] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
+        - [ ] core-douban-pypi
 - Vim Binary
-    - [ ] vim_compile
-    - [ ] macvim
+    - [x] core-vim_compile
+    - [x] core-vim_plugins
 
 # System Look
 - Install Gnome
