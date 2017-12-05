@@ -1,2 +1,2 @@
 # update pacman 
-sudo pacman -Syu
+sudo pacman -Syu --needed --noconfirm
