@@ -1,21 +1,24 @@
 # Basic System package installation:
 - Homebrew
-    - [x] homebrew
-    - [x] homebrew_software
+    - [x] darwin-homebrew
+    - [x] darwin-homebrew_package
 - ZSH
-    - [x] zsh-darwin
-- Python
-    - [ ] pip_sudo
-    - [ ] pip_server
-    - [ ] pip_
+    - [x] darwin-zsh
+- Python version
+    - [ ] 
+# Environment, dotfiles
+- Dotfiles
+    - [x] core-dotfiles
+# Develop environment: Avoid using sudo
+- Pip
+    - [x] core-pip
+    - Pypi mirror 
+        - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
+        - [x] core-douban-pypi
+    - [x] core-pip_package
 - Vim Binary
-    - [ ] vim_compile
-    - [ ] macvim
-
-- $HOME essential dirs
-    - [x] home_bin # $HOME/bin
-- Gnome Themes
-    - [ ] themes 
+    - [x] core-vim_compile
+    - [x] core-vim_plugins
 
 # SSH keys
 - SSH
@@ -24,4 +27,3 @@
 # dotfile settings
 - General Dotfiles
     - [ ] core_dotfiles # vimrc, etc. Link
-    - [ ] gitconfig

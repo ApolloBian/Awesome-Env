@@ -6,7 +6,7 @@
 - ZSH
     - [x] arch-zsh # install & chsh
 - Python version # use no sudo as much possible
-    - [x] arch-python # install python3
+    - [x] arch-python3 # install python3
 
 # Environment, dotfiles
 - Dotfiles
@@ -34,8 +34,3 @@
 # SSH keys
 - SSH
     - [ ] ssh-update-private-keys
-
-# dotfile settings
-- General Dotfiles
-    - [ ] core_dotfiles # vimrc, etc. Link
-    - [ ] gitconfig

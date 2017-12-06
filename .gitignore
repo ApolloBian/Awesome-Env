@@ -1,5 +1,6 @@
 tmp/
 tags
+.tags
 app/
 resources/git/
 .*.swp
