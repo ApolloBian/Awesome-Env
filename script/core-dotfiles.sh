@@ -23,6 +23,8 @@ link() {
   to="$2"
   echo "Linking '$from' to '$to'"
   rm -f "$to"
+  dirname=`dirname "$to"`
+  mkdir -p $dirname
   ln -s "$from" "$to"
 }
 
@@ -49,7 +51,7 @@ echo '[user]' > $git_username_file
 echo '	name=Tianling@'"$HOST" >> $git_username_file
 # --------------------------------------------------------
 
-link $(pwd)/config/oh-my-zsh $HOME/.oh-my-zsh
+link $(pwd)/resources/oh-my-zsh $HOME/.oh-my-zsh
 link $(pwd)/resources/custom.zsh-theme $HOME/.oh-my-zsh/custom/themes/custom.zsh-theme
 touch ~/.local_env
 
