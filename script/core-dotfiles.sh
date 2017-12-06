@@ -42,8 +42,7 @@ xdg_config_path=resources/
 mkdir -p $xdg_config_path/git
 git_username_file=$xdg_config_path/git/config
 if [[ `uname` == 'Darwin' ]]; then
-    #TODO: configure HOST for mac?
-    echo "WARNING: HOST is not set for mac(TODO)"
+    HOST=`hostname`
 else
     HOST=`cat /proc/sys/kernel/hostname`
 fi
