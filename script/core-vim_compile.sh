@@ -13,7 +13,6 @@ else
     num_proc=$(cat /proc/cpuinfo| grep "processor"| wc -l)
 fi
 echo $num_proc
-exit
 cd $HOME/oh-my-dotfiles/resources/vim
 ./configure --with-features=huge \
     --enable-multibyte \
@@ -23,7 +22,7 @@ cd $HOME/oh-my-dotfiles/resources/vim
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
-    --prefix=$HOME/.local/bin/
+    --prefix=$HOME/.local/
 
 #     --enable-gui=gtk2 \
 make -j$(num_proc)
