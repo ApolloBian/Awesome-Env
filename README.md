@@ -11,14 +11,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
 # Reconstruction Plans
  - new branch: modulization
     - [ ] system dependent profiles:
-        - [ ] Darwin 
+        - [x] Darwin 
         - [ ] ArchLinux
         - [ ] Ubuntu
-    - [ ] oh-my-zsh
-    - [ ] vim
-    - [ ] termbase
+    - [x] oh-my-zsh
+    - [x] vim
+    - [ ] p4merge ?
 
- - dir organization:?
+ - dir organization:
     oh-my-dotfiles
     |_install.sh
     |_update_config.sh
