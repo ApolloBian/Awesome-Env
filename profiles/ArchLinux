@@ -1,8 +1,8 @@
 # Basic System package installation:
 - pacman
     - [x] arch-pacman # update pacman 
-    - [ ] arch-pacman_essential
     - [x] arch-yaourt # install yaourt
+    - [ ] arch-aur
 - ZSH
     - [x] arch-zsh # install & chsh
 - Python version # use no sudo as much possible
