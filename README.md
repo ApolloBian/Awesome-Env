@@ -19,8 +19,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
     - [ ] fonts
         - [ ] powerline(optional)
         - [ ] fira-mono, fira-code
-    - [ ] p4merge
-    - [ ] github desktop
+    - [x] p4merge read this article : https://pempek.net/articles/2014/04/18/git-p4merge/
+        - [x] gitconfig
+        - [x] profile
+        - [x] bin
+    - [x] github desktop
     - [ ] smartgit
     - [ ] sourcetree
 

@@ -19,6 +19,8 @@
 - Vim Binary
     - [x] core-vim_compile
     - [x] core-vim_plugins
+- Git difftool & mergetool
+    - [x] core-p4merge
 
 # SSH keys
 - SSH

@@ -37,17 +37,19 @@ done
 
 # --------some workaround for using different git username
 # --------set user.name = tianling@hostname 
-source $HOME/.env
-xdg_config_path=resources/
-mkdir -p $xdg_config_path/git
-git_username_file=$xdg_config_path/git/config
+# source $HOME/.env
+# xdg_config_path=resources/
+# mkdir -p $xdg_config_path/git
+# git_username_file=$xdg_config_path/git/config
 if [[ `uname` == 'Darwin' ]]; then
     HOST=`hostname`
 else
     HOST=`cat /proc/sys/kernel/hostname`
 fi
-echo '[user]' > $git_username_file
-echo '	name=Tianling@'"$HOST" >> $git_username_file
+cp $HOME/oh-my-dotfiles/resources/gitconfig $HOME/.gitconfig
+git config --global user.name Tianling@$HOST
+# echo '[user]' > $git_username_file
+# echo '	name=Tianling@'"$HOST" >> $git_username_file
 # --------------------------------------------------------
 
 link $(pwd)/resources/oh-my-zsh $HOME/.oh-my-zsh

@@ -2,7 +2,6 @@
 	ui = true
 [user]
 	email = bian_tianling@sjtu.edu.cn
-	name = Tianling@ApoMarkI.local
 
 [merge]
     tool = p4merge
