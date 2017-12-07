@@ -57,7 +57,7 @@ oh-my-dotfiles
  - [ ] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
     - [x]independent, editable enviroment ( which does not effect configurations on other machines)
- - [ ] merge MaintainNotes into README.md
+ - [x] merge MaintainNotes into project wiki
  - [x] bundle latest version of vim
  - [x] submodule init
  - [x] finish vim related part:
