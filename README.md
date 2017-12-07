@@ -52,6 +52,7 @@ oh-my-dotfiles
 # TODO:
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
+ - [ ] add menu in readme(using toc)
  - [ ] Ant
  - [ ] Boston
  - [ ] system dependent settings
