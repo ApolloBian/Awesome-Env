@@ -16,7 +16,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
         - [ ] Ubuntu
     - [x] oh-my-zsh
     - [x] vim
-    - [ ] p4merge ?
+    - [ ] p4merge
+    - [ ] github desktop
+    - [ ] smartgit
+    - [ ] sourcetree
 
  - dir organization:
     oh-my-dotfiles
