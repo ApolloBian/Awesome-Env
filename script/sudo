@@ -1,9 +1,0 @@
-[archlinuxcn] tee --append /etc/pacman.conf
-    SigLevel = Never tee --append /etc/pacman.conf
-    Server = http://repo.archlinuxcn.org/$arch tee --append /etc/pacman.conf
-[archlinuxcn] tee --append /etc/pacman.conf
-    SigLevel = Never tee --append /etc/pacman.conf
-    Server = http://repo.archlinuxcn.org/$arch tee --append /etc/pacman.conf
-[archlinuxcn] tee --append /etc/pacman.conf
-    SigLevel = Never tee --append /etc/pacman.conf
-    Server = http://repo.archlinuxcn.org/\$arch tee --append /etc/pacman.conf
