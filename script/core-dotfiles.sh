@@ -46,6 +46,7 @@ if [[ `uname` == 'Darwin' ]]; then
 else
     HOST=`cat /proc/sys/kernel/hostname`
 fi
+rm $HOME/.gitconfig
 cp $HOME/oh-my-dotfiles/resources/gitconfig $HOME/.gitconfig
 git config --global user.name Tianling@$HOST
 # echo '[user]' > $git_username_file

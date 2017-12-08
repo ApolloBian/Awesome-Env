@@ -20,7 +20,7 @@
     - [x] core-vim_compile
     - [x] core-vim_plugins
 - Git difftool & mergetool
-    - [x] core-p4merge
+    - [x] darwin-p4merge
 
 # SSH keys
 - SSH

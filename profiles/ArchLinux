@@ -2,7 +2,7 @@
 - pacman
     - [x] arch-pacman # update pacman 
     - [x] arch-yaourt # install yaourt
-    - [ ] arch-aur
+    - [x] arch-aur
 - ZSH
     - [x] arch-zsh # install & chsh
 - Python version # use no sudo as much possible
@@ -19,8 +19,10 @@
         - [x] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
         - [ ] core-douban-pypi
 - Vim Binary
-    - [x] core-vim_compile
+    - [ ] core-vim_compile
     - [x] core-vim_plugins
+- Git difftool & mergetool
+    - [ ] arch-p4merge # not implemented: config on arch linux is not needed
 
 # System Look
 - Install Gnome
