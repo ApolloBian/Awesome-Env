@@ -63,16 +63,14 @@ oh-my-dotfiles
 
 
 # TODO:
- - [x] Rename project to awesome-env
- - [x] badges
-    - [x] awesome
-    - [x] badges: [shields.io](https://img.shields.io/)
+ - [ ] tmux ![](https://img.shields.io/badge/priority-urgent-red.svg?style=flat-square)
+ - [ ] fcitx
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
  - [ ] add menu in readme(using toc)
  - [ ] Ant
  - [ ] Boston
- - [ ] system dependent settings
+ - [x] system dependent settings
     - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
     - [x]independent, editable enviroment ( which does not effect configurations on other machines)
  - [x] merge MaintainNotes into project wiki
@@ -81,9 +79,11 @@ oh-my-dotfiles
  - [x] finish vim related part:
     - vundle
     - ycm update submodule
-    - fcitx
  - [x] finish oh-my-zsh part:
     - move custom theme to oh-my-zsh/custom
  - [x] modulization
  - [x] ship latest version of vim !
-
+ - [x] Rename project to awesome-env
+ - [x] badges
+    - [x] awesome
+    - [x] badges: [shields.io](https://img.shields.io/)
