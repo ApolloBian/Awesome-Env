@@ -1,10 +1,8 @@
 # Basic System package installation:
-- pacman
-    - [ ] arch-pacman # update pacman 
-    - [ ] arch-yaourt # install yaourt
-    - [ ] arch-aur
+- Linux Brew
+    - [x] server-brew
+    - [x] server-brew_package
 - ZSH
-    - [ ] arch-zsh # install & chsh
     - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
@@ -24,7 +22,7 @@
     - [x] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
 - Git difftool & mergetool
-    - [ ] arch-p4merge # not implemented: config on arch linux is not needed
+    - [ ] server-git_override # change diff & mergetool to vimdiff
 
 # The above is fully developed & tested
 
