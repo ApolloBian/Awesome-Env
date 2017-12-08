@@ -5,8 +5,9 @@
 ![](https://img.shields.io/badge/platform-ArchLinux%20|%20macOS%20|%20Ubuntu-lightgrey.svg?style=flat-square)
 
 ![](https://img.shields.io/badge/license-GPL_License-blue.svg?style=flat-square)
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square)]()
-[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/eslint/eslint.svg?style=flat-square)]()
+![](https://img.shields.io/commits/ApolloBian/Awesome-Env.svg?style=flat-square)
+![](https://img.shields.io/github/last-commit/ApolloBian/Awesome-Env.svg?style=flat-square)
+![](https://img.shields.io/github/commit-activity/y/ApolloBian/Awesome-Env.svg?style=flat-square)
 
 In order to set up working environment easily, and to share my configurations, I create this repo.
 
