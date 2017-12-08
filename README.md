@@ -1,5 +1,9 @@
 # Awesome Env [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![AUR](https://img.shields.io/aur/license/yaourt.svg?style=flat-square)]()
+![](https://img.shields.io/badge/language-bash-brightgreen.svg?style=flat-square)
+![](https://img.shields.io/badge/language-python-green.svg?style=flat-square)
+![](https://img.shields.io/badge/license-GPL_License-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/platform-ArchLinux%20|%20macOS%20|%20Ubuntu-lightgrey.svg?style=flat-square)
+
 In order to set up working environment easily, and to share my configurations, I create this repo.
 
 And I hope it will be awesome
@@ -59,6 +63,7 @@ oh-my-dotfiles
  - [ ] Rename project to awesome-env
  - [ ] badges
     - [x] awesome
+    - [ ] badge template: https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
  - [ ] add menu in readme(using toc)
