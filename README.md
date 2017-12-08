@@ -1,4 +1,5 @@
 # Awesome Env [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![AUR](https://img.shields.io/aur/license/yaourt.svg?style=flat-square)]()
 In order to set up working environment easily, and to share my configurations, I create this repo.
 
 And I hope it will be awesome
