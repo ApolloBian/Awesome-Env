@@ -1,10 +1,8 @@
 # Basic System package installation:
-- pacman
-    - [ ] arch-pacman # update pacman 
-    - [ ] arch-yaourt # install yaourt
-    - [ ] arch-aur
+- Linux Brew
+    - [x] server-brew
+    - [x] server-brew_package
 - ZSH
-    - [ ] arch-zsh # install & chsh
     - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
