@@ -86,4 +86,4 @@ oh-my-dotfiles
  - [x] Rename project to awesome-env
  - [x] badges
     - [x] awesome
-    - [x] badges: [shields.io](https://img.shields.io/)
+    - [x] badges: [shields.io](https://img.shields.io/) [简书链接](http://www.jianshu.com/p/e9ce56cb24ef)
