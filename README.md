@@ -1,5 +1,7 @@
-# This is my dotfiles repo
+# Awesome Env [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 In order to set up working environment easily, and to share my configurations, I create this repo.
+
+And I hope it will be awesome
 
 # Installation
 ## via curl
@@ -53,6 +55,9 @@ oh-my-dotfiles
 
 
 # TODO:
+ - [ ] Rename project to awesome-env
+ - [ ] badges
+    - [x] awesome
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
  - [ ] add menu in readme(using toc)
