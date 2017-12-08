@@ -3,9 +3,10 @@
     - [x] darwin-homebrew
     - [x] darwin-homebrew_package
 - ZSH
-    - [x] darwin-zsh
+    - [x] core-chsh_zsh
+    - [x] core-xterm_terminfo
 - Python version
-    - [ ] 
+    - [ ] # TODO: python3 darwin
 # Environment, dotfiles
 - Dotfiles
     - [x] core-dotfiles
@@ -20,7 +21,7 @@
     - [x] core-vim_compile
     - [x] core-vim_plugins
 - Git difftool & mergetool
-    - [x] darwin-p4merge
+    - [x] darwin-p4merge # TODO:seems p4merge bin works fine on ARCH, test it on mac, get rid of this script
 
 # SSH keys
 - SSH

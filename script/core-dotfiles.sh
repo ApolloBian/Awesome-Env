@@ -33,6 +33,7 @@ for file in $(find $dotfile_path -name '*'); do
   # file="${file%.sh}"
   link "$(pwd)/$dotfile_path/$file" "$HOME/.$file"
 done
+rm $HOME/.dotfiles
 
 
 # --------some workaround for using different git username

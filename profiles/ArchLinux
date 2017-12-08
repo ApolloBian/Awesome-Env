@@ -5,6 +5,8 @@
     - [x] arch-aur
 - ZSH
     - [x] arch-zsh # install & chsh
+    - [x] core-chsh_zsh
+    - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
     - [x] arch-python3 # install python3
 
@@ -19,10 +21,12 @@
         - [x] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
         - [ ] core-douban-pypi
 - Vim Binary
-    - [ ] core-vim_compile
+    - [ ] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
 - Git difftool & mergetool
     - [ ] arch-p4merge # not implemented: config on arch linux is not needed
+
+# The above is fully developed & tested
 
 # System Look
 - Install Gnome
@@ -31,7 +35,6 @@
 - Gnome Themes
     - [ ] themes 
 # Fonts
-#
 
 # SSH keys
 - SSH
