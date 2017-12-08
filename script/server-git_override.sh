@@ -1,2 +1,2 @@
-git config --global diff.tool vim
-git config --global merge.tool vim
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff

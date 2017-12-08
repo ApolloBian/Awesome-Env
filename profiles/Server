@@ -22,7 +22,7 @@
     - [x] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
 - Git difftool & mergetool
-    - [ ] arch-p4merge # not implemented: config on arch linux is not needed
+    - [ ] server-git_override # change diff & mergetool to vimdiff
 
 # The above is fully developed & tested
 
