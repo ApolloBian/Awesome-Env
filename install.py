@@ -9,6 +9,7 @@ import os
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--no_sudo', default=False, action='store_true')
+    parser.add_argument('--server', default=False, action='store_true')
     parser.add_argument('--custom_profile', default=False, action='store_true')
     parser.add_argument('--config_file', type=str, default='Custom')
     return parser.parse_args()
@@ -20,12 +21,14 @@ def detect_platform():
     return uname
 
 
-def select_profile(uname, no_sudo):
+def select_profile(uname, no_sudo, is_server):
+    if is_server:
+        return 'Server'
     if 'Ubuntu' in uname:
-        if not no_sudo:
-            return 'Ubuntu'
+        if no_sudo:
+            return 'Server'
         else:
-            return 'Ubuntu_Server'
+            return 'Ubuntu'
     elif 'ARCH' in uname:
         return 'ArchLinux'
     elif 'Darwin' in uname:
@@ -61,7 +64,8 @@ if __name__ == '__main__':
         # Detect platform
         uname = detect_platform()
         # Determine profile name
-        selected_profile = select_profile(uname, args.no_sudo)
+        selected_profile = select_profile(uname, args.no_sudo, args.server)
+        print(selected_profile)
         # Parse profile
         if selected_profile is None:
             logging.error("Unrecognized system, please use custom profile!")

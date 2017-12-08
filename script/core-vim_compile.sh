@@ -20,6 +20,7 @@ echo $prefix
 
 cd $HOME/oh-my-dotfiles/resources/vim
 make uninstall
+make distclean
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
