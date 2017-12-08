@@ -1,5 +1,5 @@
 export EDITOR=vim
-export XDG_CONFIG_HOME=$HOME/oh-my-dotfiles/resources/
+# export XDG_CONFIG_HOME=$HOME/oh-my-dotfiles/resources/
 export PATH=$HOME/oh-my-dotfiles/app/vim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH          # User executables for linux
 export PATH=$HOME/Applications/bin:$PATH    # User executables for macos
