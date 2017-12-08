@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/platform-ArchLinux%20|%20macOS%20|%20Ubuntu-lightgrey.svg?style=flat-square)
 
 ![](https://img.shields.io/badge/license-GPL_License-blue.svg?style=flat-square)
-![](https://img.shields.io/commits/ApolloBian/Awesome-Env.svg?style=flat-square)
+![](https://img.shields.io/github/commits/ApolloBian/Awesome-Env.svg?style=flat-square)
 ![](https://img.shields.io/github/last-commit/ApolloBian/Awesome-Env.svg?style=flat-square)
 ![](https://img.shields.io/github/commit-activity/y/ApolloBian/Awesome-Env.svg?style=flat-square)
 
