@@ -1,2 +1,2 @@
 # generate terminfo 
-tic -o $HOME/.terminfo $HOME/oh-my-dotfiles/resources/xterm.terminfo
+tic -o $HOME/.terminfo resources/xterm.terminfo

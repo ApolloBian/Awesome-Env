@@ -18,7 +18,7 @@ echo $num_proc
 echo $prefix
 
 
-cd $HOME/oh-my-dotfiles/resources/vim
+cd resources/vim
 make uninstall
 make distclean
 ./configure --with-features=huge \
