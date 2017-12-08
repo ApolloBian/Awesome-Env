@@ -21,9 +21,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
 
 # Reconstruction Plans
  - new branch: modulization
-    - [ ] system dependent profiles:
+    - [x] system dependent profiles:
         - [x] Darwin 
-        - [ ] ArchLinux
+        - [x] ArchLinux
+        - [x] Server
         - [ ] Ubuntu
     - [x] oh-my-zsh
     - [x] vim
@@ -34,9 +35,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/
         - [x] gitconfig
         - [x] profile
         - [x] bin
-    - [x] github desktop
-    - [ ] smartgit
-    - [ ] sourcetree
+    - [x] vimdiff3 for servers
 
  - dir organization:
 ```
@@ -64,10 +63,10 @@ oh-my-dotfiles
 
 
 # TODO:
- - [ ] Rename project to awesome-env
- - [ ] badges
+ - [x] Rename project to awesome-env
+ - [x] badges
     - [x] awesome
-    - [ ] badge template: https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg
+    - [x] badges: [![](https://camo.githubusercontent.com/f3452ce437e5e60063179cf19a9abdfd06cb7781/68747470733a2f2f7261776769742e636f6d2f6261646765732f736869656c64732f6d61737465722f7374617469632f6c6f676f2e737667)](https://img.shields.io/)
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
  - [ ] add menu in readme(using toc)
