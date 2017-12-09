@@ -68,11 +68,10 @@ oh-my-dotfiles
     - [ ] outside $TERM: xterm-256color
     - [ ] inside $TERM: xterm-256color
     - [ ] termoverride
-    - [ ] try the following inside and outside tmux
-    - [ ] infocmp -x > foo
-    - [ ] edit foo, add `Tc,`
-    - [ ] mv ~/.terminfo somewhere else
-    - [ ] tic -x foo
+    - [ ] try 2 versions of xterm-terminfo: from writer, from arch
+    - [ ] infocmp -x > xterm-terminfo
+    - [ ] edit xterm-terminfo, add `Tc,`
+    - [ ] tic -o ~/.terminfo -x xterm-terminfo
  - [ ] fcitx
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)

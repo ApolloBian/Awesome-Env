@@ -1,3 +1,3 @@
 # generate terminfo 
-# tic -o $HOME/.terminfo resources/xterm.terminfo
-tic -x resources/xterm-256color-tc
+rm -rf $HOME/.terminfo
+tic -o $HOME/.terminfo -x resources/xterm-256color-tc
