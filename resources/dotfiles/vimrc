@@ -9,6 +9,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai' 
 Plugin 'morhetz/gruvbox'
 Plugin 'jacoborus/tender.vim'
+Plugin 'rakr/vim-one' "atom color scheme, good for light color
 " Plugin 'vim-airline/vim-airline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-airline/vim-airline-themes'
@@ -100,6 +101,7 @@ set encoding=utf-8
 set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12  " :set guifont? | this cmd gives current font
 set laststatus=2      " always show status bar
 set noshowmode  " work with status lines, disable --insert-- prompt"
+
 
 " airline
 " let g:airline_theme='solarized'
