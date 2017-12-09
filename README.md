@@ -64,6 +64,15 @@ oh-my-dotfiles
 
 # TODO:
  - [ ] tmux ![](https://img.shields.io/badge/priority-urgent-red.svg?style=flat-square)
+    - [x] tmux 2.6
+    - [ ] outside $TERM: xterm-256color
+    - [ ] inside $TERM: xterm-256color
+    - [ ] termoverride
+    - [ ] try the following inside and outside tmux
+    - [ ] infocmp -x > foo
+    - [ ] edit foo, add `Tc,`
+    - [ ] mv ~/.terminfo somewhere else
+    - [ ] tic -x foo
  - [ ] fcitx
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)

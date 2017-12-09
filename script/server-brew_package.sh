@@ -1,2 +1,2 @@
 brew update
-brew install htop 
+brew install htop tmux
