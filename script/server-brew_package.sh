@@ -1,2 +1,2 @@
 brew update
-brew install htop tmux
+brew install htop tmux xclip
