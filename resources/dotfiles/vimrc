@@ -36,7 +36,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
 Plugin 'Valloric/YouCompleteMe'                     
 Plugin 'tpope/vim-commentary'                     
-Plugin 'tweekmonster/startuptime.vim'
 
 " *** Deprecated settings ***
 " Plugin 'vim-syntastic/syntastic'
