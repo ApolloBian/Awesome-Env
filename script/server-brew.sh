@@ -1,3 +1,4 @@
+source resources/dotfiles/env
 which brew
 if [[ $? != 0 ]]; then
     # install a tmp version of ruby 2.3.5
