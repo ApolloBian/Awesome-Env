@@ -12,6 +12,7 @@ Plugin 'tomasr/molokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-one' "atom color scheme, good for light color
+Plugin 'arcticicestudio/nord-vim'
 " -------------------------------------
 " Plugin 'vim-airline/vim-airline'
 Plugin 'itchyny/lightline.vim'
@@ -89,21 +90,25 @@ endif
 
 
 " ----- Make Vim look good ----------------------------------------------
-colorscheme one
-set background=light
-set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12
-" :set guifont? | this cmd gives current font
-
 set termguicolors
+set background=light
+set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12 " :set guifont? | this cmd gives current font
+
 let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY?
 let g:one_allow_italics=1
+let g:nord_italic_comments = 1
+
+let g:nord_uniform_status_lines = 1
+let g:nord_comment_brightness = 12
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
 " let g:solarized_bold=0
 set encoding=utf-8
 set laststatus=2      " always show status bar
 set noshowmode  " work with status lines, disable --insert-- prompt"
-" let &t_Co=256
+
+colorscheme nord
+let g:lightline = {'colorscheme': 'nord'}
 " more about true colors ':help xterm-true-color'
 
 
@@ -121,7 +126,6 @@ set noshowmode  " work with status lines, disable --insert-- prompt"
 
 " -----Plugin Lightline 
 " let g:lightline = {'colorscheme': 'gruvbox'}
-let g:lightline = {'colorscheme': 'one'}
 
 
 
