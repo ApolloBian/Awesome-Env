@@ -52,6 +52,7 @@ def parse_profile(profile_name):
 
 
 if __name__ == '__main__':
+    os.system('git submodule update --init --recursive')
     """
     Installation sequence:
         1. Detect platform:

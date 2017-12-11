@@ -3,7 +3,7 @@
     - [x] server-brew
     - [x] server-brew_package
 - ZSH
-    - [ ] core-chsh_zsh
+    - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
     - [ ] arch-python3 # install python3
