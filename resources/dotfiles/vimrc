@@ -12,6 +12,7 @@ Plugin 'tomasr/molokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-one' "atom color scheme, good for light color
+Plugin 'cocopon/iceberg.vim'
 Plugin 'arcticicestudio/nord-vim'
 " -------------------------------------
 " Plugin 'vim-airline/vim-airline'
@@ -46,11 +47,10 @@ filetype plugin indent on
 
 
 " ----- General Settings  -----------------------------------------------------
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
+" set cursorline
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set ruler              " show the cursor position all the time
 set hlsearch           " highlight search
@@ -91,7 +91,7 @@ endif
 
 " ----- Make Vim look good ----------------------------------------------
 set termguicolors
-set background=light
+set background=dark
 set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12 " :set guifont? | this cmd gives current font
 
 let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY?
@@ -107,8 +107,8 @@ set encoding=utf-8
 set laststatus=2      " always show status bar
 set noshowmode  " work with status lines, disable --insert-- prompt"
 
-colorscheme nord
-let g:lightline = {'colorscheme': 'nord'}
+colorscheme gruvbox
+let g:lightline = {'colorscheme': 'gruvbox'}
 " more about true colors ':help xterm-true-color'
 
 
