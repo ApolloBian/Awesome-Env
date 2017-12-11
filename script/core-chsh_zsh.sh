@@ -1,6 +1,7 @@
+zsh=`which zsh
 if [[ `uname` == 'Darwin' ]]; then
     # Darwin
-    chpass -s /bin/zsh $USER
+    chpass -s $zsh $USER
 else
-    chsh -s /usr/bin/zsh $USER
+    chsh -s $zsh $USER
 fi

@@ -3,7 +3,7 @@
     - [x] server-brew
     - [x] server-brew_package
 - ZSH
-    - [x] core-chsh_zsh
+    - [ ] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
     - [ ] arch-python3 # install python3
@@ -22,7 +22,7 @@
     - [x] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
 - Git difftool & mergetool
-    - [ ] server-git_override # change diff & mergetool to vimdiff
+    - [x] server-git_override # change diff & mergetool to vimdiff
 
 # The above is fully developed & tested
 
