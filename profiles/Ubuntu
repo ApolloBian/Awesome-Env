@@ -23,6 +23,8 @@
 - Vim Binary
     - [ ] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
+- Tmux
+    - [ ] core-tpm
 - Git difftool & mergetool
     - [ ] arch-p4merge # not implemented: config on arch linux is not needed
 

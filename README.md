@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/version-stable-brightgreen.svg?style=flat-square)
 ![](https://img.shields.io/badge/language-bash-green.svg?style=flat-square)
 ![](https://img.shields.io/badge/language-python-green.svg?style=flat-square)
-![](https://img.shields.io/badge/platform-ArchLinux%20|%20macOS%20|%20Ubuntu-lightgrey.svg?style=flat-square)
+![](https://img.shields.io/badge/platform-ArchLinux%20|%20macOS%20|%20Ubuntu-orange.svg?style=flat-square)
 
 ![](https://img.shields.io/badge/license-GPL_License-blue.svg?style=flat-square)
 ![](https://img.shields.io/github/last-commit/ApolloBian/Awesome-Env.svg?style=flat-square)

@@ -38,6 +38,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
 Plugin 'Valloric/YouCompleteMe'                     
 Plugin 'tpope/vim-commentary'                     
+Plugin 'suan/vim-instant-markdown'
 
 " *** Deprecated settings ***
 " Plugin 'vim-syntastic/syntastic'
@@ -50,7 +51,7 @@ filetype plugin indent on
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-" set cursorline
+set cursorline
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set ruler              " show the cursor position all the time
 set hlsearch           " highlight search
@@ -91,7 +92,7 @@ endif
 
 " ----- Make Vim look good ----------------------------------------------
 set termguicolors
-set background=dark
+set background=light
 set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12 " :set guifont? | this cmd gives current font
 
 let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY?
@@ -107,8 +108,8 @@ set encoding=utf-8
 set laststatus=2      " always show status bar
 set noshowmode  " work with status lines, disable --insert-- prompt"
 
-colorscheme gruvbox
-let g:lightline = {'colorscheme': 'gruvbox'}
+colorscheme one
+let g:lightline = {'colorscheme': 'one'}
 " more about true colors ':help xterm-true-color'
 
 
@@ -215,6 +216,10 @@ augroup END
 
 " ----- Plugin Youcompleteme -------------------------------------------
 let g:ycm_python_binary_path = '/usr/bin/python3'
+
+" ----- Plugin vim-instant-markdown
+set shell=bash\ -i
+let g:instant_markdown_autostart = 0
 
 " ----- important keymaps ----------------------------------------------------
 map <C-t> :TagbarToggle<CR>
