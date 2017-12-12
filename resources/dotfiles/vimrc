@@ -218,7 +218,7 @@ augroup END
 let g:ycm_python_binary_path = '/usr/bin/python3'
 
 " ----- Plugin vim-instant-markdown
-set shell=bash\ -i
+" set shell=zsh\ -i
 let g:instant_markdown_autostart = 0
 
 " ----- important keymaps ----------------------------------------------------
