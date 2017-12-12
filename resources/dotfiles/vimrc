@@ -92,7 +92,7 @@ endif
 
 " ----- Make Vim look good ----------------------------------------------
 set termguicolors
-set background=light
+set background=dark
 set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12 " :set guifont? | this cmd gives current font
 
 let g:gruvbox_italic=1  "GNOME_TERMINAL ONLY?
