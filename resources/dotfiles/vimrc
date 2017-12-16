@@ -35,7 +35,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-c0'
 Plugin 'jez/vim-ispc'
 Plugin 'kchmck/vim-coffee-script'
-" Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
+Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
 Plugin 'Valloric/YouCompleteMe'                     
 Plugin 'tpope/vim-commentary'                     
 Plugin 'suan/vim-instant-markdown'
