@@ -63,16 +63,7 @@ oh-my-dotfiles
 
 
 # TODO:
- - [ ] tmux ![](https://img.shields.io/badge/priority-urgent-red.svg?style=flat-square)
-    - [x] tmux 2.6
-    - [ ] outside $TERM: xterm-256color
-    - [ ] inside $TERM: xterm-256color
-    - [ ] termoverride
-    - [ ] try 2 versions of xterm-terminfo: from writer, from arch
-    - [ ] infocmp -x > xterm-terminfo
-    - [ ] edit xterm-terminfo, add `Tc,`
-    - [ ] tic -o ~/.terminfo -x xterm-terminfo
- - [ ] fcitx
+ - [ ] fcitx for server profile
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
  - [ ] add menu in readme(using toc)
@@ -95,3 +86,13 @@ oh-my-dotfiles
  - [x] badges
     - [x] awesome
     - [x] badges: [shields.io](https://img.shields.io/) [简书链接](http://www.jianshu.com/p/e9ce56cb24ef)
+ - [x] tmux 
+    - [x] tmux 2.6
+    - [x] outside $TERM: xterm-256color
+    - [x] inside $TERM: xterm-256color
+    - [x] termoverride
+    - [x] try 2 versions of xterm-terminfo: from writer, from arch
+        - conclusion: from writer
+    - [x] infocmp -x > xterm-terminfo
+    - [x] edit xterm-terminfo, add `Tc,`
+    - [x] tic -o ~/.terminfo -x xterm-terminfo
