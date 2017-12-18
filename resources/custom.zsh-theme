@@ -43,9 +43,9 @@ function my_current_branch() {
 }
 
 function ssh_connection() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    echo "%{$fg[red]%}ssh://$RESET_COLOR"
-  fi
+   if [[ -n $SSH_CONNECTION ]]; then
+     echo "%{$fg[red]%}ssh://$RESET_COLOR"
+   fi
 }
 
 local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
@@ -71,22 +71,25 @@ time_disabled="%{$fg[green]%}<%*>%{$reset_color%}"
 time=$time_enabled
 
 
-PROMPT=$'${time}$(ssh_connection)$USER_SERVER$PATH_PROMPT_SHORT$(my_git_prompt)$CMD_PROMPT'
+# PROMPT=$'${time}$(ssh_connection)$USER_SERVER$PATH_PROMPT_USER$(my_git_prompt)$CMD_PROMPT'
+PROMPT=$'${time} $PATH_PROMPT_USER$(my_git_prompt)$CMD_PROMPT'
 
 CYAN_FG="%{$fg[cyan]%}"
 RED_FG="%{$fg[red]%}"
+RED_FG_BOLD="%{$fg_bold[red]%}"
 GREEN_FG="%{$fg[green]%}"
-# GREEN_FG="%{$FG[040]%}"
 WHITE_FG="%{$fg[white]%}"
-# YELLOW_FG="%{$FG[226]%}"
 YELLOW_FG="%{$fg[yellow]%}"
 BLUE_FG="%{$fg[blue]%}"
-# BLUE_FG="%{$FG[033]%}"
 RESET_COLOR="%{$reset_color%}"
+# BLUE_FG="%{$FG[033]%}"
+# YELLOW_FG="%{$FG[226]%}"
+# GREEN_FG="%{$FG[040]%}"
 
 # CMD_PROMPT="$WHITE_FG %(!.#.$) $RESET_COLOR"
-CMD_PROMPT="$WHITE_FG %(!.#.$) %{$reset_color%}"
+# CMD_PROMPT="$WHITE_FG %(!.#.$) %{$reset_color%}"
+CMD_PROMPT="$RED_FG_BOLD | %{$reset_color%}"
 USER_SERVER="$CYAN_FG%n@%m:$RESET_COLOR"
 PATH_PROMPT_SHORT="$BLUE_FG%c$RESET_COLOR"
-PATH_PROMPT_USER="$BLUE_FG%~$RESET_COLOR"
+PATH_PROMPT_USER="$RESET_COLOR%~$RESET_COLOR"
 PATH_PROMPT_FULL="$BLUE_FG%/$RESET_COLOR"
