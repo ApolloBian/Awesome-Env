@@ -88,3 +88,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.alias
 source ~/.env
 source ~/.local_env # localized environment
+
+plugin_root=~/Awesome-Env/resources/omz-plugins/
+source $plugin_root/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $plugin_root/./zsh-autosuggestions/zsh-autosuggestions.zsh
