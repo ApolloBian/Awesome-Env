@@ -6,7 +6,6 @@
 
 ![](https://img.shields.io/badge/license-GPL_License-blue.svg?style=flat-square)
 ![](https://img.shields.io/github/last-commit/ApolloBian/Awesome-Env.svg?style=flat-square)
-![](https://img.shields.io/github/commit-activity/y/ApolloBian/Awesome-Env.svg?style=flat-square)
 
 In order to set up working environment easily, and to share my configurations, I create this repo.
 
@@ -64,9 +63,12 @@ oh-my-dotfiles
 
 # TODO:
  - [ ] zsh tweak
+    - [Zsh community projects](https://github.com/zsh-users)
     - [x] autocompletion and highlighting
         - [ ] tweak highlighting
         - [ ] tweak autocompletion
+    - [x] [zsh-completions](https://github.com/zsh-users/zsh-completions)
+    - [ ] manage zsh plugins with antigen
  - [ ] fcitx for server profile
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
