@@ -63,6 +63,10 @@ oh-my-dotfiles
 
 
 # TODO:
+ - [ ] zsh tweak
+    - [x] autocompletion and highlighting
+        - [ ] tweak highlighting
+        - [ ] tweak autocompletion
  - [ ] fcitx for server profile
  - [ ] learn about vim tagbar
  - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
