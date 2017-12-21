@@ -22,7 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
@@ -54,8 +54,8 @@ filetype plugin indent on
 set nocompatible
 set cursorline         " highlight current line
 set list!              " show endl and tabs
-" set listchars=tab:▸\ ,eol:¬,space:·                         " for more info, type :help listchars"
-set listchars=tab:▸\ ,eol:¬                         " for more info, type :help listchars"
+" set listchars=tab:▸\ ,space:·,eol:¬                       " for more info, type :help listchars"
+set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars"
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set ruler              " show the cursor position all the time
 set hlsearch           " highlight search
@@ -163,7 +163,7 @@ let g:syntastic_python_checker = ['flake8']
 " let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 1
 "自定义error和warning图标
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 "在vim自带的状态栏中整合ale
