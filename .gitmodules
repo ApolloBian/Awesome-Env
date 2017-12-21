@@ -4,3 +4,9 @@
 [submodule "resources/oh-my-zsh"]
 	path = resources/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "resources/omz-plugins/zsh-autosuggestions"]
+	path = resources/omz-plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "resources/omz-plugins/zsh-syntax-highlighting"]
+	path = resources/omz-plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
