@@ -72,7 +72,7 @@ time=$time_enabled
 
 
 # PROMPT=$'${time}$(ssh_connection)$USER_SERVER$PATH_PROMPT_USER$(my_git_prompt)$CMD_PROMPT'
-PROMPT=$'${time} $PATH_PROMPT_USER$(my_git_prompt)$CMD_PROMPT'
+PROMPT=$'${time} $PATH_PROMPT_SHORT$(my_git_prompt)$CMD_PROMPT'
 
 CYAN_FG="%{$fg[cyan]%}"
 RED_FG="%{$fg[red]%}"
@@ -90,6 +90,6 @@ RESET_COLOR="%{$reset_color%}"
 # CMD_PROMPT="$WHITE_FG %(!.#.$) %{$reset_color%}"
 CMD_PROMPT="$RED_FG_BOLD | %{$reset_color%}"
 USER_SERVER="$CYAN_FG%n@%m:$RESET_COLOR"
-PATH_PROMPT_SHORT="$BLUE_FG%c$RESET_COLOR"
+PATH_PROMPT_SHORT="$RESET_COLOR%c$RESET_COLOR"
 PATH_PROMPT_USER="$RESET_COLOR%~$RESET_COLOR"
 PATH_PROMPT_FULL="$BLUE_FG%/$RESET_COLOR"
