@@ -14,6 +14,9 @@ Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-one' "atom color scheme, good for light color
 Plugin 'cocopon/iceberg.vim'
 Plugin 'arcticicestudio/nord-vim'
+" --------------------------------------
+" Other stuff that makes vim good looking
+Plugin 'ryanoasis/vim-devicons'
 " -------------------------------------
 " Plugin 'vim-airline/vim-airline'
 Plugin 'itchyny/lightline.vim'
@@ -22,7 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
-" Plugin 'w0rp/ale'
+Plugin 'w0rp/ale'
 Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
@@ -104,7 +107,23 @@ set laststatus=2
 set noshowmode
 
 colorscheme iceberg
-let g:lightline = {'colorscheme': 'iceberg'}
+" let g:lightline = {'colorscheme': 'iceberg'}
+let g:lightline = { 
+            \ 'colorscheme': 'iceberg',
+            \ 'component_function': {
+            \   'filetype': 'MyFiletype',
+            \   'fileformat': 'MyFileformat',
+            \ }
+            \ }
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
 hi Comment cterm=italic gui=italic
 
 
