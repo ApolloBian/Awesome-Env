@@ -62,6 +62,7 @@ oh-my-dotfiles
 
 
 # TODO:
+ - [ ] patch font for vim-devicons
  - [ ] zsh tweak
     - [Zsh community projects](https://github.com/zsh-users)
     - [x] autocompletion and highlighting
