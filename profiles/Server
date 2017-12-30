@@ -16,8 +16,8 @@
 - Pip
     - [x] core-pip
     - Pypi mirror 
-        - [x] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
-        - [ ] core-douban-pypi
+        - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
+        - [x] core-tuna-pypi
 - Vim Binary
     - [x] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
