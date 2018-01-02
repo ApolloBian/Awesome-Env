@@ -1,7 +1,7 @@
 [color]
 	ui = true
 [user]
-	email = bian_tianling@sjtu.edu.cn
+	email = bian_tianling@icloud.com
 
 [merge]
     tool = p4merge
