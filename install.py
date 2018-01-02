@@ -10,8 +10,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--no_sudo', default=False, action='store_true')
     parser.add_argument('--server', default=False, action='store_true')
-    parser.add_argument('--custom_profile', default=False, action='store_true')
-    parser.add_argument('--config_file', type=str, default='Custom')
+    parser.add_argument('--custom_profile', type=str, default=None)
     return parser.parse_args()
 
 
@@ -72,7 +71,7 @@ if __name__ == '__main__':
             logging.error("Unrecognized system, please use custom profile!")
             exit()
     else:
-        selected_profile = args.config_file
+        selected_profile = args.custom_profile
     module_list = parse_profile(selected_profile)
 
     if max(map(lambda script: os.system("bash %s" % script), module_list)) != 0:
