@@ -11,95 +11,39 @@ In order to set up working environment easily, and to share my configurations, I
 
 And I hope it will be awesome :penguin:
 
-# Installation
-## via curl
+# Contents
 
-```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ApolloBian/oh-my-dotfiles/master/airboot.sh)"
+ - [Get started](#get-started)
+    - [Dependency](#dependency)
+    - [Installation](#installation)
+ - [Features](#features)
+
+# Get started
+## Dependency
+ - git
+ - curl
+## Installation
+Clone this repo to `~/Awesome-Env`. Execute the `install.py` script.
+```bash
+git clone https://github.com/ApolloBian/Awesome-Env.git ~/Awesome-Env
+cd ~/Awesome-Env
+```
+If you are working on a machine that you have admin(sudo) privileges, you can execute `./install.py` with no parameters.
+This script will automatically detect your platform and choose suitable profiles for you.
+
+However, if you are working on a server of which you don't have sudo privileges, or you on which need to install packages with caution,
+you can add `--server` param when executing `./install.py`:
+```bash
+./install.py --server
 ```
 
-# Reconstruction Plans
- - new branch: modulization
-    - [x] system dependent profiles:
-        - [x] Darwin 
-        - [x] ArchLinux
-        - [x] Server
-        - [ ] Ubuntu
-    - [x] oh-my-zsh
-    - [x] vim
-    - [ ] fonts
-        - [ ] powerline(optional)
-        - [ ] fira-mono, fira-code
-    - [x] p4merge read this article : https://pempek.net/articles/2014/04/18/git-p4merge/
-        - [x] gitconfig
-        - [x] profile
-        - [x] bin
-    - [x] vimdiff3 for servers
-
- - dir organization:
-```
-oh-my-dotfiles
-|_install.sh
-|_update_config.sh
-|_profile : modules -> script
-| |_macos
-| |_ubuntu
-| |_archlinux
-|
-|_script (module installation)
-| |_foo.sh
-|
-|_resources
-| |_vim8.0
-| |_oh-my-zsh
-| |_gitconfig    
-| |_fonts
-| | |_powerline-fonts (not necessary if using lightline)
-| | 
-| |_icons
-| |_themes
+You can choose the modules you need by modifying relative profiles. You can also make your own profiles and install with `--custom_profile` parameter:
+```bash
+./install.py --custom_profile profiles/Custom
 ```
 
 
-# TODO:
- - [ ] patch font for vim-devicons
- - [ ] zsh tweak
-    - [Zsh community projects](https://github.com/zsh-users)
-    - [x] autocompletion and highlighting
-        - [ ] tweak highlighting
-        - [ ] tweak autocompletion
-    - [x] [zsh-completions](https://github.com/zsh-users/zsh-completions)
-    - [ ] manage zsh plugins with antigen
- - [ ] fcitx for server profile
- - [ ] learn about vim tagbar
- - [ ] learn about vim scroll through buffer (Liu yu chen's dotfiles)
- - [ ] add menu in readme(using toc)
- - [ ] Ant
- - [ ] Boston
- - [x] system dependent settings
-    - [Refer to this link!](https://github.com/Leoyzen/dotfiles)
-    - [x]independent, editable enviroment ( which does not effect configurations on other machines)
- - [x] merge MaintainNotes into project wiki
- - [x] bundle latest version of vim
- - [x] submodule init
- - [x] finish vim related part:
-    - vundle
-    - ycm update submodule
- - [x] finish oh-my-zsh part:
-    - move custom theme to oh-my-zsh/custom
- - [x] modulization
- - [x] ship latest version of vim !
- - [x] Rename project to awesome-env
- - [x] badges
-    - [x] awesome
-    - [x] badges: [shields.io](https://img.shields.io/) [简书链接](http://www.jianshu.com/p/e9ce56cb24ef)
- - [x] tmux 
-    - [x] tmux 2.6
-    - [x] outside $TERM: xterm-256color
-    - [x] inside $TERM: xterm-256color
-    - [x] termoverride
-    - [x] try 2 versions of xterm-terminfo: from writer, from arch
-        - conclusion: from writer
-    - [x] infocmp -x > xterm-terminfo
-    - [x] edit xterm-terminfo, add `Tc,`
-    - [x] tic -o ~/.terminfo -x xterm-terminfo
+# Features
+ - Support multiple \*nix platforms using profiles
+ - modulized design, easy to maintain, troubleshoot and expand
+
