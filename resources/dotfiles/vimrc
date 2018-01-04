@@ -27,7 +27,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'w0rp/ale'
 Plugin 'xolox/vim-misc'
-" Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
@@ -204,11 +204,13 @@ let g:ale_python_flake8_args="--ignore=E402"
 
 
 " ----- Plugin vim-easytags ---------------------------------------------
-" set tags=tags " ;,~/.vimtags
+" set tags=./.tags " ;,~/.vimtags
 " Sensible defaults
+" let g:easytags_file = '~/.vim/tags'
+let g:easytags_by_filetype = '~/.vim/tags/'
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
+" let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
