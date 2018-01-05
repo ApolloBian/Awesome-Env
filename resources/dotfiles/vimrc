@@ -6,48 +6,54 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " A tool for generating colorscheme: https://github.com/jacoborus/estilo
 " --------------------------------------
-" Themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai' 
-Plugin 'morhetz/gruvbox'
-Plugin 'jacoborus/tender.vim'
-Plugin 'rakr/vim-one' "atom color scheme, good for light color
-Plugin 'cocopon/iceberg.vim'
-Plugin 'arcticicestudio/nord-vim'
-" -------------------------------------
+" Appearance
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'tomasr/molokai' 
+" Plugin 'morhetz/gruvbox'
+" Plugin 'jacoborus/tender.vim'
+" Plugin 'rakr/vim-one' "atom color scheme, good for light color
+" Plugin 'arcticicestudio/nord-vim'
 " Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive' " :Gblame
-Plugin 'Chiel92/vim-autoformat'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'itchyny/lightline.vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'w0rp/ale'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/a.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Raimondi/delimitMate'
+" -------------------------------------
+" Functions
+"   - Git
+        Plugin 'tpope/vim-fugitive' " :Gblame
+        Plugin 'airblade/vim-gitgutter' " display line status on the left
+"   - File browsing
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+        Plugin 'Xuyuanp/nerdtree-git-plugin'
+        Plugin 'ctrlpvim/ctrlp.vim'
+"   - Programming
+        Plugin 'Valloric/YouCompleteMe'                     
+        Plugin 'w0rp/ale'
+        Plugin 'xolox/vim-easytags'
+        Plugin 'majutsushi/tagbar'
+"   - System Integration
+        Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
+
+" Not familar plugins
 Plugin 'jez/vim-superman'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'jez/vim-c0'
-Plugin 'jez/vim-ispc'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
-Plugin 'Valloric/YouCompleteMe'                     
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'xolox/vim-misc'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'                     
-Plugin 'suan/vim-instant-markdown'
+Plugin 'scrooloose/nerdcommenter'
 " --------------------------------------
 " Other stuff that makes vim good looking
-Plugin 'ryanoasis/vim-devicons'
 
 " *** Deprecated settings ***
-" Plugin 'vim-syntastic/syntastic'
+" Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'vim-syntastic/syntastic' " Replaced by ale
+" Plugin 'vim-scripts/a.vim'
+" Plugin 'jez/vim-c0'
+" Plugin 'jez/vim-ispc'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'suan/vim-instant-markdown'
+" Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
@@ -57,7 +63,7 @@ filetype plugin indent on
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-set cursorline         " highlight current line
+" set cursorline         " highlight current line, this makes vim super slow btw
 set list!              " show endl and tabs
 " set listchars=tab:▸\ ,space:·,eol:¬                       " for more info, type :help listchars"
 set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars"
