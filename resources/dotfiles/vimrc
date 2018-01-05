@@ -4,20 +4,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" A tool for generating colorscheme: https://github.com/jacoborus/estilo
-" --------------------------------------
+" Vundle Plugins
 " Appearance
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'tomasr/molokai' 
-" Plugin 'morhetz/gruvbox'
-" Plugin 'jacoborus/tender.vim'
-" Plugin 'rakr/vim-one' "atom color scheme, good for light color
-" Plugin 'arcticicestudio/nord-vim'
-" Plugin 'vim-airline/vim-airline'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'itchyny/lightline.vim'
-" -------------------------------------
+"   - Color scheme
+        " A tool for generating colorscheme: https://github.com/jacoborus/estilo
+        Plugin 'cocopon/iceberg.vim'
+        Plugin 'ryanoasis/vim-devicons'
+        " Plugin 'altercation/vim-colors-solarized'
+        " Plugin 'tomasr/molokai' 
+        " Plugin 'morhetz/gruvbox'
+        " Plugin 'jacoborus/tender.vim'
+        " Plugin 'rakr/vim-one' "atom color scheme, good for light color
+        " Plugin 'arcticicestudio/nord-vim'
+"   - Status line
+        Plugin 'itchyny/lightline.vim'
+        " Plugin 'vim-airline/vim-airline'
 " Functions
 "   - Git
         Plugin 'tpope/vim-fugitive' " :Gblame
@@ -34,26 +35,26 @@ Plugin 'itchyny/lightline.vim'
         Plugin 'majutsushi/tagbar'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
-
+        Plugin 'christoomey/vim-tmux-navigator'
+"   - Markdown
 " Not familar plugins
-Plugin 'jez/vim-superman'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'xolox/vim-misc'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-commentary'                     
-Plugin 'scrooloose/nerdcommenter'
-" --------------------------------------
-" Other stuff that makes vim good looking
+        Plugin 'jez/vim-superman'
+        Plugin 'Chiel92/vim-autoformat'
+        Plugin 'xolox/vim-misc'
+        Plugin 'Raimondi/delimitMate'
+        Plugin 'tpope/vim-commentary'                     
+        Plugin 'scrooloose/nerdcommenter'
+        Plugin 'kchmck/vim-coffee-script'
 
 " *** Deprecated settings ***
-" Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'vim-syntastic/syntastic' " Replaced by ale
-" Plugin 'vim-scripts/a.vim'
-" Plugin 'jez/vim-c0'
-" Plugin 'jez/vim-ispc'
-" Plugin 'kchmck/vim-coffee-script'
-" Plugin 'suan/vim-instant-markdown'
-" Plugin 'vim-airline/vim-airline-themes'
+        " Plugin 'vim-pandoc/vim-pandoc'       
+        " Plugin 'vim-pandoc/vim-pandoc-syntax'
+        " Plugin 'vim-syntastic/syntastic' " Replaced by ale
+        " Plugin 'vim-scripts/a.vim'
+        " Plugin 'jez/vim-c0'
+        " Plugin 'jez/vim-ispc'
+        " Plugin 'suan/vim-instant-markdown'
+        " Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
@@ -229,6 +230,8 @@ let g:easytags_suppress_ctags_warning = 1
 " ----- Plugin vim-gitgutter ---------------------------------
 let g:airline#extensions#hunks#non_zero_only = 1
 
+" ---- Plugin vim-pandoc-syntax
+let g:pandoc#syntax#conceal#use = 0
 
 
 " ----- Plugin delimitMate --------------------------------------------
