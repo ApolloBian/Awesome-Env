@@ -29,10 +29,12 @@ make distclean
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
-    --enable-gui=gtk2,gnome,gtk3 \
-    --prefix=$prefix
+    --enable-gui=auto \
+    --prefix=$prefix \
+    --with-compiledby=bian_tianling@sjtu.edu.cn
 #     --disable-darwin \
 #     --with-python-config-dir=$python_config_dir \
+#     --enable-gui=gtk2,gnome,gtk3 \
 
 make clean
 make -j`num_proc`

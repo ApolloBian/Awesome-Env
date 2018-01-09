@@ -38,6 +38,8 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
         Plugin 'christoomey/vim-tmux-navigator'
 "   - Markdown
+"   - Latex
+        Plugin 'lervag/vimtex'
 " Not familar plugins
         Plugin 'jez/vim-superman'
         Plugin 'Chiel92/vim-autoformat'
@@ -235,6 +237,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:pandoc#syntax#conceal#use = 0
 
 
+" ---- vimtex -------------------
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+
+
 " ----- Plugin delimitMate --------------------------------------------
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
@@ -245,6 +251,9 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" ----- Plugin gutentags --------------------------------------------
+let g:gutentags_cache_dir = '~/.vim/tags/'
+let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
 " ----- Plugin vim-superman ---------------------------------------------
 
