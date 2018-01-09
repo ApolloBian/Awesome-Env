@@ -31,8 +31,9 @@ Plugin 'VundleVim/Vundle.vim'
 "   - Programming
         Plugin 'Valloric/YouCompleteMe'                     
         Plugin 'w0rp/ale'
-        Plugin 'xolox/vim-easytags'
         Plugin 'majutsushi/tagbar'
+        Plugin 'ludovicchabant/vim-gutentags'
+        " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
         Plugin 'christoomey/vim-tmux-navigator'
