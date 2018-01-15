@@ -16,3 +16,7 @@
 [core]
 	autocrlf = input
     editor = vim
+[push]
+	default = upstream
+[merg]
+	conflictstyle = diff3
