@@ -64,13 +64,10 @@ filetype plugin indent on
 
 
 " ----- General Settings  -----------------------------------------------------
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-" set cursorline         " highlight current line, this makes vim super slow btw
+set nocompatible       " Use Vim settings, rather than Vi settings (much better!).
+                       " This must be first, because it changes other options as a side effect.
 set list!              " show endl and tabs
-" set listchars=tab:▸\ ,space:·,eol:¬                       " for more info, type :help listchars"
-set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars"
+set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set ruler              " show the cursor position all the time
 set hlsearch           " highlight search
@@ -82,44 +79,44 @@ set showcmd            " display incomplete commands
 set incsearch          " do incremental searching
 set linebreak          " wrap lines on 'word' boundaries
 set scrolloff=8        " don't let the cursor touch the edge of the viewport
-set splitright         " Vertical splits use right half of screen
-set timeoutlen=100     " Lower ^[ timeout
+" set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
 set lazyredraw         " make macros faster
 set formatoptions-=r formatoptions-=c formatoptions-=o
-syntax on
-if exists('&breakindent')
-    set breakindent      " Indent wrapped lines up to the same level
-endif
-
-set mouse=a
-hi clear SignColumn     "We need this for plugins like Syntastic and vim-gitgutter which put symbols
-                        " in the sign column.
-" Tab settings
 set expandtab          " Expand tabs into spaces
 set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
-
-" For when you forget to sudo... Really Write the file.
-" :W sudo write
+" let mapleader=","
+syntax on
 if !(has('win32') || has('win64')) && !has("gui_running")
+    " :W sudo write
     command! W w !sudo tee % > /dev/null
 endif
+if exists('&breakindent')
+    set breakindent      " Indent wrapped lines up to the same level
+endif
+set mouse=a
+hi clear SignColumn     " We need this for plugins like Syntastic and vim-gitgutter which put symbols
+                        " in the sign column.
+" - Deprecated
+" set splitright          " Vertical splits use right half of screen
+" set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
+" set cursorline       " highlight current line, this makes vim super slow in cmd line
+
 
 
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
 set background=dark
-set guifont=Fira\ Mono\ for\ Powerline\ Regular\ 12 " :set guifont? | this cmd gives current font
+set guifont=Knack\ Regular\ Nerd\ Font\ Complete:h13" :set guifont? | this cmd gives current font
 set encoding=utf-8
 set laststatus=2
 set noshowmode
 
 colorscheme iceberg
-" let g:lightline = {'colorscheme': 'iceberg'}
 let g:lightline = { 
             \ 'colorscheme': 'iceberg',
             \ 'component_function': {
@@ -138,7 +135,6 @@ endfunction
 
 hi Comment cterm=italic gui=italic
 
-
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
 " let g:airline_theme='gruvbox'
@@ -149,10 +145,6 @@ hi Comment cterm=italic gui=italic
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
 
-
-
-" -----Plugin Lightline 
-" let g:lightline = {'colorscheme': 'gruvbox'}
 
 
 
@@ -238,7 +230,11 @@ let g:pandoc#syntax#conceal#use = 0
 
 
 " ---- vimtex -------------------
-let g:vimtex_compiler_latexmk = {'callback' : 0}
+" let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_matchparen_enabled = 0
+let g:vimtex_mappings_enabled = 1
+" let g:vimtex_view_method='skim'
+" let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 
 " ----- Plugin delimitMate --------------------------------------------
