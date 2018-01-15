@@ -254,7 +254,7 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 " ----- Plugin vim-superman ---------------------------------------------
 
 " ----- Plugin Youcompleteme -------------------------------------------
-let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_python_binary_path = 'python'
 
 " ----- Plugin vim-instant-markdown
 " set shell=zsh\ -i
