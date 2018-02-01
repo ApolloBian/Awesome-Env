@@ -202,7 +202,7 @@ let g:ale_echo_msg_error_str = '✗'
 let g:ale_echo_msg_warning_str = '▲'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " flake8 相关设置
-let g:ale_python_flake8_args="--ignore=E402"
+let g:ale_python_flake8_args="--ignore=E402,E128,E126"
 
 
 " ----- Plugin vim-easytags ---------------------------------------------
@@ -255,6 +255,8 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
 " ----- Plugin Youcompleteme -------------------------------------------
 let g:ycm_python_binary_path = 'python'
+" let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 
 " ----- Plugin vim-instant-markdown
 " set shell=zsh\ -i
