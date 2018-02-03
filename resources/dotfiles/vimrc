@@ -9,7 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 "   - Color scheme
         " A tool for generating colorscheme: https://github.com/jacoborus/estilo
         Plugin 'cocopon/iceberg.vim'
-        Plugin 'ryanoasis/vim-devicons'
         " Plugin 'altercation/vim-colors-solarized'
         " Plugin 'tomasr/molokai' 
         " Plugin 'morhetz/gruvbox'
@@ -28,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'ctrlpvim/ctrlp.vim'
+        Plugin 'ryanoasis/vim-devicons'
 "   - Programming
         Plugin 'Valloric/YouCompleteMe'                     
         Plugin 'w0rp/ale'
@@ -153,12 +153,13 @@ hi Comment cterm=italic gui=italic
 let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
 let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
 let NERDTreeShowHidden=0                              " show hidden files
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_enable_nerdtree = 0
+let g:webdevicons_enable_ctrlp = 1
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
-" let g:NERDTreeDirArrowExpandable = " "
-" let g:NERDTreeDirArrowCollapsible = " "
 
 " ----- Plugin Nerdtree-git-plugin------------------------------------
 let g:NERDTreeIndicatorMapCustom = {
