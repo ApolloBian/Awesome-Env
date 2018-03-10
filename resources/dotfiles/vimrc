@@ -33,6 +33,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'w0rp/ale'
         Plugin 'majutsushi/tagbar'
         Plugin 'ludovicchabant/vim-gutentags'
+        Plugin 'plytophogy/vim-virtualenv'
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
@@ -83,6 +84,7 @@ set scrolloff=8        " don't let the cursor touch the edge of the viewport
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
 set lazyredraw         " make macros faster
+set ttyfast
 set formatoptions-=r formatoptions-=c formatoptions-=o
 set expandtab          " Expand tabs into spaces
 set tabstop=4          " default to 2 spaces for a hard tab
@@ -111,7 +113,8 @@ hi clear SignColumn     " We need this for plugins like Syntastic and vim-gitgut
 " more about true colors ':help xterm-true-color'
 set termguicolors
 set background=dark
-set guifont=Knack\ Regular\ Nerd\ Font\ Complete:h13" :set guifont? | this cmd gives current font
+set guifont=Source\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
+set guioptions=             " disable sidebars in gui
 set encoding=utf-8
 set laststatus=2
 set noshowmode
