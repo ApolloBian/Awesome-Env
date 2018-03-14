@@ -34,6 +34,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'majutsushi/tagbar'
         Plugin 'ludovicchabant/vim-gutentags'
         Plugin 'plytophogy/vim-virtualenv'
+        Plugin 'tpope/vim-commentary'                     
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
@@ -46,8 +47,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'Chiel92/vim-autoformat'
         Plugin 'xolox/vim-misc'
         Plugin 'Raimondi/delimitMate'
-        Plugin 'tpope/vim-commentary'                     
-        Plugin 'scrooloose/nerdcommenter'
+        " Plugin 'scrooloose/nerdcommenter'
         Plugin 'kchmck/vim-coffee-script'
 
 " *** Deprecated settings ***
