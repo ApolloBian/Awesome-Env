@@ -8,7 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Appearance
 "   - Color scheme
         " A tool for generating colorscheme: https://github.com/jacoborus/estilo
-        Plugin 'cocopon/iceberg.vim'
+        " Plugin 'cocopon/iceberg.vim'
+        Plugin 'rakr/vim-one'
         " Plugin 'altercation/vim-colors-solarized'
         " Plugin 'tomasr/molokai' 
         " Plugin 'morhetz/gruvbox'
@@ -112,16 +113,17 @@ hi clear SignColumn     " We need this for plugins like Syntastic and vim-gitgut
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
-set background=dark
-set guifont=Source\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
+set background=light
+set guifont=Source\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
 set laststatus=2
 set noshowmode
 
-colorscheme iceberg
+" colorscheme iceberg
+colorscheme one
 let g:lightline = { 
-            \ 'colorscheme': 'iceberg',
+            \ 'colorscheme': 'one',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
