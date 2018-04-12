@@ -91,6 +91,9 @@ set expandtab          " Expand tabs into spaces
 set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
+" zsh style command completion
+set wildmenu
+set wildmode=full
 " let mapleader=","
 syntax on
 if !(has('win32') || has('win64')) && !has("gui_running")
