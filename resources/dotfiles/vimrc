@@ -94,6 +94,8 @@ set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
 " zsh style command completion
 set wildmenu
 set wildmode=full
+" remember more history, 200 will be more than useful
+set history=200
 " let mapleader=","
 syntax on
 if !(has('win32') || has('win64')) && !has("gui_running")
@@ -116,7 +118,7 @@ hi clear SignColumn     " We need this for plugins like Syntastic and vim-gitgut
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
-set background=light
+set background=dark
 set guifont=Source\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
