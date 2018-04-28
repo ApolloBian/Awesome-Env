@@ -74,7 +74,13 @@ if __name__ == '__main__':
         selected_profile = args.custom_profile
     module_list = parse_profile(selected_profile)
 
-    if max(map(lambda script: os.system("bash %s" % script), module_list)) != 0:
-        logging.error('Execution fail! Please check system requirements!')
+    failed_script = []
+    for i, module in zip(map(lambda script: os.system("bash %s" % script), module_list), module_list):
+        if i != 0:
+            failed_script.append(module)
+    if failed_script:
+        print("The following modules are not installed properly")
+        for fs in failed_script:
+            print(fs)
     else:
-        logging.info('Execution complete!')
+        print("Installation sucess!")
