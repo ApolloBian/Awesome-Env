@@ -47,7 +47,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'jez/vim-superman'
         Plugin 'Chiel92/vim-autoformat'
         Plugin 'xolox/vim-misc'
-        Plugin 'Raimondi/delimitMate'
+        " Plugin 'Raimondi/delimitMate'
         " Plugin 'scrooloose/nerdcommenter'
         Plugin 'kchmck/vim-coffee-script'
 
