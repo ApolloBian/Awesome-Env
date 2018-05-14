@@ -178,6 +178,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Untracked"   : "×",
     \ }
 
+" ----- Plugin CtrlP --------------------------------------------------
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|pyc|jpeg|jpg|png|mat|zip|tar|tar.gz|bz2|swp|swo)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
 
 
 " ----- Plugin Syntastic ----------------------------------------------
