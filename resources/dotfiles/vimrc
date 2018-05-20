@@ -107,6 +107,7 @@ if exists('&breakindent')
 endif
 set mouse=a
 hi clear SignColumn     " We need this for plugins like Syntastic and vim-gitgutter which put symbols
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
                         " in the sign column.
 " - Deprecated
 " set splitright          " Vertical splits use right half of screen
