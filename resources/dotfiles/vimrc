@@ -24,7 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'tpope/vim-fugitive' " :Gblame
         Plugin 'airblade/vim-gitgutter' " display line status on the left
 "   - File browsing
-        Plugin 'scrooloose/nerdtree'
+        " Plugin 'scrooloose/nerdtree'
         Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'ctrlpvim/ctrlp.vim'
@@ -156,7 +156,9 @@ hi Comment cterm=italic gui=italic
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
 
 
-
+" ----- Plugin vim-virtualenv
+let g:virtualenv_directory = '$HOME/Developer/python-virtualenv'
+set statusline+=%{virtualenv#statusline()}
 
 " ----- Plugin Nerdtree -----------------------------------------------
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
