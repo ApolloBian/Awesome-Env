@@ -19,7 +19,7 @@
     - [x] core-pip
     - Pypi mirror 
         - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
-        - [x] core-tuna-pypi
+        - [x] core-sjtu-pypi
 - Vim Binary
     - [ ] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
