@@ -42,7 +42,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'christoomey/vim-tmux-navigator'
 "   - Markdown
 "   - Latex
-        Plugin 'lervag/vimtex'
+        " Plugin 'lervag/vimtex'
 " Not familar plugins
         Plugin 'jez/vim-superman'
         Plugin 'Chiel92/vim-autoformat'
@@ -119,7 +119,7 @@ cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
-set background=dark
+set background=light
 set guifont=Source\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
