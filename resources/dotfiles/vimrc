@@ -10,8 +10,10 @@ Plugin 'VundleVim/Vundle.vim'
         " A tool for generating colorscheme: https://github.com/jacoborus/estilo
         " Plugin 'cocopon/iceberg.vim'
         Plugin 'rakr/vim-one'
+        Plugin 'AlessandroYorba/Sierra'
+        Plugin 'altercation/vim-colors-solarized'
         " Plugin 'altercation/vim-colors-solarized'
-        " Plugin 'tomasr/molokai' 
+        Plugin 'tomasr/molokai' 
         " Plugin 'morhetz/gruvbox'
         " Plugin 'jacoborus/tender.vim'
         " Plugin 'rakr/vim-one' "atom color scheme, good for light color
@@ -36,6 +38,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'ludovicchabant/vim-gutentags'
         Plugin 'plytophogy/vim-virtualenv'
         Plugin 'tpope/vim-commentary'                     
+        Plugin 'rizzatti/dash.vim'
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
@@ -139,7 +142,7 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
-set background=light
+set background=dark
 set guifont=Source\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
@@ -147,9 +150,9 @@ set laststatus=2
 set noshowmode
 
 " colorscheme iceberg
-colorscheme one
+colorscheme molokai
 let g:lightline = { 
-            \ 'colorscheme': 'one',
+            \ 'colorscheme': 'molokai',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
