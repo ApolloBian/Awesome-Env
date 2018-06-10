@@ -14,19 +14,20 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'altercation/vim-colors-solarized'
         " Plugin 'altercation/vim-colors-solarized'
         Plugin 'tomasr/molokai' 
-        " Plugin 'morhetz/gruvbox'
+        Plugin 'morhetz/gruvbox'
         " Plugin 'jacoborus/tender.vim'
         " Plugin 'rakr/vim-one' "atom color scheme, good for light color
-        " Plugin 'arcticicestudio/nord-vim'
+        Plugin 'arcticicestudio/nord-vim'
 "   - Status line
-        Plugin 'itchyny/lightline.vim'
-        " Plugin 'vim-airline/vim-airline'
+        " Plugin 'itchyny/lightline.vim'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
 " Functions
 "   - Git
         Plugin 'tpope/vim-fugitive' " :Gblame
         Plugin 'airblade/vim-gitgutter' " display line status on the left
 "   - File browsing
-        " Plugin 'scrooloose/nerdtree'
+        Plugin 'scrooloose/nerdtree'
         Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'ctrlpvim/ctrlp.vim'
@@ -62,7 +63,6 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'jez/vim-c0'
         " Plugin 'jez/vim-ispc'
         " Plugin 'suan/vim-instant-markdown'
-        " Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
@@ -143,16 +143,16 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 " more about true colors ':help xterm-true-color'
 set termguicolors
 set background=dark
-set guifont=Source\ Code\ Pro\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
+set guifont=Source\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
 set laststatus=2
 set noshowmode
 
 " colorscheme iceberg
-colorscheme molokai
+colorscheme gruvbox
 let g:lightline = { 
-            \ 'colorscheme': 'molokai',
+            \ 'colorscheme': 'gruvbox',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
@@ -171,10 +171,11 @@ hi Comment cterm=italic gui=italic
 
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
-" let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox'
 " let g:airline_theme='one'
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 " powerline-status
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
@@ -300,6 +301,12 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 let g:ycm_python_binary_path = 'python'
 " let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
+let g:ycm_goto_buffer_command = horizontal-split
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+endif
 
 " ----- Plugin vim-instant-markdown
 " set shell=zsh\ -i
