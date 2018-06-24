@@ -135,7 +135,7 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 " - Deprecated
 " set splitright          " Vertical splits use right half of screen
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
-" set cursorline       " highlight current line, this makes vim super slow in cmd line
+set cursorline
 
 
 
