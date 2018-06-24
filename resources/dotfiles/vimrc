@@ -19,9 +19,9 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'rakr/vim-one' "atom color scheme, good for light color
         Plugin 'arcticicestudio/nord-vim'
 "   - Status line
-        " Plugin 'itchyny/lightline.vim'
-        Plugin 'vim-airline/vim-airline'
-        Plugin 'vim-airline/vim-airline-themes'
+        Plugin 'itchyny/lightline.vim'
+        " Plugin 'vim-airline/vim-airline'
+        " Plugin 'vim-airline/vim-airline-themes'
 " Functions
 "   - Git
         Plugin 'tpope/vim-fugitive' " :Gblame
