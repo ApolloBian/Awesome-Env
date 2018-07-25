@@ -10,8 +10,7 @@ git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouComplet
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 
-
-./install.py
+./install.py --clang-completer --js-completer
 # uname -a | grep -i ubuntu
 # if [[ $? != 0 ]]; then
 #     ./install.py --clang-completer --system-libclang
