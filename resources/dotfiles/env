@@ -8,3 +8,4 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$HOME/Library/Python/3.6/bin:$HOME/Library/Python/2.7/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 alias proxycurl='curl --socks5-hostname socks5://localhost:1086'
+alias ns='nvidia-smi'

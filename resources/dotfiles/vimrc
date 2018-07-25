@@ -43,7 +43,7 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
-        Plugin 'christoomey/vim-tmux-navigator'
+        " Plugin 'christoomey/vim-tmux-navigator'
 "   - Markdown
 "   - Latex
         " Plugin 'lervag/vimtex'
