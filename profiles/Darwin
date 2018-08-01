@@ -6,7 +6,7 @@
     - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version
-    - [ ] # TODO: python3 darwin
+    - [ ] core-python3# TODO: python3 darwin
 # Environment, dotfiles
 - Dotfiles
     - [x] core-dotfiles
