@@ -4,7 +4,7 @@
     - [x] arch-yaourt # install yaourt
     - [x] arch-aur
 - ZSH
-    - [x] arch-zsh # install & chsh
+    - [x] core-zsh # install & chsh
     - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
