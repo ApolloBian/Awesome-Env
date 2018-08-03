@@ -21,11 +21,11 @@ echo $prefix
 cd resources/vim
 make uninstall
 make distclean
+make clean
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
     --enable-pythoninterp=yes \
-    --enable-python3interp=yes \
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
@@ -33,9 +33,9 @@ make distclean
     --prefix=$prefix \
     --with-compiledby=bian_tianling@sjtu.edu.cn
 #     --disable-darwin \
+#     --enable-python3interp=dynamic \
 #     --with-python-config-dir=$python_config_dir \
 #     --enable-gui=gtk2,gnome,gtk3 \
 
-make clean
 make -j`num_proc`
 make install
