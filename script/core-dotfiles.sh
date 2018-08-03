@@ -56,6 +56,7 @@ git config --global user.name Tianling@$HOST
 
 link $(pwd)/resources/oh-my-zsh $HOME/.oh-my-zsh
 link $(pwd)/resources/custom.zsh-theme $HOME/.oh-my-zsh/custom/themes/custom.zsh-theme
+ln -s $(pwd)/resources/omz-plugins/* $HOME/.oh-my-zsh/custom/plugins/
 touch ~/.local_env
 
 # Link Fish Config
