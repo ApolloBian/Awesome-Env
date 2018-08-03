@@ -4,8 +4,8 @@
  - [ ] zsh tweak
     - [Zsh community projects](https://github.com/zsh-users)
     - [x] autocompletion and highlighting
-        - [ ] tweak highlighting
-        - [ ] tweak autocompletion
+        - [x] tweak highlighting
+        - [x] tweak autocompletion
     - [x] [zsh-completions](https://github.com/zsh-users/zsh-completions)
     - [ ] manage zsh plugins with antigen
  - [ ] fcitx for server profile
