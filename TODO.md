@@ -1,6 +1,9 @@
 # TODO:
  - [x] migrate TODO to TODO.md
  - [ ] patch `fira-code` & `source code pro` font for vim-devicons
+ - [ ] auto install iterm (darwin only)
+    - [ ] iterm bin
+    - [ ] iterm theme
  - [ ] zsh tweak
     - [Zsh community projects](https://github.com/zsh-users)
     - [x] autocompletion and highlighting
