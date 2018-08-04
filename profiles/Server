@@ -31,6 +31,8 @@
 # System Look
 - Install Gnome
     - [ ] arch_gnome
+- Terminal decoration
+    - [ ] core-neofetch
 # Themes
 - Gnome Themes
     - [ ] themes 

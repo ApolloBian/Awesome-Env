@@ -25,6 +25,10 @@
 - Git difftool & mergetool
     - [x] darwin-p4merge # TODO:seems p4merge bin works fine on ARCH, test it on mac, get rid of this script
 
+# System look
+- Terminal decoration
+    - [ ] core-neofetch
+
 # SSH keys
 - SSH
     - [ ] ssh-update-private-keys

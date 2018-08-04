@@ -10,3 +10,6 @@
 [submodule "resources/omz-plugins/zsh-syntax-highlighting"]
 	path = resources/omz-plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "resources/neofetch"]
+	path = resources/neofetch
+	url = https://github.com/dylanaraps/neofetch
