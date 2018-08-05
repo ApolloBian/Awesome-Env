@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# 0. dependencies
+brew install imagemagick
+
 neo_config_root=~/.config/neofetch
 
 # 1. make config dir
