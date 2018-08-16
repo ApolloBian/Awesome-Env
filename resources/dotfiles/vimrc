@@ -1,4 +1,3 @@
-
 " ----- Setup Vundle      -----------------------------------------------------
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -94,6 +93,8 @@ set expandtab          " Expand tabs into spaces
 set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
+" workarounds for background disappears when scrolling
+let &t_ut=''
 " zsh style command completion
 set wildmenu
 set wildmode=full
