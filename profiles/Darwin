@@ -24,6 +24,8 @@
     - [ ] core-tpm
 - Git difftool & mergetool
     - [x] darwin-p4merge # TODO:seems p4merge bin works fine on ARCH, test it on mac, get rid of this script
+- Kitty.app
+    - [x] core-kitty
 
 # System look
 - Terminal decoration
