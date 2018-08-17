@@ -22,4 +22,4 @@ workdir=$(pwd)
 cd $(pwd)/resources/neofetch/
 make PREFIX=$prefix install
 cd $workdir
-echo "neofetch" >> ~/.local_env
+# echo "neofetch" >> ~/.local_env
