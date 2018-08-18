@@ -10,6 +10,7 @@
 # Environment, dotfiles
 - Dotfiles
     - [x] core-dotfiles
+    - [x] darwin-launchd-setenv     # set global environments in launchd, thus we can set env variables before term launches
 # Develop environment: Avoid using sudo
 - Pip
     - [x] core-pip
