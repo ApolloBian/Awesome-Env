@@ -31,7 +31,7 @@ cd ~/Awesome-Env
 If you are working on a machine that you have admin(sudo) privileges, you can execute `./install.py` with no parameters.
 This script will automatically detect your platform and choose suitable profiles for you.
 
-However, if you are working on a server of which you don't have sudo privileges, or you on which need to install packages with caution,
+However, if you are working on a server of which you don't have sudo privileges, or on which you need to install packages with caution,
 you can add `--server` param when executing `./install.py`:
 ```bash
 ./install.py --server
