@@ -19,15 +19,40 @@ And I hope it will be awesome :penguin:
  - [Features](#features)
 
 # Get started
-## Dependency
- - git
- - curl
 ## Installation
+I provide 2 options for installation.
+### 1. One-liner installation
+In most cases this one-liner will do the job. If you lack certain privilleges or you want to make custom profiles, you should
+consider [manual installation](#2-customizable-manual-installation).
+```bash
+# paste this to cmdline
+# install to default dir (~/Awesome-Env)
+bash <(curl -s \
+    https://raw.githubusercontent.com/ApolloBian/Awesome-Env/master/online-bootstrap.sh)
+```
+If you want to install to a custom directory, use the following commands
+```bash
+# paste this to cmdline
+# install to custom dir
+INSTALL_DIR=$HOME/.Awesome-Env      # the dir that you want to install to
+bash <(curl -s \
+    https://raw.githubusercontent.com/ApolloBian/Awesome-Env/master/online-bootstrap.sh) \
+    $INSTALL_DIR
+```
+
+### 2. Customizable manual installation
+__Note__: this project uses git submodules, so you MUST clone this repo instead of downloading zipfile.
+
+Esseintially, cmdline tools such as `git` and `curl` are required, also building toolchains are required
+if you are to use some components that requires compiling (such as `core-vim_compile`)
+
 Clone this repo to `~/Awesome-Env`. Execute the `install.py` script.
 ```bash
 git clone https://github.com/ApolloBian/Awesome-Env.git ~/Awesome-Env
 cd ~/Awesome-Env
+python install.py
 ```
+
 If you are working on a machine that you have admin(sudo) privileges, you can execute `./install.py` with no parameters.
 This script will automatically detect your platform and choose suitable profiles for you.
 
