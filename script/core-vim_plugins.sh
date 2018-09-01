@@ -25,6 +25,10 @@ if [[ `uname` == 'Darwin' ]]; then
     cp $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/
 fi
  
+# patch for highlighting python triple-quoted string
+python_synfile=$HOME/.vim/after/syntax/
+mkdir -p $python_synfile
+echo 'syn region Comment start=/"""/ end=/"""/' >> $python_synfile
 
 # TODO: maybe try space vim 
 # echo "Installing Space-Vim ..."
