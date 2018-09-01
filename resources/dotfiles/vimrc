@@ -7,8 +7,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Appearance
 "   - Color scheme
         " A tool for generating colorscheme: https://github.com/jacoborus/estilo
-        " Plugin 'cocopon/iceberg.vim'
+        Plugin 'cocopon/iceberg.vim'
         Plugin 'rakr/vim-one'
+        Plugin 'ApolloBian/Retro.vim'
         Plugin 'AlessandroYorba/Sierra'
         Plugin 'altercation/vim-colors-solarized'
         " Plugin 'altercation/vim-colors-solarized'
@@ -17,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'jacoborus/tender.vim'
         " Plugin 'rakr/vim-one' "atom color scheme, good for light color
         Plugin 'arcticicestudio/nord-vim'
+        Plugin 'cocopon/pgmnt.vim'
 "   - Status line
         Plugin 'itchyny/lightline.vim'
         " Plugin 'vim-airline/vim-airline'
@@ -162,10 +164,9 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-" colorscheme iceberg
-colorscheme gruvbox
+colorscheme retro
 let g:lightline = { 
-            \ 'colorscheme': 'gruvbox',
+            \ 'colorscheme': 'retro',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
