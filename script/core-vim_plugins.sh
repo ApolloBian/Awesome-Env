@@ -26,9 +26,9 @@ if [[ `uname` == 'Darwin' ]]; then
 fi
  
 # patch for highlighting python triple-quoted string
-python_synfile=$HOME/.vim/after/syntax/
-mkdir -p $python_synfile
-echo 'syn region Comment start=/"""/ end=/"""/' >> $python_synfile
+vim_synhi_dir=$HOME/.vim/after/syntax/
+mkdir -p $vim_synhi_dir
+echo 'syn region Comment start=/"""/ end=/"""/' >> $vim_synhi_dir/python.vim
 
 # TODO: maybe try space vim 
 # echo "Installing Space-Vim ..."
