@@ -9,3 +9,26 @@ export PATH=$HOME/Library/Python/3.6/bin:$HOME/Library/Python/2.7/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 alias proxycurl='curl --socks5-hostname socks5://localhost:1086'
 alias ns='nvidia-smi'
+
+# ls colors
+if [[ `uname` == 'Darwin' ]]; then
+    # use gnu coreutils ls for mac
+    gnuls_dir=/usr/local/opt/coreutils/libexec/gnubin/ls
+    if [[ -e $gnuls_dir ]]; then
+        alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=tty -F --group-directories-first'
+    fi
+else
+    # linux
+    alias ls='ls --color=tty -F --group-directories-first'
+fi
+
+# colorscheme {{{
+# for more configuration details, refer to https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console 
+
+# retro colorscheme for ls
+export LS_COLORS='fi=30'
+export LS_COLORS=$LS_COLORS:'di=103;30'             # directory
+export LS_COLORS=$LS_COLORS:'ln=1:or=101:mi=101'    # symlink, orphan sym, missing target
+export LS_COLORS=$LS_COLORS:'ex=92'                 # executable
+
+# }}}

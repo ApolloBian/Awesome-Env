@@ -7,6 +7,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Appearance
 "   - Color scheme
         " A tool for generating colorscheme: https://github.com/jacoborus/estilo
+        Plugin 'flazz/vim-colorschemes'
         Plugin 'cocopon/iceberg.vim'
         Plugin 'rakr/vim-one'
         Plugin 'ApolloBian/Retro.vim'
@@ -160,6 +161,7 @@ set noshowmode
 " Change cursor shape between insert and normal mode in iTerm2.app
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+" https://github.com/kovidgoyal/kitty/issues/715
 " This setting is for VTE compatible terminals (urxvt, st, xterm, gnome-terminal 3.x and others) 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
