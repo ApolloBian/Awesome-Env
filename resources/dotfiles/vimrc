@@ -166,6 +166,11 @@ set noshowmode
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+" set cursor shape when entering/exiting vim
+autocmd VimEnter * silent !echo -ne "\<Esc>[6 q"
+autocmd VimLeave * silent !echo -ne "\<Esc>[4 q"
+highlight Cursor guifg=white guibg=black
+
 
 colorscheme retro
 let g:lightline = { 
