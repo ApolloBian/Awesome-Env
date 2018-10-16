@@ -1374,7 +1374,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>9ADA8D66-2BE8-4C1F-8C44-677455698B07</string>
+	<string>655617DB-CE81-462E-8A48-2C144C3B8AE1</string>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -1470,7 +1470,7 @@
 		</array>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>721 281 445 77 0 0 1920 1080 </string>
+	<string>1178 185 445 95 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 713 400 129 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -1478,13 +1478,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>762 347 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>321 468 796 486 0 0 1920 1080 </string>
+	<string>865 191 796 486 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>1920 561 1080 960 1920 -399 1080 1920 </string>
+	<string>480 708 592 372 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 0 960 1080 0 0 1920 1080 </string>
+	<string>3 544 954 531 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1920 -399 1080 1897 1920 -399 1080 1897 </string>
+	<string>960 0 960 540 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>960 0 954 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2105,13 +2105,13 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Iceberg + Nerdfont</string>
+			<string>Iceberg + Courier</string>
 			<key>Non Ascii Font</key>
 			<string>SourceCodeProNerdFontCM-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMonoNerdFont-Regular 14</string>
+			<string>Courier 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Place Prompt at First Column</key>
@@ -2179,7 +2179,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/tianling</string>
 		</dict>
@@ -5732,6 +5732,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>3A193CAE-AEF3-470C-A7FD-0C2327E1B515</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncRecordedVariableNames</key>
@@ -5840,7 +5844,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-15T13:36:17Z</date>
+	<date>2018-10-16T12:59:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -5852,7 +5856,7 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1539689216</real>
+	<real>1539694720</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
