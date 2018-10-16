@@ -94,7 +94,7 @@ set scrolloff=8        " don't let the cursor touch the edge of the viewport
 " set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
-" set lazyredraw         " make macros faster
+set lazyredraw         " make macros faster
 set ttyfast
 set formatoptions-=r formatoptions-=c formatoptions-=o
 set expandtab          " Expand tabs into spaces
@@ -171,9 +171,9 @@ autocmd VimLeave * silent !echo -ne "\<Esc>[4 q"
 highlight Cursor guifg=white guibg=black
 
 
-colorscheme retro
+colorscheme iceberg
 let g:lightline = { 
-            \ 'colorscheme': 'retro',
+            \ 'colorscheme': 'iceberg',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',

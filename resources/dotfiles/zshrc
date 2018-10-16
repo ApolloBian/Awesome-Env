@@ -90,5 +90,5 @@ source ~/.env
 source ~/.local_env # localized environment
 
 extra_plugin_root=~/.oh-my-zsh/custom/plugins/
-# source $extra_plugin_root/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $extra_plugin_root/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $extra_plugin_root/./zsh-autosuggestions/zsh-autosuggestions.zsh
