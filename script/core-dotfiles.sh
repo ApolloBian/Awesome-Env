@@ -25,7 +25,7 @@ link() {
   rm -f "$to"
   dirname=`dirname "$to"`
   mkdir -p $dirname
-  ln -s "$from" "$to"
+  ln -sf "$from" "$to"
 }
 
 for file in $(find $dotfile_path -name '*'); do
@@ -56,7 +56,7 @@ git config --global user.name Tianling@$HOST
 
 link $(pwd)/resources/oh-my-zsh $HOME/.oh-my-zsh
 link $(pwd)/resources/minimal.zsh-theme $HOME/.oh-my-zsh/custom/themes/custom.zsh-theme
-ln -s $(pwd)/resources/omz-plugins/* $HOME/.oh-my-zsh/custom/plugins/
+ln -sf $(pwd)/resources/omz-plugins/* $HOME/.oh-my-zsh/custom/plugins/
 touch ~/.local_env
 
 # Link Fish Config

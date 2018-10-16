@@ -25,10 +25,17 @@ fi
 # colorscheme {{{
 # for more configuration details, refer to https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console 
 
-# retro colorscheme for ls
-export LS_COLORS='fi=30'
-export LS_COLORS=$LS_COLORS:'di=103;30'             # directory
-export LS_COLORS=$LS_COLORS:'ln=1:or=101:mi=101'    # symlink, orphan sym, missing target
-export LS_COLORS=$LS_COLORS:'ex=92'                 # executable
+# Retro (self-made light colorscheme)
+# export LS_COLORS='fi=30'
+# export LS_COLORS=$LS_COLORS:'di=103;30'             # directory
+# export LS_COLORS=$LS_COLORS:'ln=1:or=101:mi=101'    # symlink, orphan sym, missing target
+# export LS_COLORS=$LS_COLORS:'ex=92'                 # executable
+
+# Iceberg
+export LS_COLORS=$LS_COLORS:'fi=97'
+export LS_COLORS=$LS_COLORS:'di=34'                    # directory
+export LS_COLORS=$LS_COLORS:'ln=1;36:or=101:mi=101'    # symlink, orphan sym, missing target
+export LS_COLORS=$LS_COLORS:'ex=32'                 # executable
+
 
 # }}}

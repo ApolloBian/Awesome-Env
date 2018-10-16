@@ -4,13 +4,15 @@
 	email = bian_tianling@icloud.com
 
 [merge]
-    tool = p4merge
+    tool = vimdiff
+    conflictstyle=diff3
+    prompt=false
 [mergetool]
     keepTemporaries = false
     prompt = false
 
 [diff]
-    tool = p4merge
+    tool = vimdiff
     guitool = p4merge
 
 [core]
@@ -20,3 +22,8 @@
 	default = upstream
 [merg]
 	conflictstyle = diff3
+[alias]
+    cm = commit
+    st = status
+    co = checkout
+    br = branch

@@ -171,9 +171,9 @@ autocmd VimLeave * silent !echo -ne "\<Esc>[4 q"
 highlight Cursor guifg=white guibg=black
 
 
-colorscheme retro
+colorscheme iceberg
 let g:lightline = { 
-            \ 'colorscheme': 'retro',
+            \ 'colorscheme': 'iceberg',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
