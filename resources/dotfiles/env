@@ -1,5 +1,6 @@
 export EDITOR=vim
 export TERM=xterm-256color
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:$PATH
 export PATH=$HOME/oh-my-dotfiles/app/vim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH          # User executables for linux
 export PATH=$HOME/Applications/bin:$PATH    # User executables for macos
@@ -7,6 +8,10 @@ export PATH=$HOME/.linuxbrew/bin:$PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$HOME/Library/Python/3.6/bin:$HOME/Library/Python/2.7/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
+# gnu coreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 alias proxycurl='curl --socks5-hostname socks5://localhost:1086'
 alias ns='nvidia-smi'
 

@@ -1,8 +1,8 @@
 # Basic System package installation:
 - pacman
     - [x] arch-pacman # update pacman 
-    - [x] arch-yaourt # install yaourt
-    - [x] arch-aur
+    - [ ] arch-yaourt # install yaourt
+    - [ ] arch-aur
 - ZSH
     - [x] core-zsh # install & chsh
     - [x] core-chsh_zsh
