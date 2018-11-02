@@ -179,6 +179,8 @@ let g:lightline = {
             \   'fileformat': 'MyFileformat',
             \ }
             \ }
+" fix for opacity
+hi Normal ctermbg=NONE guibg=NONE
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
