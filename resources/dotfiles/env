@@ -10,6 +10,9 @@ export PATH="/usr/local/sbin:$PATH"
 alias proxycurl='curl --socks5-hostname socks5://localhost:1086'
 alias ns='nvidia-smi'
 
+# sjtug mirror for homebrew.bintray.com
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles
+
 # ls colors
 if [[ `uname` == 'Darwin' ]]; then
     # use gnu coreutils ls for mac
