@@ -45,7 +45,7 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'rizzatti/dash.vim'
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
-        Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
+        " Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
         " Plugin 'christoomey/vim-tmux-navigator'
         Plugin 'jez/vim-superman'
 "   - Reading

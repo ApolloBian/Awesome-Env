@@ -21,9 +21,9 @@ git submodule update --init --recursive
 
 
 vim +PluginInstall
-if [[ `uname` == 'Darwin' ]]; then
-    cp $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/
-fi
+# if [[ `uname` == 'Darwin' ]]; then
+#     cp $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/
+# fi
  
 # patch for highlighting python triple-quoted string
 vim_synhi_dir=$HOME/.vim/after/syntax/
