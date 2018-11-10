@@ -25,11 +25,6 @@ vim +PluginInstall
 #     cp $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/
 # fi
  
-# patch for highlighting python triple-quoted string
-vim_synhi_dir=$HOME/.vim/after/syntax/
-mkdir -p $vim_synhi_dir
-echo 'syn region Comment start=/"""/ end=/"""/' >> $vim_synhi_dir/python.vim
-
 # TODO: maybe try space vim 
 # echo "Installing Space-Vim ..."
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
