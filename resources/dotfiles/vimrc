@@ -30,37 +30,37 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'tpope/vim-fugitive' " :Gblame
         Plugin 'airblade/vim-gitgutter' " display line status on the left
 "   - File browsing
-        Plugin 'scrooloose/nerdtree'
-        Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-        Plugin 'Xuyuanp/nerdtree-git-plugin'
+        " Plugin 'scrooloose/nerdtree'
+        " Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+        " Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'ctrlpvim/ctrlp.vim'
         Plugin 'ryanoasis/vim-devicons'
 "   - Programming
         Plugin 'Valloric/YouCompleteMe'                     
-        Plugin 'w0rp/ale'
+        " Plugin 'w0rp/ale'
         Plugin 'majutsushi/tagbar'
         Plugin 'ludovicchabant/vim-gutentags'
         Plugin 'plytophogy/vim-virtualenv'
         Plugin 'tpope/vim-commentary'                     
-        Plugin 'rizzatti/dash.vim'
+        " Plugin 'rizzatti/dash.vim'
         " Plugin 'xolox/vim-easytags'
 "   - System Integration
         Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
         " Plugin 'christoomey/vim-tmux-navigator'
+        Plugin 'jez/vim-superman'
 "   - Reading
         Plugin 'inkarkat/vim-mark'
         Plugin 'inkarkat/vim-ingo-library' " dependency of above
-        Plugin 'makerj/vim-pdf'
+        " Plugin 'makerj/vim-pdf'
 "   - Markdown
 "   - Latex
         " Plugin 'lervag/vimtex'
 " Not familar plugins
-        Plugin 'jez/vim-superman'
-        Plugin 'Chiel92/vim-autoformat'
-        Plugin 'xolox/vim-misc'
+        " Plugin 'Chiel92/vim-autoformat'
+        " Plugin 'xolox/vim-misc'
         " Plugin 'Raimondi/delimitMate'
         " Plugin 'scrooloose/nerdcommenter'
-        Plugin 'kchmck/vim-coffee-script'
+        " Plugin 'kchmck/vim-coffee-script'
 
 " *** Deprecated settings ***
         " Plugin 'vim-pandoc/vim-pandoc'       
@@ -192,32 +192,32 @@ hi Comment cterm=italic gui=italic
 
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
 " let g:airline_theme='one'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
 
-" powerline-status
+" ----- powerline-status -----------------------------------------------
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
 
 
-" ----- Plugin vim-virtualenv
+" ----- Plugin vim-virtualenv ------------------------------------------
 let g:virtualenv_directory = '$HOME/Developer/python-virtualenv'
 set statusline+=%{virtualenv#statusline()}
 
 " ----- Plugin Nerdtree -----------------------------------------------
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
-let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
-let NERDTreeShowHidden=0                              " show hidden files
-let g:webdevicons_enable_nerdtree = 0
-let g:webdevicons_enable_ctrlp = 1
+" let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
+" let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
+" let NERDTreeShowHidden=0                              " show hidden files
+" let g:webdevicons_enable_nerdtree = 0
+" let g:webdevicons_enable_ctrlp = 1
 " let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
+" let g:NERDTreeDirArrowExpandable = '+'
+" let g:NERDTreeDirArrowCollapsible = '~'
 
 " ----- Plugin Nerdtree-git-plugin------------------------------------
 let g:NERDTreeIndicatorMapCustom = {
@@ -319,14 +319,13 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 " ----- Plugin vim-superman ---------------------------------------------
 
 " ----- Plugin Youcompleteme -------------------------------------------
-let g:ycm_python_binary_path = 'python'
-" let g:ycm_add_preview_to_completeopt = 0
-set completeopt-=preview
+set splitbelow
+" let g:ycm_python_binary_path = "python"
+let g:ycm_add_preview_to_completeopt = 1
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-endif
+let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
+
 
 " ----- Plugin vim-instant-markdown
 " set shell=zsh\ -i
@@ -342,8 +341,8 @@ nmap <S-n> <Plug>(ale_next_wrap)
 "<Leader>d查看错误或警告的详细信息
 " nmap <Leader>d :ALEDetail<CR>
 noremap M :SuperMan <cword><CR>
-map <C-n> :NERDTreeToggle<CR>                        
 " Ctrl p search files
 
 " #TODO:
 " scroll between buffer ? liu chen yu's vimrc
+
