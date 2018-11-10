@@ -37,7 +37,7 @@ Plugin 'VundleVim/Vundle.vim'
         Plugin 'ryanoasis/vim-devicons'
 "   - Programming
         Plugin 'Valloric/YouCompleteMe'                     
-        Plugin 'w0rp/ale'
+        " Plugin 'w0rp/ale'
         Plugin 'majutsushi/tagbar'
         Plugin 'ludovicchabant/vim-gutentags'
         Plugin 'plytophogy/vim-virtualenv'
@@ -321,14 +321,13 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 " ----- Plugin vim-superman ---------------------------------------------
 
 " ----- Plugin Youcompleteme -------------------------------------------
-let g:ycm_python_binary_path = 'python'
-" let g:ycm_add_preview_to_completeopt = 0
-set completeopt-=preview
+set splitbelow
+" let g:ycm_python_binary_path = "python"
+let g:ycm_add_preview_to_completeopt = 1
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-endif
+let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
+
 
 " ----- Plugin vim-instant-markdown
 " set shell=zsh\ -i
@@ -344,8 +343,8 @@ nmap <S-n> <Plug>(ale_next_wrap)
 "<Leader>d查看错误或警告的详细信息
 " nmap <Leader>d :ALEDetail<CR>
 noremap M :SuperMan <cword><CR>
-map <C-n> :NERDTreeToggle<CR>                        
 " Ctrl p search files
 
 " #TODO:
 " scroll between buffer ? liu chen yu's vimrc
+
