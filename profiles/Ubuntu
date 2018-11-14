@@ -4,7 +4,8 @@
     - [x] core-chsh_zsh
     - [x] core-xterm_terminfo
 - Python version # use no sudo as much possible
-    - [x] core-python3 # install python3
+    - [x] core-pyenv
+    - [x] core-python
 
 # Environment, dotfiles
 - Dotfiles

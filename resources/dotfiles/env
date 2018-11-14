@@ -30,6 +30,12 @@ else
     alias ls='ls --color=tty -F --group-directories-first'
 fi
 
+# pyenv related options
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
 # colorscheme {{{
 # for more configuration details, refer to https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console 
 
