@@ -19,6 +19,7 @@
 - Vim Binary
     - [ ] core-vim_compile # not selected: system vim is good enough
     - [x] core-vim_plugins
+    - [x] core-vim_extraconfig
 - Tmux
     - [ ] core-tpm
 - Git difftool & mergetool
