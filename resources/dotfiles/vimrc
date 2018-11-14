@@ -322,11 +322,12 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
 " ----- Plugin Youcompleteme -------------------------------------------
 set splitbelow
-" let g:ycm_python_binary_path = "python"
+let g:ycm_python_binary_path = "python"     " use env python as python bin
 let g:ycm_add_preview_to_completeopt = 1
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
+nnoremap <leader>gm :YcmCompleter GetDoc<CR>
+" let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
 
 
 " ----- Plugin vim-instant-markdown
