@@ -7,6 +7,9 @@
 ZSH_THEME="custom"
 # ZSH_THEME="random"
 
+# cmd for profiling zsh load time
+# /usr/bin/time zsh -i -c exit
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
