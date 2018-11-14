@@ -26,6 +26,7 @@ make clean
     --enable-multibyte \
     --enable-rubyinterp=yes \
     --enable-pythoninterp=yes \
+    --enable-python3interp=yes \
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
