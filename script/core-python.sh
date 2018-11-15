@@ -19,7 +19,7 @@ source resources/dotfiles/env
 if [[ `uname` == 'Darwin' ]]; then
     conf_opts="--enable-framework"
 else
-    conf_opts="--enable-shared"
+    conf_opts=""
 fi
 
 
