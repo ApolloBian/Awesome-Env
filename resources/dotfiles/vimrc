@@ -347,11 +347,10 @@ noremap M :SuperMan <cword><CR>
 " Ctrl p search files
 
 " F1 for executing current script
-set termwinsize=15x80
 " map <F1> :update <CR> :term ./% <CR>
 " remove the last CR so that I have to press ENTER to confirm
 " feels more secure
-map <F1> :update <CR> :term ./%
+map <F1> :term ./%
 " F1 was used to show help.txt
 " :help will do the same trick tho
 
