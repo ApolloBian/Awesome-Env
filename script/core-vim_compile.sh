@@ -31,6 +31,7 @@ make clean
     --enable-luainterp=yes \
     --enable-cscope \
     --enable-gui=auto \
+    --with-x \
     --prefix=$prefix \
     --with-compiledby=bian_tianling@sjtu.edu.cn
 #     --disable-darwin \
