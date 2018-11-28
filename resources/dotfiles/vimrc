@@ -327,6 +327,13 @@ let g:ycm_add_preview_to_completeopt = 1
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gm :YcmCompleter GetDoc<CR>
+" semantic triggers
+" ref:https://github.com/Valloric/YouCompleteMe/issues/2961
+let g:ycm_semantic_triggers = {
+    \ 'python': ['re!(import\s+|from\s+(\w+\s+(import\s+(\w+,\s+)*)?)?)'],
+    \}
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
 
 
@@ -345,6 +352,14 @@ nmap <S-n> <Plug>(ale_next_wrap)
 " nmap <Leader>d :ALEDetail<CR>
 noremap M :SuperMan <cword><CR>
 " Ctrl p search files
+
+" F1 for executing current script
+" map <F1> :update <CR> :term ./% <CR>
+" remove the last CR so that I have to press ENTER to confirm
+" feels more secure
+map <F1> :w <CR> :windo only <CR> :term ./%
+" F1 was used to show help.txt
+" :help will do the same trick tho
 
 " #TODO:
 " scroll between buffer ? liu chen yu's vimrc
