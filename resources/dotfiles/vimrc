@@ -358,6 +358,7 @@ noremap M :SuperMan <cword><CR>
 " remove the last CR so that I have to press ENTER to confirm
 " feels more secure
 map <F1> :w <CR> :windo only <CR> :term ./%
+map <F2> :term ./%
 " F1 was used to show help.txt
 " :help will do the same trick tho
 
