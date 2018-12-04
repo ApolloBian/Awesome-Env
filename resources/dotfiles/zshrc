@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
+print -n '\033[4 q'
+
 ZSH_THEME="custom"
 # ZSH_THEME="random"
 

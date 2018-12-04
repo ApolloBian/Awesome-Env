@@ -26,6 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'vim-airline/vim-airline'
         " Plugin 'vim-airline/vim-airline-themes'
 " Functions
+"   - Start screen
+        Plugin 'mhinz/vim-startify'
 "   - Git
         Plugin 'tpope/vim-fugitive' " :Gblame
         Plugin 'airblade/vim-gitgutter' " display line status on the left
@@ -169,8 +171,15 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 " set cursor shape when entering/exiting vim
-autocmd VimLeave * silent !echo -ne "\<Esc>[4 q"
-highlight Cursor guifg=white guibg=black
+" autocmd VimEnter * silent !print -n '\033[2 q'
+autocmd VimLeave * silent !print -n '\033[4 q'
+" highlight Cursor guifg=white guibg=black
+
+
+" file templates for py, bash, etc
+autocmd BufNewFile main.py 0r ~/.vim/templates/python_main.py
+autocmd BufNewFile *.py 0r ~/.vim/templates/python.py
+autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
 
 colorscheme iceberg
@@ -354,11 +363,10 @@ noremap M :SuperMan <cword><CR>
 " Ctrl p search files
 
 " F1 for executing current script
-" map <F1> :update <CR> :term ./% <CR>
 " remove the last CR so that I have to press ENTER to confirm
 " feels more secure
-map <F1> :w <CR> :windo only <CR> :term ./%
-map <F2> :term ./%
+" <bar> semantics : https://stackoverflow.com/questions/3249275/vim-multiple-commands-on-same-line
+map <F1> :w <bar> windo only <bar> term ./%
 " F1 was used to show help.txt
 " :help will do the same trick tho
 
