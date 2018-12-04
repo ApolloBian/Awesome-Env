@@ -8,3 +8,6 @@ ln -sf $basedir/resources/vim_extra/syntax ~/.vim/after
 
 # filetype
 ln -sf $basedir/resources/vim_extra/ftdetect ~/.vim/
+
+# templates
+ln -sf $basedir/resources/vim_extra/templates ~/.vim/
