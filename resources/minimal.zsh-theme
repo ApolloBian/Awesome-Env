@@ -22,6 +22,8 @@ BLUE_FG="%{$fg[blue]%}"
 RESET_COLOR="%{$reset_color%}"
 
 # setopt prompt_subst
-PROMPT='$WHITE_FG%m:$(short_pwd)$RESET_COLOR
-%(?.$WHITE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
+PROMPT='%(?.$WHITE_FG.$RED_FG)%m:$(short_pwd)
+%* %(!.#.$) > $RESET_COLOR'
+# PROMPT='$WHITE_FG%m:$(short_pwd)$RESET_COLOR
+# %(?.$WHITE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
 # %(?.$BLACK_FG.$RED_FG$?)$RESET_COLOR %* %(!.#.$) > '
