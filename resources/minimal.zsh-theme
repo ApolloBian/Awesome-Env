@@ -5,6 +5,11 @@ function reset_cursor() {
     echo '\033[4 q'
 }
 
+short_pwd() {
+    cwd=$(pwd | sed "s|^$HOME|~|" | perl -F/ -ane 'print join( "/", map { $i++ < @F - 1 ?  substr $_,0,1 : $_ } @F)')
+    echo -n $cwd
+}
+
 CYAN_FG="%{$fg[cyan]%}"
 RED_FG="%{$fg[red]%}"
 BLACK_FG="%{$fg[black]%}"
@@ -15,4 +20,8 @@ YELLOW_FG="%{$fg[yellow]%}"
 DARKGRAY_BG="%{$bg[yellow]%}"
 BLUE_FG="%{$fg[blue]%}"
 RESET_COLOR="%{$reset_color%}"
-PROMPT='%(?.$BLACK_FG.$RED_FG$? )$RESET_COLOR%(!.#.$) > '
+
+# setopt prompt_subst
+PROMPT='$WHITE_FG%m:$(short_pwd)$RESET_COLOR
+%(?.$WHITE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
+# %(?.$BLACK_FG.$RED_FG$?)$RESET_COLOR %* %(!.#.$) > '
