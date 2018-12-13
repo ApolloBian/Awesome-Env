@@ -29,6 +29,7 @@ alias plhw='cd ~/Documents/大学课程/大三上学期/ProgrammingLanguage/home
 alias kcpath='cd ~/Developer/KC3C/'
 
 # Cmd
+alias vim='print -n "\033[2 q"; vim'
 alias cl='clear'
 alias tc='vim ~/.tmux.conf'
 alias grep='grep --color=always'

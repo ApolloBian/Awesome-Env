@@ -1,8 +1,8 @@
 function reset_cursor() {
     # change cursur to underline
     # print -n '\033[0 q' block
-    # print -n '\033[6 q' line cursor
-    echo '\033[4 q'
+    print -n '\033[4 q' line cursor
+    # echo '\033[4 q'
 }
 
 short_pwd() {
@@ -22,7 +22,7 @@ BLUE_FG="%{$fg[blue]%}"
 RESET_COLOR="%{$reset_color%}"
 
 # setopt prompt_subst
-PROMPT='%(?.$WHITE_FG.$RED_FG)%m:$(short_pwd)
+PROMPT='%(?.$WHITE_FG.$RED_FG)%m:$(short_pwd)$(reset_cursor)
 %* %(!.#.$) > $RESET_COLOR'
 # PROMPT='$WHITE_FG%m:$(short_pwd)$RESET_COLOR
 # %(?.$WHITE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
