@@ -1,7 +1,7 @@
 function reset_cursor() {
     # change cursur to underline
     # print -n '\033[0 q' block
-    print -n '\033[4 q' line cursor
+    print -n '\033[4 q' # line cursor
     # echo '\033[4 q'
 }
 
