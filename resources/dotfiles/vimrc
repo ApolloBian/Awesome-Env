@@ -367,6 +367,7 @@ noremap M :SuperMan <cword><CR>
 " feels more secure
 " <bar> semantics : https://stackoverflow.com/questions/3249275/vim-multiple-commands-on-same-line
 map <F1> :w <bar> windo only <bar> term ./%
+map <leader>ts :w <bar> !./%
 " F1 was used to show help.txt
 " :help will do the same trick tho
 
