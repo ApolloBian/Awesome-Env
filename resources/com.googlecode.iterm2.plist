@@ -1376,7 +1376,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>655617DB-CE81-462E-8A48-2C144C3B8AE1</string>
+	<string>AF930072-088D-40A2-AF0A-D417C27B17C0</string>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>HideScrollbar</key>
@@ -1408,7 +1408,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAc7Gdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -1476,23 +1476,23 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>312 421 445 77 0 0 1280 800 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>330 305 620 392 0 0 1280 777 </string>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>451 451 796 486 0 0 1920 1057 </string>
+	<string>729 370 928 394 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>968 605 852 372 0 0 1920 1057 </string>
+	<string>100 210 853 748 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>969 284 849 321 0 0 1920 1057 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 400 650 377 0 0 1280 777 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>640 68 634 709 0 0 1280 777 </string>
+	<string>2471 1026 506 447 1920 -401 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>561 384 650 377 0 0 1280 777 </string>
+	<string>1943 -376 1034 1847 1920 -401 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 423 650 354 0 0 1280 800 </string>
+	<string>963 3 474 522 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>443 446 650 354 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -2191,270 +2191,6 @@
 			<key>Working Directory</key>
 			<string>/Users/tianling</string>
 		</dict>
-<<<<<<< HEAD
-||||||| merged common ancestors
-	</dict>
-	<key>Default Bookmark Guid</key>
-	<string>655617DB-CE81-462E-8A48-2C144C3B8AE1</string>
-	<key>EnableProxyIcon</key>
-	<false/>
-	<key>HotkeyMigratedFromSingleToMulti</key>
-	<true/>
-	<key>IRMemory</key>
-	<integer>40</integer>
-	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Awesome-Env/resources</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSQuotedKeystrokeBinding</key>
-	<string></string>
-	<key>NSRepeatCountBinding</key>
-	<string></string>
-	<key>NSScrollAnimationEnabled</key>
-	<false/>
-	<key>NSScrollViewShouldScrollUnderTitlebar</key>
-	<false/>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
-	AAAAADoAAAAAAAAAAAAAAAAAAAFM
-	</data>
-	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
-	</data>
-	<key>NSTableView Supports v2 KeyBingingTable</key>
-	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSTouchBarConfig: full screen</key>
-	<dict>
-		<key>CurrentItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>iTermTouchBarIdentifierStatus</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-		</array>
-		<key>DefaultItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierManPage</string>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>tab bar</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-			<string>iTermTouchBarIdentifierAddMark</string>
-			<string>iTermTouchBarIdentifierPreviousMark</string>
-			<string>iTermTouchBarIdentifierNextMark</string>
-		</array>
-	</dict>
-	<key>NSTouchBarConfig: regular</key>
-	<dict>
-		<key>CurrentItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>iTermTouchBarIdentifierStatus</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-		</array>
-		<key>DefaultItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierManPage</string>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-			<string>iTermTouchBarIdentifierAddMark</string>
-			<string>iTermTouchBarIdentifierPreviousMark</string>
-			<string>iTermTouchBarIdentifierNextMark</string>
-		</array>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>1178 185 445 95 0 0 1920 1080 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 713 400 129 0 0 1920 1080 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 516 620 392 0 0 1920 1080 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>762 347 606 469 0 0 1920 1057 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>865 191 796 486 0 0 1920 1080 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>480 708 592 372 0 0 1920 1080 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 544 954 531 0 0 1920 1080 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>960 0 960 540 0 0 1920 1080 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>960 0 954 1057 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1920 -395 1080 945 1920 -399 1080 1897 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>680 0 1234 1057 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>2089 644 650 477 1920 -399 1080 1897 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>289 61 650 477 0 0 1920 1057 </string>
-	<key>NeverWarnAboutShortLivedSessions_85311DF5-4BEE-427F-99F0-A61CA8C0A050</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_85311DF5-4BEE-427F-99F0-A61CA8C0A050_selection</key>
-	<integer>0</integer>
-	<key>New Bookmarks</key>
-	<array>
-=======
-	</dict>
-	<key>Default Bookmark Guid</key>
-	<string>655617DB-CE81-462E-8A48-2C144C3B8AE1</string>
-	<key>EnableProxyIcon</key>
-	<false/>
-	<key>HideScrollbar</key>
-	<true/>
-	<key>HotkeyMigratedFromSingleToMulti</key>
-	<true/>
-	<key>IRMemory</key>
-	<integer>40</integer>
-	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Awesome-Env/resources</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSQuotedKeystrokeBinding</key>
-	<string></string>
-	<key>NSRepeatCountBinding</key>
-	<string></string>
-	<key>NSScrollAnimationEnabled</key>
-	<false/>
-	<key>NSScrollViewShouldScrollUnderTitlebar</key>
-	<false/>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
-	AAAAADoAAAAAAAAAAAAAAAAAAAFM
-	</data>
-	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
-	</data>
-	<key>NSTableView Supports v2 KeyBingingTable</key>
-	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSTouchBarConfig: full screen</key>
-	<dict>
-		<key>CurrentItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>iTermTouchBarIdentifierStatus</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-		</array>
-		<key>DefaultItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierManPage</string>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>tab bar</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-			<string>iTermTouchBarIdentifierAddMark</string>
-			<string>iTermTouchBarIdentifierPreviousMark</string>
-			<string>iTermTouchBarIdentifierNextMark</string>
-		</array>
-	</dict>
-	<key>NSTouchBarConfig: regular</key>
-	<dict>
-		<key>CurrentItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>iTermTouchBarIdentifierStatus</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-		</array>
-		<key>DefaultItems</key>
-		<array>
-			<string>iTermTouchBarIdentifierManPage</string>
-			<string>iTermTouchBarIdentifierColorPreset</string>
-			<string>iTermTouchBarIdentifierFunctionKeys</string>
-			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
-			<string>iTermTouchBarIdentifierAddMark</string>
-			<string>iTermTouchBarIdentifierPreviousMark</string>
-			<string>iTermTouchBarIdentifierNextMark</string>
-		</array>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>1145 257 445 211 0 0 1920 1057 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 696 400 129 0 0 1920 1057 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>596 484 620 392 0 0 1920 1057 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>762 347 606 469 0 0 1920 1057 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>70 518 796 486 0 0 1920 1057 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>968 588 852 372 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>969 216 850 354 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>969 211 850 746 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>103 211 1714 746 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>963 798 474 256 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>680 0 1234 1057 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>2089 644 650 477 1920 -399 1080 1897 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>289 61 650 477 0 0 1920 1057 </string>
-	<key>NeverWarnAboutShortLivedSessions_85311DF5-4BEE-427F-99F0-A61CA8C0A050</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_85311DF5-4BEE-427F-99F0-A61CA8C0A050_selection</key>
-	<integer>0</integer>
-	<key>New Bookmarks</key>
-	<array>
->>>>>>> 1adfa9c7b69f61ff89f0cbb828752358d0b4d776
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
@@ -2462,14 +2198,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.25882352941176473</real>
+				<real>0.2588235438</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.17254901960784313</real>
+				<real>0.17254902420000001</real>
 				<key>Red Component</key>
-				<real>0.15294117647058825</real>
+				<real>0.15294118230000001</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -2643,16 +2381,14 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.2588235438</real>
+				<real>0.12941176470588237</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.17254902420000001</real>
+				<real>0.094117647058823528</real>
 				<key>Red Component</key>
-				<real>0.15294118230000001</real>
+				<real>0.086274509803921567</real>
 			</dict>
-			<key>Background Image Is Tiled</key>
-			<false/>
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Badge Color</key>
@@ -2668,8 +2404,6 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
-			<key>Blink Allowed</key>
-			<true/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -3143,7 +2877,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>12</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/tianling</string>
 		</dict>
@@ -6690,16 +6424,10 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
-<<<<<<< HEAD
 	<key>NoSyncConfirmRunOpenFile</key>
 	<true/>
 	<key>NoSyncConfirmRunOpenFile_selection</key>
 	<integer>0</integer>
-||||||| merged common ancestors
-=======
-	<key>NoSyncHaveRequestedFullDiskAccess</key>
-	<true/>
->>>>>>> 1adfa9c7b69f61ff89f0cbb828752358d0b4d776
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -6818,13 +6546,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-<<<<<<< HEAD
-	<date>2018-11-27T08:28:50Z</date>
-||||||| merged common ancestors
-	<date>2018-10-16T12:59:32Z</date>
-=======
-	<date>2018-11-19T09:33:30Z</date>
->>>>>>> 1adfa9c7b69f61ff89f0cbb828752358d0b4d776
+	<date>2018-12-13T20:29:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -6836,13 +6558,7 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
-<<<<<<< HEAD
-	<real>1518253952</real>
-||||||| merged common ancestors
-	<real>1539694720</real>
-=======
-	<real>1542526848</real>
->>>>>>> 1adfa9c7b69f61ff89f0cbb828752358d0b4d776
+	<real>1543481600</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
@@ -6858,13 +6574,13 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.6beta4</string>
+	<string>3.2.7beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 	<key>metalMaximizeThroughput</key>
-	<true/>
+	<false/>
 	<key>preferIntegratedGPU</key>
 	<true/>
 </dict>

@@ -201,6 +201,13 @@ endfunction
 
 hi Comment cterm=italic gui=italic
 
+" settings for transparency
+" not very ideal for current setup, but may work if endl marks are disabled
+" use :highlight to inspect cur highlight group
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
+hi EndOfBuffer ctermbg=NONE guibg=NONE
+
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
 " let g:airline_theme='gruvbox'
@@ -330,6 +337,14 @@ let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 " ----- Plugin vim-superman ---------------------------------------------
 
 " ----- Plugin Youcompleteme -------------------------------------------
+"  disable for mediawiki, latex and markdown
+let g:ycm_filetype_blacklist = {
+    \ 'mediawiki': 1,
+    \ 'plaintex': 1,
+    \ 'markdown': 1,
+    \ 'jsx': 1,
+    \ 'xml': 1,
+    \ 'html': 1}
 set splitbelow
 let g:ycm_python_binary_path = "python"     " use env python as python bin
 let g:ycm_add_preview_to_completeopt = 1
@@ -342,6 +357,7 @@ let g:ycm_semantic_triggers = {
     \ 'python': ['re!(import\s+|from\s+(\w+\s+(import\s+(\w+,\s+)*)?)?)'],
     \}
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
 
 " let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
 
