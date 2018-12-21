@@ -30,14 +30,10 @@ make clean
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
-    --enable-gui=auto \
-    --with-x \
+    --enable-gui \
     --prefix=$prefix \
+    --disable-darwin \
     --with-compiledby=bian_tianling@sjtu.edu.cn
-#     --disable-darwin \
-#     --enable-python3interp=dynamic \
-#     --with-python-config-dir=$python_config_dir \
-#     --enable-gui=gtk2,gnome,gtk3 \
 
 make -j`num_proc`
 make install
