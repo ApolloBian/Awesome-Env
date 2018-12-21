@@ -22,6 +22,8 @@ cd resources/vim
 # make uninstall
 make distclean
 make clean
+# if gui is desired, add this option in configure 
+    # --enable-gui \
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
@@ -30,7 +32,6 @@ make clean
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
-    --enable-gui \
     --prefix=$prefix \
     --disable-darwin \
     --with-compiledby=bian_tianling@sjtu.edu.cn && \
