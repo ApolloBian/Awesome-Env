@@ -19,7 +19,7 @@ echo $prefix
 
 
 cd resources/vim
-make uninstall
+# make uninstall
 make distclean
 make clean
 ./configure --with-features=huge \
@@ -33,7 +33,6 @@ make clean
     --enable-gui \
     --prefix=$prefix \
     --disable-darwin \
-    --with-compiledby=bian_tianling@sjtu.edu.cn
-
-make -j`num_proc`
+    --with-compiledby=bian_tianling@sjtu.edu.cn && \
+make -j`num_proc` && \
 make install
