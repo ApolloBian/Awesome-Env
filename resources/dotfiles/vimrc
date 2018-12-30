@@ -51,8 +51,8 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'christoomey/vim-tmux-navigator'
         Plugin 'jez/vim-superman'
 "   - Reading
-        Plugin 'inkarkat/vim-mark'
-        Plugin 'inkarkat/vim-ingo-library' " dependency of above
+        " Plugin 'inkarkat/vim-mark'
+        " Plugin 'inkarkat/vim-ingo-library' " dependency of above
         " Plugin 'makerj/vim-pdf'
 "   - Markdown
 "   - Latex
@@ -151,7 +151,6 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 set cursorline
 
 
-
 " ----- Make Vim look good ----------------------------------------------
 " more about true colors ':help xterm-true-color'
 set termguicolors
@@ -219,6 +218,21 @@ hi EndOfBuffer ctermbg=NONE guibg=NONE
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
 
+" search configs
+" prevent * and # from jumping to next
+" stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
+" conflict with vim-mark
+nnoremap <silent> * m`:keepjumps normal! *<cr>``
+nnoremap <silent> # m`:keepjumps normal! #<cr>``
+map <leader>c :noh<cr>
+hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
+" more colors for search, colors from vim-mark
+" hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#8CCBEA  " blue
+" hi Search ctermfg=0 ctermbg=10 guifg=Black guibg=#A4E57E  " green
+" hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72  " yellow
+" hi Search ctermfg=0 ctermbg=9 guifg=Black guibg=#FF7272   " red
+" hi Search ctermfg=0 ctermbg=13 guifg=Black guibg=#FFB3FF  " pink
+" hi Search ctermfg=0 ctermbg=12 guifg=Black guibg=#9999FF  " purple
 
 " ----- Plugin vim-virtualenv ------------------------------------------
 let g:virtualenv_directory = '$HOME/Developer/python-virtualenv'
