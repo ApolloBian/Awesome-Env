@@ -15,20 +15,11 @@
 
 source resources/dotfiles/env
 
-# PYTHON_CONFIGURE_OPTS
-if [[ `uname` == 'Darwin' ]]; then
-    conf_opts="--enable-framework"
-else
-    conf_opts="--enable-shared"
-fi
-
-
-
 which pyenv
 if [[ $? == 0 ]]; then
-    # pyenv installed
-    env PYTHON_CONFIGURE_OPTS="$conf_opts" pyenv install 2.7.15
-    env PYTHON_CONFIGURE_OPTS="$conf_opts" pyenv install 3.5.6
+    pyenv install 2.7.15
+    pyenv install 3.5.6
+    pyenv install 3.7.1
 else
     echo 'pyenv not installed (properly?)'
     exit 1

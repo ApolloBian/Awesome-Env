@@ -31,6 +31,12 @@ else
 fi
 
 # pyenv related options
+if [[ `uname` == 'Darwin' ]]; then
+    export PYTHON_CONFIGURE_OPTS="--enable-framework"
+else
+    export PYTHON_CONFIGURE_OPTS="--enable-shared"
+fi
+
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init - --no-rehash)"
 # eval "$(pyenv virtualenv-init -)"
