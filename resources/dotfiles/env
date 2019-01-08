@@ -6,7 +6,6 @@ export PATH=$HOME/.local/bin:$PATH          # User executables for linux
 export PATH=$HOME/Applications/bin:$PATH    # User executables for macos
 export PATH=$HOME/.linuxbrew/bin:$PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export PATH=$HOME/Library/Python/3.6/bin:$HOME/Library/Python/2.7/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 # gnu coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
