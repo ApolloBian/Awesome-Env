@@ -27,7 +27,9 @@ Plugin 'VundleVim/Vundle.vim'
         " Plugin 'vim-airline/vim-airline-themes'
 " Functions
 "   - Start screen
-        Plugin 'mhinz/vim-startify'
+        if !has("gui_macvim")
+            Plugin 'mhinz/vim-startify'
+        endif
 "   - Git
         Plugin 'tpope/vim-fugitive' " :Gblame
         Plugin 'airblade/vim-gitgutter' " display line status on the left
@@ -200,12 +202,14 @@ endfunction
 
 hi Comment cterm=italic gui=italic
 
-" settings for transparency
-" not very ideal for current setup, but may work if endl marks are disabled
-" use :highlight to inspect cur highlight group
-hi Normal ctermbg=NONE guibg=NONE
-hi NonText ctermbg=NONE guibg=NONE
-hi EndOfBuffer ctermbg=NONE guibg=NONE
+if !has("gui_macvim")
+    " settings for transparency
+    " not very ideal for current setup, but may work if endl marks are disabled
+    " use :highlight to inspect cur highlight group
+    hi Normal ctermbg=NONE guibg=NONE
+    hi NonText ctermbg=NONE guibg=NONE
+    hi EndOfBuffer ctermbg=NONE guibg=NONE
+endif
 
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
