@@ -105,6 +105,7 @@ set expandtab          " Expand tabs into spaces
 set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
+set hidden             " allow edited buffers to be hidden
 set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
                             " ref: https://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 " workarounds for background disappears when scrolling
