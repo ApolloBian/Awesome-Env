@@ -212,6 +212,14 @@ if !has("gui_macvim")
     hi EndOfBuffer ctermbg=NONE guibg=NONE
 endif
 
+" hides cursorline in inactive buffers
+" ref: https://superuser.com/questions/385553/making-the-active-window-in-vim-more-obvious
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
+
 " -----Plugin airline ------------------------------------------------
 " let g:airline_theme='solarized'
 " let g:airline_theme='gruvbox'
