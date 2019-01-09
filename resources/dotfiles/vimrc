@@ -235,9 +235,15 @@ augroup END
 " prevent * and # from jumping to next
 " stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
 " conflict with vim-mark
-nnoremap <silent> * m`:keepjumps normal! *<cr>``
+" Using # will blink, but * won't
+nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
+nnoremap <silent> g* :let @/=expand('<cword>') <bar> set hls <cr>
 nnoremap <silent> # m`:keepjumps normal! #<cr>``
+
+" clear highlight
 map <leader>c :noh<cr>
+
+" Search highlight colors
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " more colors for search, colors from vim-mark
 " hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#8CCBEA  " blue
