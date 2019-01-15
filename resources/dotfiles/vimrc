@@ -1,81 +1,86 @@
 " ----- Setup Vundle      -----------------------------------------------------
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-" Vundle Plugins
+call plug#begin('~/.vim/plugged')
+" Vim-plug Plugins
 " Appearance
 "   - Color scheme
-        " A tool for generating colorscheme: https://github.com/jacoborus/estilo
-        Plugin 'flazz/vim-colorschemes'
-        Plugin 'cocopon/iceberg.vim'
-        Plugin 'rakr/vim-one'
-        Plugin 'ApolloBian/Retro.vim'
-        Plugin 'AlessandroYorba/Sierra'
-        Plugin 'altercation/vim-colors-solarized'
-        " Plugin 'altercation/vim-colors-solarized'
-        Plugin 'tomasr/molokai' 
-        Plugin 'morhetz/gruvbox'
-        " Plugin 'jacoborus/tender.vim'
-        " Plugin 'rakr/vim-one' "atom color scheme, good for light color
-        Plugin 'arcticicestudio/nord-vim'
-        Plugin 'cocopon/pgmnt.vim'
-        Plugin 'cocopon/colorswatch.vim'
+    " A tool for generating colorscheme: https://github.com/jacoborus/estilo
+    Plug 'flazz/vim-colorschemes'
+    Plug 'cocopon/iceberg.vim'
+    Plug 'rakr/vim-one'
+    Plug 'ApolloBian/Retro.vim'
+    Plug 'AlessandroYorba/Sierra'
+    Plug 'altercation/vim-colors-solarized'
+    " Plug 'altercation/vim-colors-solarized'
+    Plug 'tomasr/molokai'
+    Plug 'morhetz/gruvbox'
+    " Plug 'jacoborus/tender.vim'
+    " Plug 'rakr/vim-one' "atom color scheme, good for light color
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'cocopon/pgmnt.vim'
+    Plug 'cocopon/colorswatch.vim'
 "   - Status line
-        Plugin 'itchyny/lightline.vim'
-        " Plugin 'vim-airline/vim-airline'
-        " Plugin 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
 " Functions
 "   - Start screen
-        if !has("gui_macvim")
-            Plugin 'mhinz/vim-startify'
-        endif
+    if !has("gui_macvim")
+        Plug 'mhinz/vim-startify'
+    endif
 "   - Git
-        Plugin 'tpope/vim-fugitive' " :Gblame
-        Plugin 'airblade/vim-gitgutter' " display line status on the left
+    Plug 'tpope/vim-fugitive' " :Gblame
+    Plug 'airblade/vim-gitgutter' " display line status on the left
 "   - File browsing
-        " Plugin 'scrooloose/nerdtree'
-        " Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-        " Plugin 'Xuyuanp/nerdtree-git-plugin'
-        Plugin 'ctrlpvim/ctrlp.vim'
-        Plugin 'ryanoasis/vim-devicons'
+    " Plug 'scrooloose/nerdtree'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'ryanoasis/vim-devicons'
 "   - Programming
-        Plugin 'Valloric/YouCompleteMe'                     
-        " Plugin 'w0rp/ale'
-        Plugin 'majutsushi/tagbar'
-        Plugin 'ludovicchabant/vim-gutentags'
-        Plugin 'plytophogy/vim-virtualenv'
-        Plugin 'tpope/vim-commentary'                     
-        " Plugin 'rizzatti/dash.vim'
-        " Plugin 'xolox/vim-easytags'
+    function! BuildYCM(info)
+        " info is a dictionary with 3 fields
+        " - name:   name of the plugin
+        " - status: 'installed', 'updated', or 'unchanged'
+        " - force:  set on PlugInstall! or PlugUpdate!
+        if a:info.status == 'installed' || a:info.force
+            !./install.py --clang-completer
+        endif
+    endfunction
+    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+    " Plug 'w0rp/ale'
+    Plug 'majutsushi/tagbar'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'plytophogy/vim-virtualenv'
+    Plug 'tpope/vim-commentary'
+    " Plug 'rizzatti/dash.vim'
+    " Plug 'xolox/vim-easytags'
 "   - System Integration
-        " Plugin 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
-        " Plugin 'christoomey/vim-tmux-navigator'
-        Plugin 'jez/vim-superman'
+    " Plug 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
+    " Plug 'christoomey/vim-tmux-navigator'
+    Plug 'jez/vim-superman'
 "   - Reading
-        " Plugin 'inkarkat/vim-mark'
-        " Plugin 'inkarkat/vim-ingo-library' " dependency of above
-        " Plugin 'makerj/vim-pdf'
+    " Plug 'inkarkat/vim-mark'
+    " Plug 'inkarkat/vim-ingo-library' " dependency of above
+    " Plug 'makerj/vim-pdf'
 "   - Markdown
 "   - Latex
-        " Plugin 'lervag/vimtex'
-" Not familar plugins
-        " Plugin 'Chiel92/vim-autoformat'
-        " Plugin 'xolox/vim-misc'
-        " Plugin 'Raimondi/delimitMate'
-        " Plugin 'scrooloose/nerdcommenter'
-        " Plugin 'kchmck/vim-coffee-script'
+    " Plug 'lervag/vimtex'
+" Not familar Plugs
+    " Plug 'Chiel92/vim-autoformat'
+    " Plug 'xolox/vim-misc'
+    " Plug 'Raimondi/delimitMate'
+    " Plug 'scrooloose/nerdcommenter'
+    " Plug 'kchmck/vim-coffee-script'
 
 " *** Deprecated settings ***
-        " Plugin 'vim-pandoc/vim-pandoc'       
-        " Plugin 'vim-pandoc/vim-pandoc-syntax'
-        " Plugin 'vim-syntastic/syntastic' " Replaced by ale
-        " Plugin 'vim-scripts/a.vim'
-        " Plugin 'jez/vim-c0'
-        " Plugin 'jez/vim-ispc'
-        " Plugin 'suan/vim-instant-markdown'
-call vundle#end()
-filetype plugin indent on
+    " Plug 'vim-pandoc/vim-pandoc'
+    " Plug 'vim-pandoc/vim-pandoc-syntax'
+    " Plug 'vim-syntastic/syntastic' " Replaced by ale
+    " Plug 'vim-scripts/a.vim'
+    " Plug 'jez/vim-c0'
+    " Plug 'jez/vim-ispc'
+    " Plug 'suan/vim-instant-markdown'
+call plug#end()
 
 
 
