@@ -42,3 +42,5 @@ ignore_option='-I "*pyc" -I __pycache__ -I tags'
 # alias tree='tree '$ignore_option
 alias la='ls -a'
 alias lh='ls -lh'
+alias ta = 'tmux attach'
+alias td = 'tmux detach'
