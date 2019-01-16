@@ -1,13 +1,11 @@
-" ----- Setup Vim-plug -----------------------------------------------------
+" ===== Setup Vim-plug =====
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
-" Vim-plug Plugins
-" Appearance
-"   - Color scheme
+" Color Scheme
     " A tool for generating colorscheme: https://github.com/jacoborus/estilo
     Plug 'flazz/vim-colorschemes'
     Plug 'cocopon/iceberg.vim'
@@ -23,25 +21,23 @@ call plug#begin('~/.vim/plugged')
     Plug 'arcticicestudio/nord-vim'
     Plug 'cocopon/pgmnt.vim'
     Plug 'cocopon/colorswatch.vim'
-"   - Status line
+" Status line
     Plug 'itchyny/lightline.vim'
     " Plug 'vim-airline/vim-airline'
     " Plug 'vim-airline/vim-airline-themes'
 " Functions
-"   - Start screen
-    if !has("gui_macvim")
-        Plug 'mhinz/vim-startify'
-    endif
-"   - Git
+" Start screen
+    Plug 'mhinz/vim-startify'
+" Git
     Plug 'tpope/vim-fugitive' " :Gblame
     Plug 'airblade/vim-gitgutter' " display line status on the left
-"   - File browsing
+" File browsing
     " Plug 'scrooloose/nerdtree'
     " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     " Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'ryanoasis/vim-devicons'
-"   - Programming
+" Programming
     function! BuildYCM(info)
         " info is a dictionary with 3 fields
         " - name:   name of the plugin
@@ -55,20 +51,23 @@ call plug#begin('~/.vim/plugged')
     " Plug 'w0rp/ale'
     Plug 'majutsushi/tagbar'
     Plug 'ludovicchabant/vim-gutentags'
-    Plug 'plytophogy/vim-virtualenv'
+    Plug 'plytophogy/vim-virtualenv', has('gui_macvim') ? {} : {'on': []}
     Plug 'tpope/vim-commentary'
     " Plug 'rizzatti/dash.vim'
     " Plug 'xolox/vim-easytags'
-"   - System Integration
+" System Integration
     " Plug 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
     " Plug 'christoomey/vim-tmux-navigator'
     Plug 'jez/vim-superman'
-"   - Reading
+" Reading
     " Plug 'inkarkat/vim-mark'
     " Plug 'inkarkat/vim-ingo-library' " dependency of above
     " Plug 'makerj/vim-pdf'
-"   - Markdown
-"   - Latex
+" Ghost-text
+    Plug 'raghur/vim-ghost', has('nvim') ? {'do': ':GhostInstall'} : {'on': []}
+    Plug 'pandysong/ghost-text.vim', !has('nvim') ? {} : {'on': []}
+" Markdown
+" Latex
     " Plug 'lervag/vimtex'
 " Not familar Plugs
     " Plug 'Chiel92/vim-autoformat'
@@ -89,7 +88,7 @@ call plug#end()
 
 
 
-" ----- General Settings  -----------------------------------------------------
+" ===== General Settings =====
 set nocompatible       " Use Vim settings, rather than Vi settings (much better!).
                        " This must be first, because it changes other options as a side effect.
 set list!              " show endl and tabs
@@ -116,8 +115,9 @@ set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
 set hidden             " allow edited buffers to be hidden
-set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
-                            " ref: https://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
+if !has('nvim')
+    set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
+endif
 " workarounds for background disappears when scrolling
 let &t_ut=''
 " zsh style command completion
@@ -164,7 +164,7 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 set cursorline
 
 
-" ----- Make Vim look good ----------------------------------------------
+" ===== Make Vim look good =====
 " more about true colors ':help xterm-true-color'
 set termguicolors
 set background=dark
@@ -230,14 +230,14 @@ augroup BgHighlight
     autocmd WinLeave * set nocul
 augroup END
 
-" -----Plugin airline ------------------------------------------------
+" ===== Plugin airline =====
 " let g:airline_theme='solarized'
 " let g:airline_theme='gruvbox'
 " let g:airline_theme='one'
 " let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 
-" ----- powerline-status -----------------------------------------------
+" ===== powerline-status =====
 " set rtp+=/anaconda/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/mnt/ficusthailand/tlbian/virtualenv/py3_Tensorflow_GPU/lib/python3.4/site-packages/powerline/bindings/vim/
 
@@ -263,11 +263,11 @@ hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " hi Search ctermfg=0 ctermbg=13 guifg=Black guibg=#FFB3FF  " pink
 " hi Search ctermfg=0 ctermbg=12 guifg=Black guibg=#9999FF  " purple
 
-" ----- Plugin vim-virtualenv ------------------------------------------
+" ===== Plugin vim-virtualenv =====
 let g:virtualenv_directory = '$HOME/Developer/python-virtualenv'
 set statusline+=%{virtualenv#statusline()}
 
-" ----- Plugin Nerdtree -----------------------------------------------
+" ===== Plugin Nerdtree =====
 " nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " let g:nerdtree_tabs_open_on_console_startup = 0       " To have NERDTree always open on startup
 " let NERDTreeIgnore=['\.pyc$', '\~$','__pycache__', 'tags']                  " ignore files in NERDTree
@@ -280,14 +280,14 @@ set statusline+=%{virtualenv#statusline()}
 " let g:NERDTreeDirArrowExpandable = '+'
 " let g:NERDTreeDirArrowCollapsible = '~'
 
-" ----- Plugin Nerdtree-git-plugin------------------------------------
+" ===== Plugin Nerdtree-git-plugin------------------------------------
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"    : "○",
     \ "Staged"      : "●",
     \ "Untracked"   : "×",
     \ }
 
-" ----- Plugin CtrlP --------------------------------------------------
+" ===== Plugin CtrlP =====
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(exe|so|dll|pyc|jpeg|jpg|png|mat|zip|tar|tar.gz|bz2|swp|swo|xml)$',
@@ -295,7 +295,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 
-" ----- Plugin Syntastic ----------------------------------------------
+" ===== Plugin Syntastic =====
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = "▲"
 augroup mySyntastic
@@ -313,7 +313,7 @@ let g:syntastic_quiet_messages = {"type" : "style"}
 let g:syntastic_python_checker = ['flake8']
 
 
-" ----- Plugin ale ------------------------------------------------------
+" ===== Plugin ale =====
 "始终开启标志列
 " let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 1
@@ -331,7 +331,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_python_flake8_args="--ignore=E402,E128,E126"
 
 
-" ----- Plugin vim-easytags ---------------------------------------------
+" ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
 " Sensible defaults
 " let g:easytags_file = '~/.vim/tags'
@@ -342,20 +342,20 @@ let g:easytags_dynamic_files = 1
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
-" ----- Plugin tagbar ----------------------------------------
+" ===== Plugin tagbar =====
 " Open/close tagbar with \b
 " nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
-" ----- Plugin vim-gitgutter ---------------------------------
+" ===== Plugin vim-gitgutter =====
 let g:airline#extensions#hunks#non_zero_only = 1
 
-" ---- Plugin vim-pandoc-syntax
+" ===== Plugin vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
 
 
-" ---- vimtex -------------------
+" ===== vimtex =====
 " let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_matchparen_enabled = 0
 let g:vimtex_mappings_enabled = 1
@@ -363,7 +363,7 @@ let g:vimtex_mappings_enabled = 1
 " let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 
-" ----- Plugin delimitMate --------------------------------------------
+" ===== Plugin delimitMate =====
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
@@ -373,13 +373,13 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
-" ----- Plugin gutentags --------------------------------------------
+" ===== Plugin gutentags =====
 let g:gutentags_cache_dir = '~/.vim/tags/'
 let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
-" ----- Plugin vim-superman ---------------------------------------------
+" ===== Plugin vim-superman =====
 
-" ----- Plugin Youcompleteme -------------------------------------------
+" ===== Plugin Youcompleteme =====
 "  disable for mediawiki, latex and markdown
 " let g:ycm_filetype_blacklist = {
 "     \ 'mediawiki': 1,
@@ -406,11 +406,11 @@ let g:ycm_min_num_of_chars_for_completion = 15
 " let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
 
 
-" ----- Plugin vim-instant-markdown
+" ===== Plugin vim-instant-markdown
 " set shell=zsh\ -i
 let g:instant_markdown_autostart = 0
 
-" ----- important keymaps ----------------------------------------------------
+" ===== important keymaps =====
 map <C-t> :TagbarToggle<CR>
 " nmap <S-p> <Plug>(ale_previous_wrap)
 " nmap <S-n> <Plug>(ale_next_wrap)
