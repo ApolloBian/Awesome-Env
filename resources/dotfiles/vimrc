@@ -47,7 +47,12 @@ call plug#begin('~/.vim/plugged')
             !./install.py --clang-completer
         endif
     endfunction
-    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+    Plug 'Valloric/YouCompleteMe', !has('nvim') ? 
+        \ {'do': function('BuildYCM')} :
+        \ {'on': [], 'do': function('BuildYCM')}
+    Plug 'Shougo/deoplete.nvim', has('nvim') ?
+        \ { 'do': ':UpdateRemotePlugins' } :
+        \ { 'on': [] }
     " Plug 'w0rp/ale'
     Plug 'majutsushi/tagbar'
     Plug 'ludovicchabant/vim-gutentags'
@@ -64,7 +69,9 @@ call plug#begin('~/.vim/plugged')
     " Plug 'inkarkat/vim-ingo-library' " dependency of above
     " Plug 'makerj/vim-pdf'
 " Ghost-text
-    Plug 'raghur/vim-ghost', has('nvim') ? {'do': ':GhostInstall'} : {'on': []}
+    Plug 'raghur/vim-ghost', has('nvim') ?
+        \ {'do': ':GhostInstall'} :
+        \ {'on': []}
     Plug 'pandysong/ghost-text.vim', !has('nvim') ? {} : {'on': []}
 " Markdown
 " Latex
@@ -213,7 +220,7 @@ endfunction
 
 hi Comment cterm=italic gui=italic
 
-if !has("gui_macvim")
+if !has("gui_macvim") && !has('nvim')
     " settings for transparency
     " not very ideal for current setup, but may work if endl marks are disabled
     " use :highlight to inspect cur highlight group
