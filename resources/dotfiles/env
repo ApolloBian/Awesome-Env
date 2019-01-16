@@ -22,7 +22,7 @@ if [[ `uname` == 'Darwin' ]]; then
     # use gnu coreutils ls for mac
     gnuls_dir=/usr/local/opt/coreutils/libexec/gnubin/ls
     if [[ -e $gnuls_dir ]]; then
-        alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=tty -F --group-directories-first'
+        alias ls='ls --color=tty -F --group-directories-first'
     fi
 else
     # linux

@@ -5,6 +5,7 @@ brew install htop tmux cmake git fcitx-remote-for-osx wget python3 python2 npm c
 brew install screenresolution neofetch
 # gnu coreutils (including ls)
 brew install coreutils
+brew install gnu-sed --with-default-names
 # pyenv dependencies
 brew install openssl readline sqlite3 xz zlib
 # useful apps
