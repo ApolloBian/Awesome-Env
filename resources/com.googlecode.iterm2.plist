@@ -1485,19 +1485,19 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>185 266 918 514 0 0 1920 1057 </string>
+	<string>505 192 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>967 586 853 372 0 0 1920 1057 </string>
+	<string>100 207 852 372 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>432 540 1466 494 0 0 1920 1057 </string>
+	<string>1158 211 658 746 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1441 540 458 494 0 0 1920 1057 </string>
+	<string>479 211 658 746 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1175 24 722 494 0 0 1920 1057 </string>
+	<string>479 211 658 746 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>430 20 1470 1018 0 0 1920 1057 </string>
+	<string>1443 3 474 522 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>963 268 474 256 0 0 1920 1057 </string>
+	<string>479 211 1338 746 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>443 446 650 354 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -1723,8 +1723,10 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blink Allowed</key>
+			<true/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -2422,8 +2424,10 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blink Allowed</key>
+			<true/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -6581,7 +6585,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-08T11:35:07Z</date>
+	<date>2019-01-14T13:45:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -6593,7 +6597,7 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1546493952</real>
+	<real>1547361408</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>

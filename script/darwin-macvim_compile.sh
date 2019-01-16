@@ -5,20 +5,15 @@
 # Setup compile env variable according to plafrorm
 # compile vim
 if [[ `uname` == 'Darwin' ]]; then
-    # Set compile flags here
     num_proc=8
-    prefix=$HOME/Applications/
 else
-    num_proc=`cat /proc/cpuinfo| grep "processor"| wc -l`
-    prefix=$HOME/.local
+    echo "macvim only compiles on mac"
+    exit
 fi
-# python_config_dir=/usr/lib/python2.7/`ls /usr/lib/python2.7 | grep ^config`
-# echo $python_config_dir
 echo $num_proc
-echo $prefix
 
 
-cd resources/vim
+cd resources/macvim/src
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
@@ -26,7 +21,7 @@ cd resources/vim
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
-    --prefix=$prefix \
     --with-compiledby=bian_tianling@sjtu.edu.cn && \
-make -j`num_proc` && \
-make install
+make -j`num_proc`
+
+mv ./MacVim/build/Release/MacVim.app $HOME/Applications/
