@@ -44,3 +44,73 @@ alias la='ls -a'
 alias lh='ls -lh'
 alias ta='tmux attach'
 alias td='tmux detach'
+
+alias vv="vim --version | \
+    python -c \"
+#!/usr/bin/env python
+import sys
+import argparse
+import re
+
+
+'''
+escape seqs:
+    style  font      bg
+\033[  0;   37;     48  m
+\033[0m (reset color)
+'''
+
+args = None
+
+def proc(line):
+    global args
+    if line[:9] in ['VIM - Vi ', 'Included ', 'Compiled ']:
+        pattern = re.compile(r'''
+            (\d+[\.-]\d+)    | # version/patch
+            (\w*\@[.\w]*)    | # email
+            ''', re.VERBOSE)
+        line, _ = pattern.subn(
+            r'\033[1;35m\1' +
+            r'\033[1;33;34m\2' +
+            r'\033[0m',
+            line)
+        return line
+    elif line[0] in ['-', '+']:
+        if not args.f:
+            return ''
+        # function lines
+        func_pattern = re.compile(r'''
+            (-[\w\(\)]+)    | # -function
+            (
+             [-+]python\d?|
+             [-+]X11|
+             [-+]\w*clip\w*|
+             [-+]num\d*|
+            )               | # interested functions
+            ''', re.VERBOSE)
+        # -func with red blink
+        line, _ = func_pattern.subn(
+                r'\033[9;31m\1' +   # -function, red color
+                r'\033[1;32m\2' +   # -function, red color
+                r'\033[0m' ,        # reset color
+                line)
+        return line
+    elif re.match('Compilation:', line):
+        if not args.c:
+            return ''
+        return line
+    elif re.match('Linking:', line):
+        if not args.l:
+            return ''
+        return line
+    else:
+        return line
+parser = argparse.ArgumentParser()
+parser.add_argument('-f', action='store_true')
+parser.add_argument('-c', action='store_true')
+parser.add_argument('-l', action='store_true')
+args = parser.parse_args()
+with open('./vvtest') as f:
+    for l in f:
+        print(proc(l), end='')
+\" "
