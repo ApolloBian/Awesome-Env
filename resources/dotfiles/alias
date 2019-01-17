@@ -68,7 +68,7 @@ def proc(line):
         pattern = re.compile(r'''
             (\d+[\.-]\d+)    | # version/patch
             (\w*\@[.\w]*)    | # email
-            ''', re.VERBOSE)
+            foobar''', re.VERBOSE)
         line, _ = pattern.subn(
             r'\033[1;35m\1' +
             r'\033[1;33;34m\2' +
@@ -87,7 +87,7 @@ def proc(line):
              [-+]\w*clip\w*|
              [-+]num\d*|
             )               | # interested functions
-            ''', re.VERBOSE)
+            foobar''', re.VERBOSE)
         # -func with red blink
         line, _ = func_pattern.subn(
                 r'\033[9;31m\1' +   # -function, red color
