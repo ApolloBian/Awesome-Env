@@ -19,6 +19,9 @@ echo $prefix
 
 
 cd resources/vim
+make uninstall
+make distclean
+make clean
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
@@ -28,5 +31,5 @@ cd resources/vim
     --enable-cscope \
     --prefix=$prefix \
     --with-compiledby=bian_tianling@sjtu.edu.cn && \
-make -j`num_proc` && \
+make -j`num_proc`
 make install
