@@ -1,39 +1,36 @@
 export EDITOR=vim
 export TERM=xterm-256color
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:$PATH
-export PATH=$HOME/oh-my-dotfiles/app/vim/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH          # User executables for linux
-export PATH=$HOME/Applications/bin:$PATH    # User executables for macos
-export PATH=$HOME/.linuxbrew/bin:$PATH
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-# gnu coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-alias proxycurl='curl --socks5-hostname socks5://localhost:1086'
-alias ns='nvidia-smi'
-
-# sjtug mirror for homebrew.bintray.com
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles
 
 # ls colors
 if [[ `uname` == 'Darwin' ]]; then
     # use gnu coreutils ls for mac
+else
+    # linux
+fi
+
+# architecture dependent configs
+if [[ `uname` == 'Darwin' ]]; then
+    # MacOS
+    export PATH="$HOME/Applications/bin:$PATH"
+    export PYTHON_CONFIGURE_OPTS="--enable-framework"
+    # gnu coreutils
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     gnuls_dir=/usr/local/opt/coreutils/libexec/gnubin/ls
     if [[ -e $gnuls_dir ]]; then
         alias ls='ls --color=tty -F --group-directories-first'
     fi
+    # sjtug mirror for homebrew.bintray.com
+    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 else
-    # linux
-    alias ls='ls --color=tty -F --group-directories-first'
-fi
-
-# pyenv related options
-if [[ `uname` == 'Darwin' ]]; then
-    export PYTHON_CONFIGURE_OPTS="--enable-framework"
-else
+    # Linux
+    export PATH=$HOME/.local/bin:$PATH
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
     export PYTHON_CONFIGURE_OPTS="--enable-shared"
+    alias ls='ls --color=tty -F --group-directories-first'
 fi
 
 export PATH=$HOME/.pyenv/bin:$PATH
