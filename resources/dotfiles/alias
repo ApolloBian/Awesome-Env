@@ -18,17 +18,9 @@ alias gauss='ssh -p 5566 -Y tlb96@202.120.38.69'
 alias stanford='ssh -p 6620 -Y tlb96@202.120.38.125'
 alias itmo='ssh -p 8888 -Y tlb96@202.120.38.125'
 alias apple='ssh -p 219 -Y tlb96@222.92.117.141'
-# Shortcut
-alias dotfiles='cd ~/Developer/toolkit/dotfiles'
-alias plan='vim ~/Documents/DailyPlan/Today'
-alias diary='vim ~/Documents/Diary/Today'
-alias bp='vim ~/.bash_profile; source ~/.bash_profile;'
-alias vr='vim ~/.vimrc'
-alias cnnassignment='cd ~/Developer/ComputerVision/Stanford_CS231n/Assignments'
-alias plhw='cd ~/Documents/大学课程/大三上学期/ProgrammingLanguage/homework'
-alias kcpath='cd ~/Developer/KC3C/'
 
 # Cmd
+alias ns='nvidia-smi'
 alias vim='print -n "\033[2 q"; vim'
 alias cl='clear'
 alias tc='vim ~/.tmux.conf'
@@ -83,6 +75,7 @@ def proc(line):
             (-[\w\(\)]+)    | # -function
             (
              [-+]python\d?|
+             [-+]termguicolors\d?|
              [-+]X11|
              [-+]\w*clip\w*|
              [-+]num\d*|
