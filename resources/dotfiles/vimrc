@@ -355,6 +355,7 @@ let g:easytags_suppress_ctags_warning = 1
 " nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
+let g:tagbar_autofocus = 1
 
 " ===== Plugin vim-gitgutter =====
 let g:airline#extensions#hunks#non_zero_only = 1
