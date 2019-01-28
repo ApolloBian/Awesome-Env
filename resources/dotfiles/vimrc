@@ -69,11 +69,6 @@ call plug#begin('~/.vim/plugged')
     " Plug 'inkarkat/vim-mark'
     " Plug 'inkarkat/vim-ingo-library' " dependency of above
     " Plug 'makerj/vim-pdf'
-" Ghost-text
-    Plug 'raghur/vim-ghost', ( arc == 'Darwin' ) && has('nvim') ?
-        \ {'do': ':GhostInstall'} :
-        \ {'on': []}
-    Plug 'pandysong/ghost-text.vim', ( arc == 'Darwin' ) && !has('nvim') ? {} : {'on': []}
 " Markdown
 " Latex
     " Plug 'lervag/vimtex'
