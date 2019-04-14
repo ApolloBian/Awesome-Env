@@ -220,9 +220,9 @@ if !has("gui_macvim") && !has('nvim')
     " settings for transparency
     " not very ideal for current setup, but may work if endl marks are disabled
     " use :highlight to inspect cur highlight group
-    hi Normal ctermbg=NONE guibg=NONE
-    hi NonText ctermbg=NONE guibg=NONE
-    hi EndOfBuffer ctermbg=NONE guibg=NONE
+    " hi Normal ctermbg=NONE guibg=NONE
+    " hi NonText ctermbg=NONE guibg=NONE
+    " hi EndOfBuffer ctermbg=NONE guibg=NONE
 endif
 
 " hides cursorline in inactive buffers
@@ -297,6 +297,12 @@ let g:ctrlp_custom_ignore = {
     \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
     \ }
 
+" drastically improves ctrlp speed
+" ref: https://stackoverflow.com/a/22784889
+" let g:ctrlp_cache_dir = '$HOME/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag -f %s -l --nocolor -g ""'
+endif
 
 " ===== Plugin Syntastic =====
 let g:syntastic_error_symbol = '✗'
@@ -351,6 +357,9 @@ let g:easytags_suppress_ctags_warning = 1
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 let g:tagbar_autofocus = 1
+let g:tagbar_width = 60
+highlight default link TagbarSignature Comment
+highlight default link TagbarPseudoID Comment
 
 " ===== Plugin vim-gitgutter =====
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -404,7 +413,7 @@ let g:ycm_semantic_triggers = {
     \ 'python': ['re!(import\s+|from\s+(\w+\s+(import\s+(\w+,\s+)*)?)?)'],
     \}
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_min_num_of_chars_for_completion = 15
+" let g:ycm_min_num_of_chars_for_completion = 15
 
 
 " let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
@@ -438,3 +447,5 @@ map <leader>ts :w <bar> !./%
 " #TODO:
 " scroll between buffer ? liu chen yu's vimrc
 
+" python autoformatting with yapf
+nnoremap <leader>fm :w <CR> :% !yapf % <CR>
