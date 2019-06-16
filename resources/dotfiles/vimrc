@@ -54,7 +54,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/deoplete.nvim', has('nvim') ?
         \ { 'do': ':UpdateRemotePlugins' } :
         \ { 'on': [] }
-    " Plug 'w0rp/ale'
+    Plug 'w0rp/ale'
+    Plug 'maximbaz/lightline-ale'
+    Plug 'ervandew/supertab'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'majutsushi/tagbar'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'plytophogy/vim-virtualenv', has('gui_macvim') ? {} : {'on': []}
@@ -71,7 +75,7 @@ call plug#begin('~/.vim/plugged')
     " Plug 'makerj/vim-pdf'
 " Markdown
 " Latex
-    " Plug 'lervag/vimtex'
+    Plug 'lervag/vimtex'
 " Not familar Plugs
     " Plug 'Chiel92/vim-autoformat'
     " Plug 'xolox/vim-misc'
@@ -324,20 +328,45 @@ let g:syntastic_python_checker = ['flake8']
 
 " ===== Plugin ale =====
 "始终开启标志列
-" let g:ale_sign_column_always = 1
+let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 1
 "自定义error和warning图标
 " let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
+
+" hi ALEErrorSign ctermbg=235 guibg=#1e2132
+" hi ALEWarningSign ctermbg=235 guibg=#1e2132
+hi ALEErrorSign term=reverse ctermfg=203 ctermbg=235 guifg=#e27878 guibg=#1e2132
+hi ALEWarningSign term=standout ctermfg=150 ctermbg=235 guifg=#d8e599 guibg=#1e2132
+hi clear ALEError
+hi clear ALEWarning
+hi clear ALEInfo
+hi ALEError gui=underline cterm=underline
+hi ALEWarning gui=underline cterm=underline
+hi ALEInfo gui=underline cterm=underline
+
 "在vim自带的状态栏中整合ale
 let g:ale_statusline_format = ['✗ %d', '▲ %d', '✔ OK']
 "显示Linter名称,出错或警告等相关信息
 let g:ale_echo_msg_error_str = '✗'
 let g:ale_echo_msg_warning_str = '▲'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%severity%][%linter%][%code%] %s'
 " flake8 相关设置
-let g:ale_python_flake8_args="--ignore=E402,E128,E126"
+let g:ale_linters = {
+\    'python': ['flake8'],
+\}
+let g:ale_fixers = {
+\   'python': ['yapf'],
+\   'javascript': ['eslint'],
+\   'cpp': ['clang-format'],
+\}
+let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 0
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <leader>ff :ALEFix <CR>
 
 
 " ===== Plugin vim-easytags =====
@@ -360,6 +389,12 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 60
 highlight default link TagbarSignature Comment
 highlight default link TagbarPseudoID Comment
+" Increast the responsiveness of tagbar
+" update time is the length of time vim waits after you stop typing before it
+" triggers the plugin
+" more info about this value :
+" ref: https://www.reddit.com/r/vim/comments/3ql651/what_do_you_set_your_updatetime_to/
+set updatetime=50 
 
 " ===== Plugin vim-gitgutter =====
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -367,6 +402,19 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " ===== Plugin vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
 
+
+" ===== Ultisnip =============
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<c-e>"
+let g:UltiSnipsJumpForwardTrigger = "<c-l>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-h>"
+
+let g:UltiSnipsSnippetsDir = $HOME."/.vim/customsnippets/"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "customsnippets"]
+
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 
 " ===== vimtex =====
 " let g:vimtex_compiler_latexmk = {'callback' : 0}
@@ -412,7 +460,7 @@ nnoremap <leader>gm :YcmCompleter GetDoc<CR>
 let g:ycm_semantic_triggers = {
     \ 'python': ['re!(import\s+|from\s+(\w+\s+(import\s+(\w+,\s+)*)?)?)'],
     \}
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_min_num_of_chars_for_completion = 15
 
 
