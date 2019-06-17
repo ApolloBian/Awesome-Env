@@ -25,7 +25,8 @@ make clean
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
-    --enable-python3interp=yes \
+    --enable-python3interp=dynamic \
+    --enable-pythoninterp=dynamic \
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
