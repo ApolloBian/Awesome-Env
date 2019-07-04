@@ -4,12 +4,12 @@
     - [ ] arch-yaourt # install yaourt
     - [ ] arch-aur
 - ZSH
-    - [x] core-zsh # install & chsh
-    - [x] core-chsh_zsh
-    - [x] core-xterm_terminfo
+    - [ ] core-zsh # install & chsh
+    - [ ] core-chsh_zsh
+    - [ ] core-xterm_terminfo
 - Python version # use no sudo as much possible
     - [x] core-pyenv
-    - [x] core-python
+    - [ ] core-python
 
 # Environment, dotfiles
 - Dotfiles
@@ -26,7 +26,7 @@
     - [x] core-vim_plugins
     - [x] core-vim_extraconfig
 - Tmux
-    - [x] core-tpm
+    - [ ] core-tpm
 - Git difftool & mergetool
     - [ ] arch-p4merge # not implemented: config on arch linux is not needed
 
