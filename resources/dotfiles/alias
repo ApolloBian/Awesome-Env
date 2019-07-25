@@ -39,6 +39,9 @@ alias ta='tmux attach'
 alias td='tmux detach'
 alias tl='tmux ls'
 
+alias aswork='pwd > $HOME/workdir'
+alias work='cd `cat $HOME/workdir`'
+
 alias vv="vim --version | \
     python -c \"
 #!/usr/bin/env python
