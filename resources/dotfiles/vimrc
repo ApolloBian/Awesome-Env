@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 " Start screen
     Plug 'mhinz/vim-startify'
 " Git
-    Plug 'tpope/vim-fugitive' " :Gblame
+    " Plug 'tpope/vim-fugitive' " :Gblame
     Plug 'airblade/vim-gitgutter' " display line status on the left
 " File browsing
     " Plug 'scrooloose/nerdtree'
@@ -51,16 +51,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', !has('nvim') ? 
         \ {'do': function('BuildYCM')} :
         \ {'on': [], 'do': function('BuildYCM')}
+    Plug 'davidhalter/jedi-vim'
     Plug 'Shougo/deoplete.nvim', has('nvim') ?
         \ { 'do': ':UpdateRemotePlugins' } :
         \ { 'on': [] }
-    Plug 'w0rp/ale'
-    Plug 'maximbaz/lightline-ale'
+    " Plug 'w0rp/ale'
+    " Plug 'maximbaz/lightline-ale'
     Plug 'ervandew/supertab'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'majutsushi/tagbar'
-    Plug 'ludovicchabant/vim-gutentags'
+    " Plug 'ludovicchabant/vim-gutentags'
     Plug 'plytophogy/vim-virtualenv', has('gui_macvim') ? {} : {'on': []}
     Plug 'tpope/vim-commentary'
     " Plug 'rizzatti/dash.vim'
@@ -68,14 +69,14 @@ call plug#begin('~/.vim/plugged')
 " System Integration
     " Plug 'lilydjwg/fcitx.vim'                         " need to modify according to git repo readme
     " Plug 'christoomey/vim-tmux-navigator'
-    Plug 'jez/vim-superman'
+    " Plug 'jez/vim-superman'
 " Reading
     " Plug 'inkarkat/vim-mark'
     " Plug 'inkarkat/vim-ingo-library' " dependency of above
     " Plug 'makerj/vim-pdf'
 " Markdown
 " Latex
-    Plug 'lervag/vimtex'
+    " Plug 'lervag/vimtex'
 " Not familar Plugs
     " Plug 'Chiel92/vim-autoformat'
     " Plug 'xolox/vim-misc'
@@ -438,7 +439,19 @@ augroup END
 let g:gutentags_cache_dir = '~/.vim/tags/'
 let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
-" ===== Plugin vim-superman =====
+" ===== Plugin jedi-vim
+let g:jedi#usages_command = "<leader>gu"
+let g:jedi#rename_command = "<leader>r"
+" The following lines are used to disable all other functionalities of
+" jedi-vim
+" for more settings, refer: https://github.com/davidhalter/jedi-vim#settings
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = ""
+let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = ""
+let g:jedi#completions_command = ""
+
 
 " ===== Plugin Youcompleteme =====
 "  disable for mediawiki, latex and markdown
@@ -480,7 +493,6 @@ map <C-t> :TagbarToggle<CR>
 " nmap <Leader>s :ALEToggle<CR>
 "<Leader>d查看错误或警告的详细信息
 " nmap <Leader>d :ALEDetail<CR>
-noremap M :SuperMan <cword><CR>
 " Ctrl p search files
 
 " F1 for executing current script
