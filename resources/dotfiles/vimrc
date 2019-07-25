@@ -8,20 +8,23 @@ endif
 call plug#begin('~/.vim/plugged')
 " Color Scheme
     " A tool for generating colorscheme: https://github.com/jacoborus/estilo
-    Plug 'flazz/vim-colorschemes'
+    " Plug 'flazz/vim-colorschemes'
     Plug 'cocopon/iceberg.vim'
-    Plug 'rakr/vim-one'
+    " Plug 'rakr/vim-one'
     Plug 'ApolloBian/Retro.vim'
-    Plug 'AlessandroYorba/Sierra'
-    Plug 'altercation/vim-colors-solarized'
+    " Plug 'AlessandroYorba/Sierra'
     " Plug 'altercation/vim-colors-solarized'
-    Plug 'tomasr/molokai'
-    Plug 'morhetz/gruvbox'
+    " Plug 'altercation/vim-colors-solarized'
+    " Plug 'tomasr/molokai'
+    " Plug 'morhetz/gruvbox'
     " Plug 'jacoborus/tender.vim'
     " Plug 'rakr/vim-one' "atom color scheme, good for light color
-    Plug 'arcticicestudio/nord-vim'
-    Plug 'cocopon/pgmnt.vim'
-    Plug 'cocopon/colorswatch.vim'
+    " Plug 'arcticicestudio/nord-vim'
+    " Plug 'cocopon/pgmnt.vim'
+    " Plug 'cocopon/colorswatch.vim'
+    " Plug 'NLKNguyen/papercolor-theme'
+    " Plug 'rakr/vim-two-firewatch'
+    " Plug 'reedes/vim-colors-pencil'
 " Status line
     Plug 'itchyny/lightline.vim'
     " Plug 'vim-airline/vim-airline'
@@ -210,6 +213,31 @@ let g:lightline = {
             \   'fileformat': 'MyFileformat',
             \ }
             \ }
+
+" This function toggles between coding mode and writing mode
+let s:writing = 0
+function! ToggleWritingMode()
+    if s:writing  == 0
+        let s:writing = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+        set background=light
+        colorscheme retro
+        " colorscheme PaperColor
+    else
+        let s:writing = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+        set background=dark
+        colorscheme iceberg
+    endif
+endfunction
+
+nnoremap <leader>tw :call ToggleWritingMode()<CR>
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
