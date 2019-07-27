@@ -94,5 +94,6 @@ source $ZSH/oh-my-zsh.sh
 extra_plugin_root=~/.oh-my-zsh/custom/plugins/
 source $extra_plugin_root/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $extra_plugin_root/./zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^l' autosuggest-accept
 
 source ~/.local_env # localized environment
