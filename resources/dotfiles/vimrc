@@ -178,7 +178,6 @@ set cursorline
 " ===== Make Vim look good =====
 " more about true colors ':help xterm-true-color'
 set termguicolors
-set background=dark
 set guifont=Source\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Mono:h13 " :set guifont? | this cmd gives current font
 set guioptions=             " disable sidebars in gui
 set encoding=utf-8
@@ -205,39 +204,66 @@ autocmd BufNewFile *.py 0r ~/.vim/templates/python.py
 autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
 
-colorscheme iceberg
+set background=light
+colorscheme retro
 let g:lightline = { 
-            \ 'colorscheme': 'iceberg',
+            \ 'colorscheme': 'retro',
             \ 'component_function': {
             \   'filetype': 'MyFiletype',
             \   'fileformat': 'MyFileformat',
             \ }
             \ }
 
-" This function toggles between coding mode and writing mode
-let s:writing = 0
-function! ToggleWritingMode()
-    if s:writing  == 0
-        let s:writing = 1
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+
+" This function toggles dark mode (iceberg)
+let s:darkmode = 0
+function! ToggleDarkMode()
+    if s:darkmode  == 1
+        let s:darkmode = 0
         set noshowmode
         set noruler
-        set laststatus=0
+        " set laststatus=0
         set noshowcmd
         set background=light
         colorscheme retro
-        " colorscheme PaperColor
+        let g:lightline = { 
+                    \ 'colorscheme': 'retro',
+                    \ 'component_function': {
+                    \   'filetype': 'MyFiletype',
+                    \   'fileformat': 'MyFileformat',
+                    \ }
+                    \ }
+        call LightlineReload()
     else
-        let s:writing = 0
+        let s:darkmode = 1
         set showmode
         set ruler
-        set laststatus=2
+        " set laststatus=2
         set showcmd
         set background=dark
         colorscheme iceberg
+        let g:lightline = { 
+                    \ 'colorscheme': 'iceberg',
+                    \ 'component_function': {
+                    \   'filetype': 'MyFiletype',
+                    \   'fileformat': 'MyFileformat',
+                    \ }
+                    \ }
+        call LightlineReload()
     endif
 endfunction
 
-nnoremap <leader>tw :call ToggleWritingMode()<CR>
+
+if $TERM_THEME == 'iceberg'
+    call ToggleDarkMode()
+endif
+
+nnoremap <leader>tw :call ToggleDarkMode()<CR>
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''

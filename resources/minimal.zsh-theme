@@ -15,15 +15,20 @@ RED_FG="%{$fg[red]%}"
 BLACK_FG="%{$fg[black]%}"
 RED_FG_BOLD="%{$fg_bold[red]%}"
 GREEN_FG="%{$fg[green]%}"
-WHITE_FG="%{$fg[white]%}"
 YELLOW_FG="%{$fg[yellow]%}"
 DARKGRAY_BG="%{$bg[yellow]%}"
 BLUE_FG="%{$fg[blue]%}"
 RESET_COLOR="%{$reset_color%}"
 
+if [ $TERM_THEME = 'retro' ]; then
+    BASE_FG="%{$fg[black]%}"
+elif [ $TERM_THEME = 'iceberg' ]; then
+    BASE_FG="%{$fg[white]%}"
+fi
+
 # setopt prompt_subst
-PROMPT='%(?.$WHITE_FG.$RED_FG)%m:$(short_pwd)$(reset_cursor)
+PROMPT='%(?.$BASE_FG.$RED_FG)%m:$(short_pwd)$(reset_cursor)
 %* %(!.#.$) > $RESET_COLOR'
-# PROMPT='$WHITE_FG%m:$(short_pwd)$RESET_COLOR
-# %(?.$WHITE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
+# PROMPT='$BASE_FG%m:$(short_pwd)$RESET_COLOR
+# %(?.$BASE_FG.$RED_FG)%* %(!.#.$) > $RESET_COLOR'
 # %(?.$BLACK_FG.$RED_FG$?)$RESET_COLOR %* %(!.#.$) > '
