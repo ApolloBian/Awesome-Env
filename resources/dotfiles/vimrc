@@ -69,6 +69,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
     " Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'google/vim-maktaba'
+    Plug 'google/vim-codefmt'
+    " Plug 'Chiel92/vim-autoformat'
+    " Plug 'Valloric/python-indent'  " it seems not conforming to pep8
     " Plug 'rizzatti/dash.vim'
     " Plug 'xolox/vim-easytags'
 " System Integration
@@ -83,7 +87,6 @@ call plug#begin('~/.vim/plugged')
 " Latex
     " Plug 'lervag/vimtex'
 " Not familar Plugs
-    " Plug 'Chiel92/vim-autoformat'
     " Plug 'xolox/vim-misc'
     " Plug 'Raimondi/delimitMate'
     " Plug 'scrooloose/nerdcommenter'
@@ -509,6 +512,23 @@ let g:jedi#goto_assignments_command = ""
 let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = ""
 let g:jedi#completions_command = ""
+
+" ===== Plugin google/vim-codefmt =====
+" uncomment the following lines will auto format when write
+" However I think it will be good if I can enable this manually
+" mode info :h AutoFormatBuffer
+" augroup autoformat_settings
+"   autocmd FileType bzl AutoFormatBuffer buildifier
+"   autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+"   autocmd FileType dart AutoFormatBuffer dartfmt
+"   autocmd FileType go AutoFormatBuffer gofmt
+"   autocmd FileType gn AutoFormatBuffer gn
+"   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+"   autocmd FileType java AutoFormatBuffer google-java-format
+"   autocmd FileType python AutoFormatBuffer yapf
+"   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+"   autocmd FileType vue AutoFormatBuffer prettier
+" augroup END
 
 
 " ===== Plugin Youcompleteme =====
