@@ -21,7 +21,7 @@ alias apple='ssh -p 219 -Y tlb96@222.92.117.141'
 
 # Cmd
 alias ns='nvidia-smi'
-alias vim='print -n "\033[2 q"; vim'
+# alias vim='print -n "\033[2 q"; vim'
 alias cl='clear'
 alias tc='vim ~/.tmux.conf'
 alias grep='grep --color=always'
