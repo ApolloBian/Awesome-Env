@@ -54,7 +54,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', !has('nvim') ? 
         \ {'do': function('BuildYCM')} :
         \ {'on': [], 'do': function('BuildYCM')}
-    Plug 'davidhalter/jedi-vim'
+    " Plug 'davidhalter/jedi-vim'
+    Plug 'Shougo/echodoc.vim'
     Plug 'Shougo/deoplete.nvim', has('nvim') ?
         \ { 'do': ':UpdateRemotePlugins' } :
         \ { 'on': [] }
@@ -523,6 +524,9 @@ augroup END
 let g:gutentags_cache_dir = '~/.vim/tags/'
 let g:gutentags_exclude_project_root = ['~/', '/usr/local']
 
+" ===== Plugin echodoc
+let g:echodoc#enable_at_startup = 1
+
 " ===== Plugin jedi-vim
 let g:jedi#usages_command = "<leader>gu"
 let g:jedi#rename_command = "<leader>r"
@@ -565,7 +569,8 @@ let g:jedi#completions_command = ""
 "     \ 'html': 1}
 set splitbelow
 let g:ycm_python_binary_path = "python"     " use env python as python bin
-" let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gm :YcmCompleter GetDoc<CR>
