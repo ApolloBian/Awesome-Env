@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', !has('nvim') ? 
         \ {'do': function('BuildYCM')} :
         \ {'on': [], 'do': function('BuildYCM')}
-    " Plug 'davidhalter/jedi-vim'
+    Plug 'davidhalter/jedi-vim'
     Plug 'Shougo/deoplete.nvim', has('nvim') ?
         \ { 'do': ':UpdateRemotePlugins' } :
         \ { 'on': [] }
