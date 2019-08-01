@@ -108,7 +108,8 @@ call plug#end()
 set nocompatible       " Use Vim settings, rather than Vi settings (much better!).
                        " This must be first, because it changes other options as a side effect.
 set list!              " show endl and tabs
-set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars
+" set listchars=tab:▸\ ,eol:¬                       " for more info, type :help listchars
+set listchars=tab:▸\                        " I find the existance of eol sometimes not very pleasing
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set ruler              " show the cursor position all the time
 set hlsearch           " highlight search
@@ -118,7 +119,6 @@ set number             " line numbers
 set numberwidth=5
 set showcmd            " display incomplete commands
 set incsearch          " do incremental searching
-set linebreak          " wrap lines on 'word' boundaries
 set scrolloff=8        " don't let the cursor touch the edge of the viewport
 " set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
@@ -225,6 +225,16 @@ function! LightlineReload()
   call lightline#update()
 endfunction
 
+function! SetALESignColor()
+    if s:darkmode == 1
+        hi ALEErrorSign term=reverse ctermfg=203 guifg=#e27878
+        hi ALEWarningSign term=standout ctermfg=150 guifg=#d8e599
+    else
+        hi ALEErrorSign term=reverse ctermfg=203 guifg=#e27878
+        hi ALEWarningSign term=standout ctermfg=150 guifg=#93999e
+    endif
+endfunction
+
 " This function toggles dark mode (iceberg)
 let s:darkmode = 0
 function! ToggleDarkMode()
@@ -236,14 +246,9 @@ function! ToggleDarkMode()
         set noshowcmd
         set background=light
         colorscheme retro
-        let g:lightline = { 
-                    \ 'colorscheme': 'retro',
-                    \ 'component_function': {
-                    \   'filetype': 'MyFiletype',
-                    \   'fileformat': 'MyFileformat',
-                    \ }
-                    \ }
+        let g:lightline.colorscheme = 'retro'
         call LightlineReload()
+        call SetALESignColor()
     else
         let s:darkmode = 1
         set showmode
@@ -252,19 +257,17 @@ function! ToggleDarkMode()
         set showcmd
         set background=dark
         colorscheme iceberg
-        let g:lightline = { 
-                    \ 'colorscheme': 'iceberg',
-                    \ 'component_function': {
-                    \   'filetype': 'MyFiletype',
-                    \   'fileformat': 'MyFileformat',
-                    \ }
-                    \ }
+        let g:lightline.colorscheme = 'iceberg'
         call LightlineReload()
+        call SetALESignColor()
     endif
 endfunction
 
 
 if $TERM_THEME == 'iceberg'
+    call ToggleDarkMode()
+else
+    let s:darkmode = 1
     call ToggleDarkMode()
 endif
 
@@ -395,12 +398,16 @@ let g:ale_sign_column_always = 1
 "自定义error和warning图标
 " let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '▲'
+" let g:ale_sign_warning = '▲'
+let g:ale_sign_warning = '•'
 
+
+" TODO: modify this to be a function that can be called
+" I would like to configure a light theme and a dark theme
+" same for gitgutter, I think I'll have most signs of default foreground
+" color
 " hi ALEErrorSign ctermbg=235 guibg=#1e2132
 " hi ALEWarningSign ctermbg=235 guibg=#1e2132
-hi ALEErrorSign term=reverse ctermfg=203 ctermbg=235 guifg=#e27878 guibg=#1e2132
-hi ALEWarningSign term=standout ctermfg=150 ctermbg=235 guifg=#d8e599 guibg=#1e2132
 hi clear ALEError
 hi clear ALEWarning
 hi clear ALEInfo
@@ -588,3 +595,29 @@ map <leader>ts :w <bar> !./%
 
 " python autoformatting with yapf
 nnoremap <leader>fm :w <CR> :% !yapf % <CR>
+" ============ Filetype dependent tweaks: =======================
+" === python files ===
+autocmd FileType python set nowrap
+" Indent Python in the Google way. Not sure if it works
+" http://google.github.io/styleguide/pyguide.html
+setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+let s:maxoff = 50
+function GetGooglePythonIndent(lnum)
+  call cursor(a:lnum, 1)
+  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        \ . " =~ '\\(Comment\\|String\\)$'")
+  if par_line > 0
+    call cursor(par_line, 1)
+    if par_col != col("$") - 1
+      return par_col
+    endif
+  endif
+  return GetPythonIndent(a:lnum)
+endfunction
+let pyindent_nested_paren="&sw*2"
+let pyindent_open_paren="&sw*2"
+
+" === txt files ===
+autocmd FileType text set linebreak          " wrap lines on 'word' boundaries
