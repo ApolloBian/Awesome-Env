@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', !has('nvim') ? 
         \ {'do': function('BuildYCM')} :
         \ {'on': [], 'do': function('BuildYCM')}
-    " Plug 'davidhalter/jedi-vim'
+    Plug 'davidhalter/jedi-vim'
     Plug 'Shougo/echodoc.vim'
     Plug 'Shougo/deoplete.nvim', has('nvim') ?
         \ { 'do': ':UpdateRemotePlugins' } :
@@ -69,7 +69,8 @@ call plug#begin('~/.vim/plugged')
     " Plug 'ludovicchabant/vim-gutentags'
     Plug 'plytophogy/vim-virtualenv', has('gui_macvim') ? {} : {'on': []}
     Plug 'tpope/vim-commentary'
-    " Plug 'Vimjas/vim-python-pep8-indent'
+    Plug 'Vimjas/vim-python-pep8-indent'
+    Plug 'vim-scripts/Highlight-UnMatched-Brackets'
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
@@ -413,9 +414,9 @@ let g:ale_sign_warning = '•'
 hi clear ALEError
 hi clear ALEWarning
 hi clear ALEInfo
-hi ALEError gui=underline cterm=underline
-hi ALEWarning gui=underline cterm=underline
-hi ALEInfo gui=underline cterm=underline
+" hi ALEError gui=underline cterm=underline
+" hi ALEWarning gui=underline cterm=underline
+" hi ALEInfo gui=underline cterm=underline
 
 "在vim自带的状态栏中整合ale
 let g:ale_statusline_format = ['✗ %d', '▲ %d', '✔ OK']
@@ -540,6 +541,19 @@ let g:jedi#goto_assignments_command = ""
 let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = ""
 let g:jedi#completions_command = ""
+let g:jedi#auto_initialization = 0
+let g:jedi#show_call_signatures_delay = 10
+let g:jedi#show_call_signatures = 1
+call jedi#configure_call_signatures()
+function! ToggleSignature()
+    if g:jedi#show_call_signatures == 1
+        let g:jedi#show_call_signatures = 0
+    else
+        let g:jedi#show_call_signatures = 1
+    endif
+endfunction
+
+nnoremap <leader>tj :call ToggleSignature()<CR>
 
 " ===== Plugin google/vim-codefmt =====
 " uncomment the following lines will auto format when write
@@ -595,12 +609,15 @@ let g:ycm_semantic_triggers['python'] = [
     \ 're!(import\s+|from\s+([\w.]+\s+(import\s+([\w.]+,\s+)*)?)?)',
     \ ', ',
     \]
+    " \'re!import\s+',
+    " \'re!from\s+(\w+\s+import\s+)?',
+    " \'re!from\s+[\w.]+\s+import\s+(\w+,\s+)*',
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_min_num_of_chars_for_completion = 15
 
 
 " let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
-autocmd VimLeave * silent !pkill -P $PPID
+" autocmd VimLeave * silent !pkill -P $PPID
 
 
 " ===== Plugin vim-instant-markdown
@@ -623,7 +640,7 @@ map <C-t> :TagbarToggle<CR>
 " feels more secure
 " <bar> semantics : https://stackoverflow.com/questions/3249275/vim-multiple-commands-on-same-line
 map <F1> :w <bar> windo only <bar> term ./%
-map <leader>ts :w <bar> !./%
+" map <leader>ts :w <bar> !./%
 " F1 was used to show help.txt
 " :help will do the same trick tho
 
@@ -633,26 +650,13 @@ map <leader>ts :w <bar> !./%
 " ============ Filetype dependent tweaks: =======================
 " === python files ===
 autocmd FileType python set nowrap
-" Indent Python in the Google way. Not sure if it works
-" http://google.github.io/styleguide/pyguide.html
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-let s:maxoff = 50
-function GetGooglePythonIndent(lnum)
-  call cursor(a:lnum, 1)
-  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        \ . " =~ '\\(Comment\\|String\\)$'")
-  if par_line > 0
-    call cursor(par_line, 1)
-    if par_col != col("$") - 1
-      return par_col
-    endif
-  endif
-  return GetPythonIndent(a:lnum)
-endfunction
-let pyindent_nested_paren="&sw*2"
-let pyindent_open_paren="&sw*2"
 
 " === txt files ===
-autocmd FileType text set linebreak          " wrap lines on 'word' boundaries
+autocmd filetype text set linebreak          " wrap lines on 'word' boundaries
+autocmd filetype text set wrap
+
+" === tex files ===
+autocmd filetype tex set linebreak
+autocmd filetype tex set wrap
+
+
