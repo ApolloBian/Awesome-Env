@@ -16,18 +16,19 @@ if [[ $? != 0 ]]; then
 fi
 
 dotfile_path="resources/dotfiles"
+config_path="resources/config"
 
-echo "Symlinking dotfiles in $(pwd)/$dotfile_path"
 link() {
   from="$1"
   to="$2"
   echo "Linking '$from' to '$to'"
-  rm -f "$to"
+  rm -rf "$to"
   dirname=`dirname "$to"`
   mkdir -p $dirname
   ln -sf "$from" "$to"
 }
 
+echo "Symlinking dotfiles in $(pwd)/$dotfile_path"
 for file in $(find $dotfile_path -name '*'); do
   file="${file##*/}"
   # file="${file%.sh}"
@@ -35,6 +36,10 @@ for file in $(find $dotfile_path -name '*'); do
 done
 rm $HOME/.dotfiles
 
+echo "Symlinking config files in $(pwd)$config_path"
+for file in $(ls $config_path); do
+    link "$(pwd)/$config_path/$file" "$HOME/.config/$file"
+done
 
 # --------some workaround for using different git username
 # --------set user.name = tianling@hostname 
