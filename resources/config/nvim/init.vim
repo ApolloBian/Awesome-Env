@@ -32,7 +32,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Start screen
     Plug 'mhinz/vim-startify'
 " Git
-    " Plug 'airblade/vim-gitgutter' " display line status on the left
+    Plug 'airblade/vim-gitgutter' " display line status on the left
 " File browsing
     Plug 'junegunn/fzf', {'dir': '~/.fzf'}
     Plug 'junegunn/fzf.vim'
