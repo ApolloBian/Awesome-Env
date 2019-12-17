@@ -59,7 +59,9 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'ervandew/supertab'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'majutsushi/tagbar'
+    Plug 'majutsushi/tagbar', {
+        \'for': ['python']
+        \}
     " Plug 'plytophogy/vim-virtualenv'
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
@@ -203,7 +205,6 @@ let g:lightline = {
             \}
 let g:lightline.colorscheme = 'retro'
 let g:lightline.component = {
-            \   'tagbar': '%{tagbar#currenttag("%s", "", "f")}',
             \   'cocstatus': "%{coc#status()}%{get(b:,'coc_current_function','')}",
             \}
 let g:lightline.active ={
@@ -226,9 +227,13 @@ function! FilenameWithDetail()
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
   let modified = &modified ? '[+]' : ''
   let readonly = &readonly ? '[RO]': ''
-  let tagpos = tagbar#currenttag("%s", "", "f")
-  if tagpos != ""
-      let tagpos = '->' . tagpos
+  if &ft == 'python'
+      let tagpos = tagbar#currenttag("%s", "", "f")
+      if tagpos != ""
+          let tagpos = '->' . tagpos
+      endif
+  else
+      let tagpos = ""
   endif
 
   return readonly . modified . filename . tagpos
