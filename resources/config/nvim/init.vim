@@ -339,6 +339,14 @@ hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " hi Search ctermfg=0 ctermbg=13 guifg=Black guibg=#FFB3FF  " pink
 " hi Search ctermfg=0 ctermbg=12 guifg=Black guibg=#9999FF  " purple
 
+" ===== Plugin python-syntax
+let g:python_highlight_string_formatting=1
+let g:python_highlight_string_format=1
+let g:python_highlight_string_templates=1
+let g:python_highlight_class_vars=1
+let g:python_highlight_file_headers_as_comments=1
+
+
 " ===== Plugin vim-emoji =====
 " working with youcompleteme
 " https://github.com/junegunn/vim-emoji/issues/22
