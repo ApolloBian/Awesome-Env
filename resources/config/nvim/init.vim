@@ -63,15 +63,15 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'plytophogy/vim-virtualenv'
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
-    Plug 'google/vim-maktaba'
-    Plug 'google/vim-codefmt'
+    " Plug 'google/vim-maktaba'
+    " Plug 'google/vim-codefmt'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
 " Web editing
     " Plug 'glacambre/firenvim'
     Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 " Chinese input
-    Plug 'vim-scripts/VimIM'
+    " Plug 'vim-scripts/VimIM'
 call plug#end()
 
 
@@ -103,6 +103,7 @@ set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
 set hidden             " allow edited buffers to be hidden
+set pumheight=10       " completion menu height
 if !has('nvim')
     set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
 endif
@@ -194,24 +195,32 @@ autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
 set background=light
 colorscheme retro
-let g:lightline = { 
-            \ 'colorscheme': 'retro',
-            \ 'component': {
+let g:lightline = {
+            \'colorscheme': {},
+            \'component': {},
+            \'active':{},
+            \'component_function':{}
+            \}
+let g:lightline.colorscheme = 'retro'
+let g:lightline.component = {
             \   'tagbar': '%{tagbar#currenttag("%s", "", "f")}',
             \   'cocstatus': "%{coc#status()}%{get(b:,'coc_current_function','')}",
-            \ },
-            \ 'active': {
+            \}
+let g:lightline.active ={
             \   'left': [
             \       [ 'mode', 'paste' ],
-            \       ['hostname'], ['cocstatus'],
-            \       ['filename'],]
-            \ },
-            \ 'component_function': {
+            \       ['hostname'],
+            \       ['filename']],
+            \   'right':[
+            \['percent'],
+            \['filetype'],
+            \['cocstatus']],
+            \ }
+let g:lightline.component_function = {
             \   'hostname': 'hostname',
             \   'fileformat': 'MyFileformat',
             \   'filename': 'FilenameWithDetail',
-            \ }
-            \ }
+            \}
 function! FilenameWithDetail()
   " TODO: winwidth?
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
@@ -317,6 +326,9 @@ nnoremap <silent> # m`:keepjumps normal! #<cr>``
 " clear highlight
 map <leader>c :noh<cr>
 
+" quit shortcut
+nnoremap <leader>q :wqa
+
 " Search highlight colors
 hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " more colors for search, colors from vim-mark
@@ -337,6 +349,9 @@ hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " ===== Plugin vim-virtualenv =====
 " let g:virtualenv_directory = '$HOME/.pyenv/versions/'
 " set statusline+=%{virtualenv#statusline()}
+
+" ===== Plugin vim-startify =====
+let g:startify_change_to_vcs_root=1
 
 " ===== Plugin CtrlP =====
 let g:ctrlp_custom_ignore = {
@@ -508,6 +523,8 @@ let g:vimtex_mappings_enabled = 1
 " let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 " ===== coc.nvim =====
+" more functions refer to: https://zhuanlan.zhihu.com/p/65524706
+" coc-pairs, coc-snippets, coc-yank, coc-git
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -529,11 +546,12 @@ set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -570,7 +588,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>r <Plug>(coc-rename)
