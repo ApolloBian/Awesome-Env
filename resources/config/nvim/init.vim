@@ -565,6 +565,7 @@ set signcolumn=yes
 "       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <c-l> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
