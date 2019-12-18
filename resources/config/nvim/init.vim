@@ -541,6 +541,11 @@ let g:vimtex_mappings_enabled = 1
 " if hidden is not set, TextEdit might fail.
 set hidden
 
+" more info about custom sources
+" https://github.com/neoclide/coc.nvim/wiki/Create-custom-source#options-for-completion
+" custom source script:
+" ./autoload/coc/source/dict_completion.vim
+
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
