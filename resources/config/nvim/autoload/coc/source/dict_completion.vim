@@ -1,7 +1,7 @@
 " vim source for dict_completions
 function! coc#source#dict_completion#init() abort
   return {
-    \'filetypes': ['', 'markdown', 'text'],
+    \'filetypes': ['', 'markdown', 'text', 'tex'],
     \'shortcut': 'DIC',
     \}
 endfunction
