@@ -1,4 +1,6 @@
 {
+    "latex.build.args": ["-xelatex", "-bibtex"],
+    "latex.build.onSave": true,
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintArgs": ["--disable", "C,R,W"],
