@@ -27,6 +27,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'arcticicestudio/nord-vim'
     Plug 'cocopon/pgmnt.vim'  " template engine for vim color scheme by cocopon
     Plug 'cocopon/inspecthi.vim'
+" QOL improvements
+    Plug 'vim-scripts/BufOnly.vim'
 " Status line
     Plug 'itchyny/lightline.vim'
 " Start screen
