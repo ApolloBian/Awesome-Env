@@ -69,6 +69,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'google/vim-codefmt'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
+    Plug 'plasticboy/vim-markdown'
 " Web editing
     " Plug 'glacambre/firenvim'
     Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
@@ -350,6 +351,14 @@ let g:python_highlight_string_format=1
 let g:python_highlight_string_templates=1
 let g:python_highlight_class_vars=1
 let g:python_highlight_file_headers_as_comments=1
+
+" ===== Plugin vim-markdown =====
+let g:vim_markdown_folding_disabled = 1 " disable auto folding
+set conceallevel=2 "conceal bold, italic, url, etc
+" let g:vim_markdown_fenced_languages=['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 
 " ===== Plugin vim-emoji =====
