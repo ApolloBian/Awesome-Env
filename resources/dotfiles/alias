@@ -42,6 +42,10 @@ alias tl='tmux ls'
 alias aswork='pwd > $HOME/.workdir'
 alias work='cd `cat $HOME/.workdir`'
 
+# git shortcuts
+alias gst='git st'
+alias ga='git add'
+
 alias vv="vim --version | \
     python -c \"
 #!/usr/bin/env python

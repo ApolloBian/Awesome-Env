@@ -33,9 +33,6 @@ else
     alias ls='ls --color=tty -F --group-directories-first'
 fi
 
-export PATH=$HOME/.pyenv/bin:$PATH
-eval "$(pyenv init - --no-rehash)"
-# eval "$(pyenv virtualenv-init -)"
 
 
 # --- end modifying PATH variables ------
