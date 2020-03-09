@@ -51,14 +51,13 @@ call plug#begin('~/.local/share/nvim/plugged')
             !python3 install.py --clang-completer
         endif
     endfunction
-    " Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'mileszs/ack.vim'
-    " Plug 'davidhalter/jedi-vim'
+    Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
+    Plug 'ncm2/float-preview.nvim'
+    Plug 'davidhalter/jedi-vim'
     " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     " Plug 'w0rp/ale'
     " Plug 'maximbaz/lightline-ale'
-    " Plug 'ervandew/supertab'
+    Plug 'ervandew/supertab'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'majutsushi/tagbar', {
@@ -67,10 +66,11 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'plytophogy/vim-virtualenv'
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
-    " Plug 'google/vim-maktaba'
-    " Plug 'google/vim-codefmt'
+    Plug 'google/vim-maktaba'
+    Plug 'google/vim-codefmt'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
+    Plug 'plasticboy/vim-markdown'
 " Web editing
     " Plug 'glacambre/firenvim'
     Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
@@ -107,7 +107,6 @@ set tabstop=4          " default to 2 spaces for a hard tab
 set softtabstop=4      " default to 2 spaces for the soft tab
 set shiftwidth=4       " for when <TAB> is pressed at the beginning of a line
 set hidden             " allow edited buffers to be hidden
-set pumheight=10       " completion menu height
 if !has('nvim')
     set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
 endif
@@ -216,8 +215,7 @@ let g:lightline.active ={
             \       ['filename']],
             \   'right':[
             \['percent'],
-            \['filetype'],
-            \['cocstatus']],
+            \['filetype']],
             \ }
 let g:lightline.component_function = {
             \   'hostname': 'hostname',
@@ -376,6 +374,14 @@ let g:python_highlight_string_templates=1
 let g:python_highlight_class_vars=1
 let g:python_highlight_file_headers_as_comments=1
 
+" ===== Plugin vim-markdown =====
+let g:vim_markdown_folding_disabled = 1 " disable auto folding
+set conceallevel=2 "conceal bold, italic, url, etc
+" let g:vim_markdown_fenced_languages=['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+
 
 " ===== Plugin vim-emoji =====
 " working with youcompleteme
@@ -494,7 +500,8 @@ let g:ale_set_quickfix = 1
 let g:ale_set_loclist = 0
 
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-n> <Plug>(ale_next_wrap)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
+nnoremap <leader>ff :ALEFix <CR>
 
 " general formatting script
 " This is complementary against ALEFix, in the future
@@ -503,7 +510,7 @@ let g:ale_set_loclist = 0
 " However, this does require reloading the file and lose 
 " where you were. So maybe consider using alefix to implement
 " this?
-" nnoremap <leader>fm :w <CR> :% !yapf % <CR>
+nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
 
 " ===== Plugin vim-easytags =====
@@ -560,106 +567,6 @@ let g:vimtex_mappings_enabled = 1
 " let g:vimtex_view_method='skim'
 " let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
-" ===== coc.nvim =====
-" more functions refer to: https://zhuanlan.zhihu.com/p/65524706
-" coc-pairs, coc-snippets, coc-yank, coc-git
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" more info about custom sources
-" https://github.com/neoclide/coc.nvim/wiki/Create-custom-source#options-for-completion
-" custom source script:
-" ./autoload/coc/source/dict_completion.vim
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" Better display for messages
-set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><expr> <c-l> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-n> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-nmap <silent> <C-n> <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use M to show documentation in preview window
-nnoremap <silent> M :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <leader>r <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>fm  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-nmap <leader>fm :call CocAction('format')<CR>
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-" command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-
 
 " ===== Plugin delimitMate =====
 let delimitMate_expand_cr = 1
@@ -671,6 +578,84 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" ===== Plugin jedi-vim
+" let g:jedi#usages_command = "<leader>gu"
+let g:jedi#rename_command = "<leader>r"
+" The following lines are used to disable all other functionalities of
+" jedi-vim
+" for more settings, refer: https://github.com/davidhalter/jedi-vim#settings
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = ""
+" let g:jedi#goto_assignments_command = "<leader>ga"
+" let g:jedi#goto_definitions_command = "<leader>gd"
+let g:jedi#documentation_command = ""
+let g:jedi#completions_command = ""
+let g:jedi#auto_initialization = 1
+let g:jedi#show_call_signatures_delay = 10
+let g:jedi#show_call_signatures = 0
+" call jedi#configure_call_signatures()
+function! ToggleSignature()
+    if g:jedi#show_call_signatures == 1
+        let g:jedi#show_call_signatures = 0
+    else
+        let g:jedi#show_call_signatures = 1
+    endif
+endfunction
+
+nnoremap <leader>tj :call ToggleSignature()<CR>
+
+" ===== Plugin Youcompleteme =====
+"  disable for mediawiki, latex and markdown
+let g:ycm_filetype_blacklist = {
+    \ 'jsx': 1,
+    \ 'xml': 1,
+    \ 'html': 1}
+set splitbelow
+
+
+let g:ycm_collect_identifiers_from_tags_files = 1
+autocmd FileType markdown set tags+=$HOME/.config/nvim/custom/tags/markdown.tags
+autocmd FileType tex set tags+=$HOME/.config/nvim/custom/tags/latex.tags
+
+let g:ycm_python_binary_path = "python"     " use env python as python bin
+" let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_autoclose_preview_window_after_insertion = 0
+set completeopt+=preview
+" Discussion ref: https://github.com/ycm-core/YouCompleteMe/issues/3458
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gu :YcmCompleter GoToReferences<CR>
+nnoremap M :YcmCompleter GetDoc<CR>
+" semantic triggers
+" ref:https://github.com/Valloric/YouCompleteMe/issues/2961
+
+let g:ycm_semantic_triggers =  {
+  \   'c': ['->', '.'],
+  \   'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+  \            're!\[.*\]\s'],
+  \   'ocaml': ['.', '#'],
+  \   'cpp,cuda,objcpp': ['->', '.', '::'],
+  \   'perl': ['->'],
+  \   'php': ['->', '::'],
+  \   'cs,d,elixir,go,groovy,java,javascript,julia,perl6,python,scala,typescript,vb': ['.'],
+  \   'ruby,rust': ['.', '::'],
+  \   'lua': ['.', ':'],
+  \   'erlang': [':'],
+  \ }
+
+let g:ycm_semantic_triggers['python'] = [
+    \ '.',
+    \ 're!(import\s+|from\s+([\w.]+\s+(import\s+([\w.]+,\s+)*)?)?)',
+    \ ', ',
+    \]
+    " \'re!import\s+',
+    " \'re!from\s+(\w+\s+import\s+)?',
+    " \'re!from\s+[\w.]+\s+import\s+(\w+,\s+)*',
+" let g:ycm_min_num_of_chars_for_completion = 15
+
+
+" let g:ycm_global_ycm_extra_conf = "~/.ycm_global_extra_conf.py"
+" autocmd VimLeave * silent !pkill -P $PPID
 
 " ================ vim-buftabline ========================
 nnoremap <c-l> :bnext<CR>
