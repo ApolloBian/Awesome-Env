@@ -224,6 +224,29 @@ let g:lightline.component_function = {
             \   'fileformat': 'MyFileformat',
             \   'filename': 'FilenameWithDetail',
             \}
+let g:lightline.mode_map = {
+            \   'n': '普通模式',
+            \   'i': '插入模式',
+            \   'R': '替换模式',
+            \   'v': '可视模式',
+            \   'V': '可 视 行',
+            \   "\<C-v>": '可 视 块',
+            \   'c': '命令模式',
+            \   't': '终端模式',
+            \ }
+" let g:lightline.mode_map = {
+"         \ 'n' : 'N',
+"         \ 'i' : 'I',
+"         \ 'R' : 'R',
+"         \ 'v' : 'V',
+"         \ 'V' : 'VL',
+"         \ "\<C-v>": 'VB',
+"         \ 'c' : 'C',
+"         \ 's' : 'S',
+"         \ 'S' : 'SL',
+"         \ "\<C-s>": 'SB',
+"         \ 't': 'T',
+"       \ }
 function! FilenameWithDetail()
   " TODO: winwidth?
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
@@ -337,7 +360,7 @@ map <leader>c :noh<cr>
 nnoremap <leader>q :wqa
 
 " Search highlight colors
-hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
+" hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " more colors for search, colors from vim-mark
 " hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#8CCBEA  " blue
 " hi Search ctermfg=0 ctermbg=10 guifg=Black guibg=#A4E57E  " green
@@ -691,4 +714,3 @@ autocmd filetype text set wrap
 
 " === tex files ===
 autocmd filetype tex set linebreak
-autocmd filetype tex set wrap
