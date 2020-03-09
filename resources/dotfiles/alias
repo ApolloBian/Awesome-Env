@@ -43,8 +43,11 @@ alias aswork='pwd > $HOME/.workdir'
 alias work='cd `cat $HOME/.workdir`'
 
 # git shortcuts
-alias gst='git st'
+alias g='git'
+alias gst='git status'
 alias ga='git add'
+alias adog='git log --all --decorate --graph'
+alias gdiff='git diff'
 
 alias vv="vim --version | \
     python -c \"
