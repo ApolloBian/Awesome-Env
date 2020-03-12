@@ -27,14 +27,12 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'arcticicestudio/nord-vim'
     Plug 'cocopon/pgmnt.vim'  " template engine for vim color scheme by cocopon
     Plug 'cocopon/inspecthi.vim'
-" QOL improvements
-    Plug 'vim-scripts/BufOnly.vim'
 " Status line
     Plug 'itchyny/lightline.vim'
 " Start screen
     Plug 'mhinz/vim-startify'
 " Git
-    Plug 'airblade/vim-gitgutter' " display line status on the left
+    " Plug 'airblade/vim-gitgutter' " display line status on the left
 " File browsing
     Plug 'junegunn/fzf', {'dir': '~/.fzf'}
     Plug 'junegunn/fzf.vim'
@@ -52,17 +50,14 @@ call plug#begin('~/.local/share/nvim/plugged')
         endif
     endfunction
     Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
-    Plug 'ncm2/float-preview.nvim'
     Plug 'davidhalter/jedi-vim'
     " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-    " Plug 'w0rp/ale'
+    Plug 'w0rp/ale'
     " Plug 'maximbaz/lightline-ale'
     Plug 'ervandew/supertab'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'majutsushi/tagbar', {
-        \'for': ['python']
-        \}
+    Plug 'majutsushi/tagbar'
     " Plug 'plytophogy/vim-virtualenv'
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
@@ -70,12 +65,11 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'google/vim-codefmt'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
-    Plug 'plasticboy/vim-markdown'
 " Web editing
     " Plug 'glacambre/firenvim'
     Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 " Chinese input
-    " Plug 'vim-scripts/VimIM'
+    Plug 'vim-scripts/VimIM'
 call plug#end()
 
 
@@ -198,65 +192,31 @@ autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
 set background=light
 colorscheme retro
-let g:lightline = {
-            \'colorscheme': {},
-            \'component': {},
-            \'active':{},
-            \'component_function':{}
-            \}
-let g:lightline.colorscheme = 'retro'
-let g:lightline.component = {
-            \   'cocstatus': "%{coc#status()}%{get(b:,'coc_current_function','')}",
-            \}
-let g:lightline.active ={
+let g:lightline = { 
+            \ 'colorscheme': 'retro',
+            \ 'component': {
+            \   'tagbar': '%{tagbar#currenttag("%s", "", "f")}',
+            \ },
+            \ 'active': {
             \   'left': [
             \       [ 'mode', 'paste' ],
             \       ['hostname'],
-            \       ['filename']],
-            \   'right':[
-            \['percent'],
-            \['filetype']],
-            \ }
-let g:lightline.component_function = {
+            \       ['filename'],]
+            \ },
+            \ 'component_function': {
             \   'hostname': 'hostname',
             \   'fileformat': 'MyFileformat',
             \   'filename': 'FilenameWithDetail',
-            \}
-let g:lightline.mode_map = {
-            \   'n': '普通模式',
-            \   'i': '插入模式',
-            \   'R': '替换模式',
-            \   'v': '可视模式',
-            \   'V': '可 视 行',
-            \   "\<C-v>": '可 视 块',
-            \   'c': '命令模式',
-            \   't': '终端模式',
             \ }
-" let g:lightline.mode_map = {
-"         \ 'n' : 'N',
-"         \ 'i' : 'I',
-"         \ 'R' : 'R',
-"         \ 'v' : 'V',
-"         \ 'V' : 'VL',
-"         \ "\<C-v>": 'VB',
-"         \ 'c' : 'C',
-"         \ 's' : 'S',
-"         \ 'S' : 'SL',
-"         \ "\<C-s>": 'SB',
-"         \ 't': 'T',
-"       \ }
+            \ }
 function! FilenameWithDetail()
   " TODO: winwidth?
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
   let modified = &modified ? '[+]' : ''
   let readonly = &readonly ? '[RO]': ''
-  if &ft == 'python'
-      let tagpos = tagbar#currenttag("%s", "", "f")
-      if tagpos != ""
-          let tagpos = '->' . tagpos
-      endif
-  else
-      let tagpos = ""
+  let tagpos = tagbar#currenttag("%s", "", "f")
+  if tagpos != ""
+      let tagpos = '->' . tagpos
   endif
 
   return readonly . modified . filename . tagpos
@@ -354,11 +314,8 @@ nnoremap <silent> # m`:keepjumps normal! #<cr>``
 " clear highlight
 map <leader>c :noh<cr>
 
-" quit shortcut
-nnoremap <leader>q :wqa
-
 " Search highlight colors
-" hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
+hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
 " more colors for search, colors from vim-mark
 " hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#8CCBEA  " blue
 " hi Search ctermfg=0 ctermbg=10 guifg=Black guibg=#A4E57E  " green
@@ -366,22 +323,6 @@ nnoremap <leader>q :wqa
 " hi Search ctermfg=0 ctermbg=9 guifg=Black guibg=#FF7272   " red
 " hi Search ctermfg=0 ctermbg=13 guifg=Black guibg=#FFB3FF  " pink
 " hi Search ctermfg=0 ctermbg=12 guifg=Black guibg=#9999FF  " purple
-
-" ===== Plugin python-syntax
-let g:python_highlight_string_formatting=1
-let g:python_highlight_string_format=1
-let g:python_highlight_string_templates=1
-let g:python_highlight_class_vars=1
-let g:python_highlight_file_headers_as_comments=1
-
-" ===== Plugin vim-markdown =====
-let g:vim_markdown_folding_disabled = 1 " disable auto folding
-set conceallevel=2 "conceal bold, italic, url, etc
-" let g:vim_markdown_fenced_languages=['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
-
 
 " ===== Plugin vim-emoji =====
 " working with youcompleteme
@@ -393,9 +334,6 @@ let g:vim_markdown_new_list_item_indent = 0
 " ===== Plugin vim-virtualenv =====
 " let g:virtualenv_directory = '$HOME/.pyenv/versions/'
 " set statusline+=%{virtualenv#statusline()}
-
-" ===== Plugin vim-startify =====
-let g:startify_change_to_vcs_root=1
 
 " ===== Plugin CtrlP =====
 let g:ctrlp_custom_ignore = {
@@ -586,7 +524,7 @@ let g:jedi#rename_command = "<leader>r"
 " for more settings, refer: https://github.com/davidhalter/jedi-vim#settings
 let g:jedi#completions_enabled = 0
 let g:jedi#goto_command = ""
-" let g:jedi#goto_assignments_command = "<leader>ga"
+let g:jedi#goto_assignments_command = "<leader>ga"
 " let g:jedi#goto_definitions_command = "<leader>gd"
 let g:jedi#documentation_command = ""
 let g:jedi#completions_command = ""
@@ -620,15 +558,12 @@ autocmd FileType tex set tags+=$HOME/.config/nvim/custom/tags/latex.tags
 let g:ycm_python_binary_path = "python"     " use env python as python bin
 " let g:ycm_add_preview_to_completeopt = 0
 " let g:ycm_autoclose_preview_window_after_insertion = 0
-set completeopt+=preview
+set completeopt-=preview
 " Discussion ref: https://github.com/ycm-core/YouCompleteMe/issues/3458
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToType<CR>
-nnoremap gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gu :YcmCompleter GoToReferences<CR>
 nnoremap M :YcmCompleter GetDoc<CR>
-let g:ycm_key_invoke_completion = '<C-n>'
-
 " semantic triggers
 " ref:https://github.com/Valloric/YouCompleteMe/issues/2961
 
@@ -702,3 +637,4 @@ autocmd filetype text set wrap
 
 " === tex files ===
 autocmd filetype tex set linebreak
+autocmd filetype tex set wrap
