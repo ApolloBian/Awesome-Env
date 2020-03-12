@@ -17,6 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Eye candy
     Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/vim-emoji'
+    Plug 'terryma/vim-smooth-scroll'
 " Color Scheme
     Plug 'nanotech/jellybeans.vim'
     Plug 'cocopon/iceberg.vim'
@@ -52,7 +53,7 @@ call plug#begin('~/.local/share/nvim/plugged')
         endif
     endfunction
     Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
-    Plug 'ncm2/float-preview.nvim'
+    " Plug 'ncm2/float-preview.nvim'
     Plug 'davidhalter/jedi-vim'
     " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     " Plug 'w0rp/ale'
@@ -68,6 +69,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'Vimjas/vim-python-pep8-indent'
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
+    Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
     Plug 'plasticboy/vim-markdown'
@@ -161,6 +163,10 @@ nnoremap <silent> <expr> k ScreenMovement("k")
 " nnoremap <silent> <expr> 0 ScreenMovement("0")
 " nnoremap <silent> <expr> ^ ScreenMovement("^")
 " nnoremap <silent> <expr> $ ScreenMovement("$")
+
+" smooth movement for half PageUp PageDown
+noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.5), 3, 1)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 0.5), 3, 1)<CR>
 
 " set splitright          " Vertical splits use right half of screen
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
