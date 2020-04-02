@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/vim-emoji'
     Plug 'terryma/vim-smooth-scroll'
+    Plug 'ap/vim-css-color'
 " Color Scheme
     Plug 'nanotech/jellybeans.vim'
     Plug 'cocopon/iceberg.vim'
