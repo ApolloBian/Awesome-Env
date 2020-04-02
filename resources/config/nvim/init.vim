@@ -165,9 +165,12 @@ nnoremap <silent> <expr> k ScreenMovement("k")
 " nnoremap <silent> <expr> ^ ScreenMovement("^")
 " nnoremap <silent> <expr> $ ScreenMovement("$")
 
+nnoremap <leader>x :bd<CR>
+
+
 " smooth movement for half PageUp PageDown
-noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.5), 3, 1)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 0.5), 3, 1)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.9), 16, 1)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 1.0), 16, 1)<CR>
 
 " set splitright          " Vertical splits use right half of screen
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
@@ -519,6 +522,7 @@ nnoremap <leader>ff :ALEFix <CR>
 " this?
 nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
+nnoremap <leader>py :w \| !python % <CR>
 
 " ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
