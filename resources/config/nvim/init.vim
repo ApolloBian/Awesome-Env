@@ -547,7 +547,7 @@ nnoremap <leader>ff :ALEFix <CR>
 " this?
 nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
-nnoremap <leader>py :w \| !python % <CR>
+nnoremap <c-m> :w \| !python % <CR>
 
 " ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
