@@ -74,6 +74,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
     Plug 'plasticboy/vim-markdown'
+" Writing
+    Plug 'chmp/mdnav'
 " Web editing
     " Plug 'glacambre/firenvim'
     Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
@@ -113,18 +115,33 @@ set hidden             " allow edited buffers to be hidden
 if !has('nvim')
     set clipboard=exclude:.*    " prevent vim from connecting to x11 on remote connection
 endif
-let g:clipboard = {
-      \   'name': 'myClipboard',
-      \   'copy': {
-      \      '+': 'xclip -i -selection clipboard',
-      \      '*': 'xclip -i -selection primary',
-      \    },
-      \   'paste': {
-      \      '+': 'xclip -o -selection clipboard',
-      \      '*': 'xclip -o -selection primary',
-      \   },
-      \   'cache_enabled': 1,
-      \ }
+if has('mac')
+    let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': 'pbcopy',
+          \      '*': 'pbcopy',
+          \    },
+          \   'paste': {
+          \      '+': 'pbpaste',
+          \      '*': 'pbpaste',
+          \   },
+          \   'cache_enabled': 1,
+          \ }
+else
+    let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': 'xclip -i -selection clipboard',
+          \      '*': 'xclip -i -selection primary',
+          \    },
+          \   'paste': {
+          \      '+': 'xclip -o -selection clipboard',
+          \      '*': 'xclip -o -selection primary',
+          \   },
+          \   'cache_enabled': 1,
+          \ }
+endif
 " workarounds for background disappears when scrolling
 let &t_ut=''
 " zsh style command completion
@@ -167,6 +184,9 @@ nnoremap <silent> <expr> k ScreenMovement("k")
 
 nnoremap <leader>x :bd<CR>
 
+" shortcut for starting wiki
+nnoremap <leader>ww :e $HOME/vimwiki/index.md<CR>
+
 
 " smooth movement for half PageUp PageDown
 noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.9), 16, 1)<CR>
@@ -176,6 +196,8 @@ noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 1.0), 16, 1)<
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
 set cursorline
 
+" disable auto inserting comment for new lines, which is buggy
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " ===== Make Vim look good =====
 " more about true colors ':help xterm-true-color'
@@ -387,11 +409,14 @@ let g:python_highlight_file_headers_as_comments=1
 " ===== Plugin vim-markdown =====
 let g:vim_markdown_folding_disabled = 1 " disable auto folding
 set conceallevel=2 "conceal bold, italic, url, etc
+" set concealcursor=n "also conceal cursorline in normal mode
 " let g:vim_markdown_fenced_languages=['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
+" ===== Plugin mdnav =====
+let g:mdnav#Extensions='.md, .MD, .txt, .tex, .py' "All other extensions will not be opened in vim
 
 " ===== Plugin vim-emoji =====
 " working with youcompleteme
@@ -708,8 +733,6 @@ nnoremap <leader>hi :let @/=
 autocmd FileType python set nowrap
 
 " === txt files ===
-autocmd filetype text set linebreak          " wrap lines on 'word' boundaries
-autocmd filetype text set wrap
-
-" === tex files ===
-autocmd filetype tex set linebreak
+" autocmd filetype text set linebreak          " wrap lines on 'word' boundaries
+autocmd filetype text,tex,markdown set linebreak
+autocmd filetype text,tex,markdown set wrap          " wrap lines on 'word' boundaries
