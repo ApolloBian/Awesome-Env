@@ -415,6 +415,11 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
+" ===== Plugin auto-pairs =====
+"same behavior for ^H and <BS>
+imap <c-h> <BS>
+let g:AutoPairsFlyMode=1
+
 " ===== Plugin mdnav =====
 let g:mdnav#Extensions='.md, .MD, .txt, .tex, .py' "All other extensions will not be opened in vim
 
@@ -547,7 +552,8 @@ nnoremap <leader>ff :ALEFix <CR>
 " this?
 nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
-nnoremap <c-m> :w \| !python % <CR>
+" nnoremap <leader>e :w \| !python % <CR>
+autocmd FileType python nnoremap <c-e> :w \| !python % <CR>
 
 " ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
@@ -656,7 +662,7 @@ autocmd FileType tex set tags+=$HOME/.config/nvim/custom/tags/latex.tags
 let g:ycm_python_binary_path = "python"     " use env python as python bin
 " let g:ycm_add_preview_to_completeopt = 0
 " let g:ycm_autoclose_preview_window_after_insertion = 0
-set completeopt+=preview
+set completeopt-=preview
 " Discussion ref: https://github.com/ycm-core/YouCompleteMe/issues/3458
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToType<CR>
