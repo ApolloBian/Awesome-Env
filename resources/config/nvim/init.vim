@@ -185,7 +185,7 @@ nnoremap <silent> <expr> k ScreenMovement("k")
 nnoremap <leader>x :bd<CR>
 
 " shortcut for starting wiki
-nnoremap <leader>ww :e $HOME/vimwiki/index.md<CR>
+nnoremap <leader>ww :e $HOME/vimwiki/index.md \| cd %:h <CR>
 
 
 " smooth movement for half PageUp PageDown
@@ -736,3 +736,4 @@ autocmd FileType python set nowrap
 " autocmd filetype text set linebreak          " wrap lines on 'word' boundaries
 autocmd filetype text,tex,markdown set linebreak
 autocmd filetype text,tex,markdown set wrap          " wrap lines on 'word' boundaries
+autocmd filetype text,tex,markdown set shiftwidth=2
