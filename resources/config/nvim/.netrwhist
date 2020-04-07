@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/data/tianling/developer/vot-lt2018-ytbbfmt/frames/ballet:111:142:occ'
-let g:netrw_dirhist_3='/data/tianling/developer/vot-lt2018-ytbbfmt/frames'
-let g:netrw_dirhist_2='/home/tianling/.config/labelme'
-let g:netrw_dirhist_1='/data/tianling/developer/pysot/pysot/models/neck'
