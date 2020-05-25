@@ -31,6 +31,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'cocopon/inspecthi.vim'
 " QOL improvements
     Plug 'vim-scripts/BufOnly.vim'
+    Plug 'kshenoy/vim-signature'
+    Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Status line
     Plug 'itchyny/lightline.vim'
 " Start screen
@@ -68,8 +70,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'plytophogy/vim-virtualenv'
     Plug 'tpope/vim-commentary'
     Plug 'Vimjas/vim-python-pep8-indent'
-    Plug 'google/vim-maktaba'
-    Plug 'google/vim-codefmt'
+    " Plug 'google/vim-maktaba'
+    " Plug 'google/vim-codefmt'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-dispatch'
     Plug 'vim-python/python-syntax'
@@ -189,8 +191,8 @@ nnoremap <leader>ww :e $HOME/vimwiki/index.md \| cd %:h <CR>
 
 
 " smooth movement for half PageUp PageDown
-noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.9), 16, 1)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 1.0), 16, 1)<CR>
+" noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.9), 16, 1)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 1.0), 16, 1)<CR>
 
 " set splitright          " Vertical splits use right half of screen
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
@@ -237,9 +239,9 @@ let g:lightline = {
             \'component_function':{}
             \}
 let g:lightline.colorscheme = 'retro'
-let g:lightline.component = {
-            \   'cocstatus': "%{coc#status()}%{get(b:,'coc_current_function','')}",
-            \}
+" let g:lightline.component = {
+"             \   'cocstatus': "%{coc#status()}%{get(b:,'coc_current_function','')}",
+"             \}
 let g:lightline.active ={
             \   'left': [
             \       [ 'mode', 'paste' ],
@@ -387,7 +389,7 @@ nnoremap <silent> # m`:keepjumps normal! #<cr>``
 map <leader>c :noh<cr>
 
 " quit shortcut
-nnoremap <leader>q :wqa
+nnoremap <leader>q :wqa<CR>
 
 " Search highlight colors
 " hi Search ctermfg=0 ctermbg=11 guifg=Black guibg=#FFDB72
@@ -414,6 +416,7 @@ set conceallevel=2 "conceal bold, italic, url, etc
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_strikethrough=1
 
 " ===== Plugin auto-pairs =====
 "same behavior for ^H and <BS>
