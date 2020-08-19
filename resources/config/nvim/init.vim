@@ -57,7 +57,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     endfunction
     Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
     " Plug 'ncm2/float-preview.nvim'
-    Plug 'davidhalter/jedi-vim'
+    " Plug 'davidhalter/jedi-vim'
     " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     " Plug 'w0rp/ale'
     " Plug 'maximbaz/lightline-ale'
@@ -80,7 +80,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'chmp/mdnav'
 " Web editing
     " Plug 'glacambre/firenvim'
-    Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+    " Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 " Chinese input
     " Plug 'vim-scripts/VimIM'
 call plug#end()
@@ -225,7 +225,6 @@ let &t_EI = "\<Esc>[2 q"
 
 
 " file templates for py, bash, etc
-autocmd BufNewFile main.py 0r ~/.vim/templates/python_main.py
 autocmd BufNewFile *.py 0r ~/.vim/templates/python.py
 autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
@@ -556,7 +555,9 @@ nnoremap <leader>ff :ALEFix <CR>
 nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
 " nnoremap <leader>e :w \| !python % <CR>
-autocmd FileType python nnoremap <c-e> :w \| !python % <CR>
+" autocmd FileType python nnoremap <c-e> :w \| !python3 % <CR>
+autocmd FileType python nnoremap <c-e> :w \| !cat testdata.txt 2>/dev/null \| python3 % <CR>
+autocmd FileType sh nnoremap <c-e> :w \| !bash % <CR>
 
 " ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
@@ -598,7 +599,8 @@ let g:UltiSnipsExpandTrigger = "<c-e>"
 let g:UltiSnipsJumpForwardTrigger = "<c-l>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-h>"
 
-let g:UltiSnipsSnippetsDir = $HOME."/.vim/customsnippets/"
+" deprecated?
+" let g:UltiSnipsSnippetsDir = $HOME."/.vim/customsnippets/"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "customsnippets"]
 
 
@@ -694,6 +696,7 @@ let g:ycm_semantic_triggers =  {
 let g:ycm_semantic_triggers['python'] = [
     \ '.',
     \ 're!(import\s+|from\s+([\w.]+\s+(import\s+([\w.]+,\s+)*)?)?)',
+    \ 're!(\w{2,})',
     \ ', ',
     \]
     " \'re!import\s+',
