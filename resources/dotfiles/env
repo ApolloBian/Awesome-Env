@@ -27,8 +27,8 @@ if [[ `uname` == 'Darwin' ]]; then
 else
     # Linux
     export PATH=$HOME/.local/bin:$PATH
-    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    # export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+    # export PATH="$HOME/.linuxbrew/bin:$PATH"
     export PYTHON_CONFIGURE_OPTS="--enable-shared"
     alias ls='ls --color=tty -F --group-directories-first'
 fi
