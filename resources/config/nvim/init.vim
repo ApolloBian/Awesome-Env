@@ -587,6 +587,8 @@ set updatetime=50
 
 " ===== Plugin vim-gitgutter =====
 let g:airline#extensions#hunks#non_zero_only = 1
+command GGU GitGutterUndoHunk
+command GGN GitGutterNextHunk
 
 " ===== Plugin vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
