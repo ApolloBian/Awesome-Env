@@ -255,16 +255,34 @@ let g:lightline.component_function = {
             \   'fileformat': 'MyFileformat',
             \   'filename': 'FilenameWithDetail',
             \}
-let g:lightline.mode_map = {
-            \   'n': '普通模式',
-            \   'i': '插入模式',
-            \   'R': '替换模式',
-            \   'v': '可视模式',
-            \   'V': '可 视 行',
-            \   "\<C-v>": '可 视 块',
-            \   'c': '命令模式',
-            \   't': '终端模式',
-            \ }
+
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+
+let s:lightline_mode_chinese = 0
+function! ToggleLightlineChinese()
+    let s:lightline_mode_chinese = 1 - s:lightline_mode_chinese
+    if s:lightline_mode_chinese == 0
+        let g:lightline.mode_map = {}
+        call LightlineReload()
+    else
+        let g:lightline.mode_map = {
+                    \   'n': '普通模式',
+                    \   'i': '插入模式',
+                    \   'R': '替换模式',
+                    \   'v': '可视模式',
+                    \   'V': '可 视 行',
+                    \   "\<C-v>": '可 视 块',
+                    \   'c': '命令模式',
+                    \   't': '终端模式',
+                    \ }
+        call LightlineReload()
+    endif
+endfunction
+call ToggleLightlineChinese()
 " let g:lightline.mode_map = {
 "         \ 'n' : 'N',
 "         \ 'i' : 'I',
@@ -309,12 +327,6 @@ function! MyFileformat()
       let ff_icon = ' '
   endif
   return winwidth(0) > 70 ? (&fileformat . ff_icon):''
-endfunction
-
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
 endfunction
 
 function! SetALESignColor()
