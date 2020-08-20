@@ -52,7 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
         " - force:  set on PlugInstall! or PlugUpdate!
         if a:info.status == 'installed' || a:info.force
             " python3 works way better than python2
-            !python3 install.py --clang-completer
+            !python3 install.py
         endif
     endfunction
     Plug 'Valloric/Youcompleteme', {'do': function('BuildYCM')}
