@@ -10,6 +10,3 @@
 [submodule "resources/neofetch"]
 	path = resources/neofetch
 	url = https://github.com/dylanaraps/neofetch
-[submodule "resources/macvim"]
-	path = resources/macvim
-	url = https://github.com/macvim-dev/macvim.git
