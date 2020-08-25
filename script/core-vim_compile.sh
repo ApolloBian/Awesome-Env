@@ -17,7 +17,6 @@ fi
 echo $num_proc
 echo $prefix
 
-
 cd resources/vim
 make uninstall
 make distclean
@@ -25,8 +24,8 @@ make clean
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
-    --enable-python3interp=dynamic \
-    --enable-pythoninterp=dynamic \
+    --enable-python3interp=yes \
+    --with-python3-config-dir=$(python3-config --configdir) \
     --enable-perlinterp=yes \
     --enable-luainterp=yes \
     --enable-cscope \
