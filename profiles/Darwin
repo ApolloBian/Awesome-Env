@@ -21,7 +21,7 @@
     - [x] core-pip_package
 - Vim Binary
     - [x] core-vim_compile
-    - [x] darwin-macvim_compile
+    - [ ] darwin-macvim_compile
     - [x] core-vim_plugins
     - [x] core-vim_extraconfig
 - Tmux
