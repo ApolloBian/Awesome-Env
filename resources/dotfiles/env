@@ -2,6 +2,7 @@ export EDITOR=vim
 export TERM=xterm-256color
 export PATH="/usr/local/sbin:$PATH"
 
+export PATH="$HOME/.fzf/bin/:$PATH" # fzf binary directory
 
 # ls colors
 if [[ `uname` == 'Darwin' ]]; then
