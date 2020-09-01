@@ -15,7 +15,8 @@ fi
 if [[ `uname` == 'Darwin' ]]; then
     # MacOS
     export PATH="$HOME/Applications/bin:$PATH"
-    export PYTHON_CONFIGURE_OPTS="--enable-framework"
+    # --enable-framework option breaks anaconda installation
+    # export PYTHON_CONFIGURE_OPTS="--enable-framework"
     # gnu coreutils
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
