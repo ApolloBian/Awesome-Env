@@ -42,7 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Git
     Plug 'airblade/vim-gitgutter' " display line status on the left
 " File browsing
-    Plug 'junegunn/fzf', {'dir': '~/.fzf'}
+    Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': {-> fzf#install()}}
     Plug 'junegunn/fzf.vim'
     " Plug 'ctrlpvim/ctrlp.vim'
     Plug 'ap/vim-buftabline'
@@ -267,8 +267,18 @@ if g:completion_backend == 'coc'
     call add(g:lightline.active.right, ['cocstatus'])
 endif
 
+if !(has('win32') || has('win64'))
+    let var = system('hostname -s')
+    let g:lightline_hostname = trim(var)
+else
+    let g:lightline_hostname = hostname()
+endif
+function! HostnameWrapper()
+    return g:lightline_hostname
+endfunction
+
 let g:lightline.component_function = {
-            \   'hostname': 'hostname',
+            \   'hostname': 'HostnameWrapper',
             \   'fileformat': 'MyFileformat',
             \   'filename': 'FilenameWithDetail',
             \}
@@ -585,8 +595,22 @@ nnoremap <leader>fm :w <CR> :% !yapf % <CR>
 
 " nnoremap <leader>e :w \| !python % <CR>
 " autocmd FileType python nnoremap <c-e> :w \| !python3 % <CR>
-autocmd FileType python nnoremap <c-e> :w \| !cat testdata.txt 2>/dev/null \| python3 % <CR>
-autocmd FileType sh nnoremap <c-e> :w \| !bash % <CR>
+" autocmd FileType python nnoremap <c-e> :w \| !cat testdata.txt 2>/dev/null \| python3 % <CR>
+" autocmd FileType sh nnoremap <c-e> :w \| !bash % <CR>
+function! SmartTest()
+    if file_readable('vim_test.sh')
+        !bash vim_test.sh
+    else
+        if &ft == 'python'
+            !python %
+        elseif &ft=='bash' || &ft == 'shell' || &ft == 'sh'
+            !bash %
+        endif
+    endif
+endfunction
+nnoremap <c-e> :w \| call SmartTest() <CR>
+
+
 
 " ===== Plugin vim-easytags =====
 " set tags=./tags " ;,~/.vimtags
@@ -781,7 +805,7 @@ set hidden
 set nobackup
 set nowritebackup
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
