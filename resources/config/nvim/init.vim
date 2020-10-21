@@ -608,7 +608,8 @@ function! SmartTest()
         endif
     endif
 endfunction
-nnoremap <c-e> :w \| call SmartTest() <CR>
+" nnoremap <c-e> :w \| call SmartTest() <CR>
+nnoremap <silent> <c-e> :silent w <bar> execute("!bash " . expand(stdpath('config') . '/custom/scripts/split_and_dispatch.sh') . ' ' . @%) <CR>
 
 
 
@@ -889,13 +890,13 @@ command! -nargs=0 Format :call CocAction('format')
 nmap <leader>fm <Plug>(coc-format)
 xmap <leader>fm <Plug>(coc-format-selected)
 
-" augroup mygroup
-"   autocmd!
-"   " Setup formatexpr specified filetype(s).
-"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-"   " Update signature help on jump placeholder.
-"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-" augroup end
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
