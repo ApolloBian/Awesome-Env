@@ -8,7 +8,7 @@
     "languageserver": {
         "python": {
             "command": "~/.pyenv/versions/pyls/bin/pyls",
-            "args": ["-vv"],
+            "args": ["-vv", "--log-file", "/tmp/lsp_python.log"],
             "trace.server": "verbose",
             "filetypes": [ "python" ],
             "settings": {
@@ -18,7 +18,10 @@
                     "commandPath": "",
                     "configurationSources": [ "pycodestyle" ],
                     "plugins": {
-                        "jedi_completion": { "enabled": true },
+                        "jedi_completion": {
+                            "fuzzy": true,
+                            "enabled": true
+                        },
                         "jedi_hover": { "enabled": true },
                         "jedi_references": { "enabled": true },
                         "jedi_signature_help": { "enabled": true },
@@ -32,7 +35,7 @@
                             "matchDir": "[^\\.].*"
                         },
                         "pyflakes": { "enabled": false },
-                        "rope_completion": { "enabled": false },
+                        "rope_completion": { "enabled": true },
                         "pyls-mypy": {"enabled": false, "live_mode": false},
                         "yapf": { "enabled": true }
                     }
@@ -41,8 +44,9 @@
         }
     },
     "python.formatting.provider": "yapf",
-    "python.jediEnabled": true,
+    "python.jediEnabled": false,
     "python.linting.enabled": false,
+    "python.analysis.diagnosticEnabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintArgs": ["--disable", "C,R,W"],
     "python.linting.flake8Enabled": false,
