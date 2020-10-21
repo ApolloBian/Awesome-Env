@@ -1,8 +1,2 @@
 # this file is sourced before zshrc
 export SOURCED=true
-
-# use pyenv python
-export PATH=$HOME/.pyenv/bin:$PATH
-export PYENV_ROOT=$HOME/.pyenv
-eval "$(pyenv init - --no-rehash)"
-eval "$(pyenv virtualenv-init -)"
