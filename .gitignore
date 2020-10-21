@@ -5,3 +5,6 @@ app/
 resources/git/
 .*.swp
 .DS_Store
+
+# nvim
+resources/config/nvim/.netrwhist
