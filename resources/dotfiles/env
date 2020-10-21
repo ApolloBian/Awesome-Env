@@ -1,8 +1,16 @@
-export EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export TERM=xterm-256color
 export PATH="/usr/local/sbin:$PATH"
 
-export PATH="$HOME/.fzf/bin/:$PATH" # fzf binary directory
+# ===== fzf =======
+export PATH="$HOME/.fzf/bin/:$PATH"
+
+# ===== pyenv =====
+export PATH=$HOME/.pyenv/bin:$PATH
+export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init - --no-rehash)"
+eval "$(pyenv virtualenv-init -)"
 
 # ls colors
 if [[ `uname` == 'Darwin' ]]; then
