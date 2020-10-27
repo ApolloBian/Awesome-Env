@@ -1,9 +1,11 @@
 " ===== Setup python
 let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
 if has('mac')
   let g:python3_host_prog = '/usr/local/bin/python3'
+  let g:python_host_prog = '/usr/local/bin/python'
+  let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 endif
-let g:python_host_prog = '/usr/bin/python2'
 " ===== NeoVim Specific tweak
 "https://vi.stackexchange.com/questions/11221/is-there-an-incsearch-for-the-replace-command
 set inccommand=nosplit      " highlight match during replace:
@@ -24,6 +26,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'junegunn/vim-emoji'
     Plug 'terryma/vim-smooth-scroll'
     Plug 'ap/vim-css-color'
+    Plug 'severin-lemaignan/vim-minimap'
 " Color Scheme
     Plug 'nanotech/jellybeans.vim'
     Plug 'cocopon/iceberg.vim'
@@ -802,6 +805,10 @@ autocmd FileType c,cpp,h,hpp,python nmap M :YcmGetDocFloatWin<cr>
 
 else
 " ============== coc.nvim ================
+if has('mac')
+    let g:coc_node_path = '/usr/local/bin/node'
+endif
+
 " set completeopt-=preview
 " TextEdit might fail if hidden is not set.
 set hidden
