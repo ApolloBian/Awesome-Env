@@ -1,5 +1,8 @@
 " ===== Setup python
 let g:python3_host_prog = '/usr/bin/python3'
+if has('mac')
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
 let g:python_host_prog = '/usr/bin/python2'
 " ===== NeoVim Specific tweak
 "https://vi.stackexchange.com/questions/11221/is-there-an-incsearch-for-the-replace-command
