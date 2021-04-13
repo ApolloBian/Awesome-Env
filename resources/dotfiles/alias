@@ -47,6 +47,7 @@ alias work='cd `cat $HOME/.workdir`'
 alias g='git'
 alias gst='git status -uno -s'
 alias ga='git add'
+alias gai='git add -i'
 alias adog='git log --all --decorate --graph'
 alias gdiff='git diff'
 
