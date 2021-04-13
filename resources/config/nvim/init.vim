@@ -53,6 +53,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Plug 'ctrlpvim/ctrlp.vim'
     Plug 'ap/vim-buftabline'
 " Programming
+    Plug 'voldikss/vim-floaterm'
+    " Plug 'MattesGroeger/vim-bookmarks'
     function! BuildYCM(info)
         " info is a dictionary with 3 fields
         " - name:   name of the plugin
@@ -260,7 +262,7 @@ let g:lightline.colorscheme = 'retro'
 let g:lightline.active ={
             \   'left': [
             \       [ 'mode', 'paste' ],
-            \       ['hostname'],
+            \       [],
             \       ['filename']],
             \   'right':[
             \['percent'],
@@ -1006,3 +1008,6 @@ autocmd FileType python set nowrap
 autocmd filetype text,tex,markdown set linebreak
 autocmd filetype text,tex,markdown set wrap          " wrap lines on 'word' boundaries
 autocmd filetype text,tex,markdown set shiftwidth=2
+
+" ==== vim-floaterm
+command IPython :FloatermNew --width=0.7 --height=0.6 --autoclose=2 ipython

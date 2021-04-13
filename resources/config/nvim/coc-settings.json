@@ -10,7 +10,7 @@
             "command": "~/.pyenv/versions/pyls/bin/pyls",
             "args": ["-vv", "--log-file", "/tmp/lsp_python.log"],
             "trace.server": "verbose",
-            "filetypes": [ "python" ],
+            "filetypes": ["python"],
             "settings": {
                 "pyls": {
                     "enable": true,
@@ -44,9 +44,8 @@
         }
     },
     "python.formatting.provider": "yapf",
-    "python.jediEnabled": false,
+    "python.runLinting": false,
     "python.linting.enabled": false,
-    "python.analysis.diagnosticEnabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintArgs": ["--disable", "C,R,W"],
     "python.linting.flake8Enabled": false,
