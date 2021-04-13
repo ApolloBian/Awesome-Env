@@ -4,7 +4,7 @@
     - [x] darwin-brew_package
 - ZSH
     - [x] core-chsh_zsh
-    - [x] core-xterm_terminfo
+    - [ ] core-xterm_terminfo
 - Python version
     - [x] core-pyenv
     - [x] core-python
@@ -14,20 +14,21 @@
     - [x] darwin-launchd-setenv     # set global environments in launchd, thus we can set env variables before term launches
 # Develop environment: Avoid using sudo
 - Pip
-    - [x] core-pip
+    - [ ] core-pip
     - Pypi mirror 
         - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
-        - [x] core-sjtu-pypi
-    - [x] core-pip_package
+        - [ ] core-sjtu-pypi
+        - [x] core-aliyun-pypi
+    - [ ] core-pip_package
 - Vim Binary
-    - [x] core-vim_compile
+    - [ ] core-vim_compile
     - [ ] darwin-macvim_compile
+    - [x] core-nvim
     - [x] core-vim_plugins
-    - [x] core-vim_extraconfig
 - Tmux
     - [ ] core-tpm
 - Git difftool & mergetool
-    - [x] darwin-p4merge # TODO:seems p4merge bin works fine on ARCH, test it on mac, get rid of this script
+    - [ ] darwin-p4merge # TODO:seems p4merge bin works fine on ARCH, test it on mac, get rid of this script
 - Kitty.app
     - [x] core-kitty
 
@@ -38,7 +39,3 @@
 # SSH keys
 - SSH
     - [ ] ssh-update-private-keys
-
-# dotfile settings
-- General Dotfiles
-    - [ ] core_dotfiles # vimrc, etc. Link

@@ -17,9 +17,7 @@ source resources/dotfiles/env
 
 which pyenv
 if [[ $? == 0 ]]; then
-    pyenv install 2.7.15
-    pyenv install 3.5.6
-    pyenv install 3.7.1
+    pyenv install anaconda3-5.3.1
 else
     echo 'pyenv not installed (properly?)'
     exit 1
