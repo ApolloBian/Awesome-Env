@@ -5,13 +5,14 @@ if [[ `uname` == 'Darwin' ]]; then
 else
     pipdir=$HOME/.config/pip
 fi
-mkdir -p $pipdir
+mkdir -p "$pipdir"
+
 pipconfig=$pipdir/pip.conf
 
-echo "
+cat > "$pipconfig" <<  "EOF"
 [global]
 index-url = https://mirrors.aliyun.com/pypi/simple/
 
 [install]
 trusted-host=mirrors.aliyun.com
-" > $pipconfig
+EOF
