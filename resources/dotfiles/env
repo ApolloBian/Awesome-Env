@@ -32,8 +32,6 @@ if [[ `uname` == 'Darwin' ]]; then
     if [[ -e $gnuls_dir ]]; then
         alias ls='ls --color=tty -F --group-directories-first'
     fi
-    # sjtug mirror for homebrew.bintray.com
-    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 else
     # Linux
     export PATH=$HOME/.local/bin:$PATH
