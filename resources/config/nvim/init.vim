@@ -246,8 +246,8 @@ let &t_EI = "\<Esc>[2 q"
 
 
 " file templates for py, bash, etc
-autocmd BufNewFile *.py 0r ~/.vim/templates/python.py
-autocmd BufNewFile *.sh 0r ~/.vim/templates/bash.sh
+autocmd BufNewFile *.py 0r ~/.config/nvim/templates/python.py
+autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/bash.sh
 
 
 set background=light
