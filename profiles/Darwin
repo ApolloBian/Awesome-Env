@@ -1,7 +1,6 @@
 # Basic System package installation:
-- Homebrew
-    - [x] darwin-brew
-    - [x] darwin-brew_package
+- Packages
+    - [x] core-packages
 - ZSH
     - [x] core-chsh_zsh
     - [ ] core-xterm_terminfo

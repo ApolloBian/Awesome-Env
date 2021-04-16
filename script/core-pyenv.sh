@@ -10,5 +10,5 @@ bash resources/pyenv_replace_mirror.sh
 if [[ `uname` == 'Darwin' ]]; then
     brew install miniconda
 else
-    # linux is not supported now
+    echo linux is not supported now
 fi

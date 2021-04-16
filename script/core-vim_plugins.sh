@@ -7,6 +7,7 @@ rm -rf "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/plugged
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+export PATH=$HOME/.local/bin:$PATH
 nvim +PlugInstall 8
 # if [[ `uname` == 'Darwin' ]]; then
 #     cp $HOME/.vim/bundle/fcitx.vim/so/fcitx.vim $HOME/.vim/bundle/fcitx.vim/plugin/

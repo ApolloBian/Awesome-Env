@@ -1,4 +1,6 @@
 # Basic System package installation:
+- Packages
+    - [x] core-packages
 - ZSH
     - [x] core-zsh # install & chsh
     - [x] core-chsh_zsh
@@ -16,11 +18,13 @@
     - [x] core-pip
     - Pypi mirror 
         - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
-        - [x] core-sjtu-pypi
+        - [ ] core-sjtu-pypi
+ 	- [x] core-aliyun-pypi
 - Vim Binary
     - [ ] core-vim_compile # not selected: system vim is good enough
+    - [ ] core-vim_extraconfig
+    - [x] core-nvim
     - [x] core-vim_plugins
-    - [x] core-vim_extraconfig
 - Tmux
     - [ ] core-tpm
 - Git difftool & mergetool
