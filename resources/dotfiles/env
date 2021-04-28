@@ -42,6 +42,9 @@ else
 fi
 
 
+# gnu tar & gnu sed
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # --- end modifying PATH variables ------
 

@@ -6,7 +6,7 @@ brew install the_silver_searcher
 # brew install screenresolution neofetch
 # gnu coreutils (including ls)
 brew install coreutils
-brew install gnu-sed
+brew install gnu-sed gnu-tar
 # pyenv dependencies
 brew install openssl readline sqlite3 xz zlib
 # useful apps

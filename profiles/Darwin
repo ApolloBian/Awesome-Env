@@ -18,6 +18,8 @@
         - [ ] core-yitu-pypi # set easy_install, pip to use pypi.yitu.com
         - [ ] core-sjtu-pypi
         - [x] core-aliyun-pypi
+    - Conda mirror
+        - [ ] core-tuna-conda
     - [ ] core-pip_package
 - Vim Binary
     - [ ] core-vim_compile
