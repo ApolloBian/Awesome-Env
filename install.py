@@ -71,7 +71,7 @@ if __name__ == '__main__':
         # Determine profile name
         selected_profile = select_profile(uname, args.no_sudo, args.server)
         print(selected_profile)
-        exit(0)
+        if raw_input("confirm? [y/N]") != 'y': exit(0)
         # Parse profile
         if selected_profile is None:
             logging.error("Unrecognized system, please use custom profile!")
