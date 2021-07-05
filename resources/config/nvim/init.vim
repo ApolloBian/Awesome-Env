@@ -68,7 +68,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
     function! InstallCocSources(info)
         if a:info.status == 'installed' || a:info.force
-            CocInstall coc-json coc-dictionary coc-word coc-emoji coc-ultisnips coc-python coc-texlab
+            CocInstall coc-json coc-dictionary coc-word coc-emoji coc-ultisnips coc-pyright coc-texlab
         endif
     endfunction
 
@@ -127,7 +127,7 @@ set scrolloff=8        " don't let the cursor touch the edge of the viewport
 " set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
-set lazyredraw         " make macros faster
+" set lazyredraw         " make macros faster
 set ttyfast
 set formatoptions-=r formatoptions-=c formatoptions-=o
 set expandtab          " Expand tabs into spaces
@@ -456,7 +456,7 @@ let g:python_highlight_file_headers_as_comments=1
 
 " ===== Plugin vim-markdown =====
 let g:vim_markdown_folding_disabled = 1 " disable auto folding
-set conceallevel=2 "conceal bold, italic, url, etc
+set conceallevel=0 "conceal bold, italic, url, etc
 " set concealcursor=n "also conceal cursorline in normal mode
 " let g:vim_markdown_fenced_languages=['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
 let g:vim_markdown_conceal_code_blocks = 0
@@ -511,7 +511,7 @@ command! -bang -nargs=* BLines call fzf#vim#buffer_lines(<q-args>, {'options': '
 command! -bang -nargs=* BTags  call fzf#vim#buffer_tags(<q-args>, {'options': '--no-reverse'}, <bang>0)
 nnoremap <c-b> :Buffers <CR>
 nnoremap <c-t> :BTags <CR>
-nnoremap <leader>tt :Tags <CR>
+" nnoremap <leader>tt :Tags <CR>
 nnoremap <c-p> :Files <CR>
 nnoremap <c-s> :BLines  <CR>
 let g:fzf_layout = {'down': '~40%'}
@@ -867,6 +867,10 @@ endif
 " nmap <silent> [g <Plug>(coc-diagnostic-prev)
 " nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <c-n> <Plug>(coc-diagnostic-next)
+
+" toggle diagnostics
+" nnoremap <leader>tt :call CocAction('diagnosticToggle')<CR>
+nnoremap <leader>tt :call CocAction('diagnosticToggleBuffer')<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

@@ -5,49 +5,12 @@
     "coc.source.word.filetypes": ["text", "markdown"],
     "coc.source.around.enable": false,
     "coc.source.buffer.enable": false,
-    "languageserver": {
-        "python": {
-            "command": "~/.pyenv/versions/pyls/bin/pyls",
-            "args": ["-vv", "--log-file", "/tmp/lsp_python.log"],
-            "trace.server": "verbose",
-            "filetypes": ["python"],
-            "settings": {
-                "pyls": {
-                    "enable": true,
-                    "trace": { "server": "verbose" },
-                    "commandPath": "",
-                    "configurationSources": [ "pycodestyle" ],
-                    "plugins": {
-                        "jedi_completion": {
-                            "fuzzy": true,
-                            "enabled": true
-                        },
-                        "jedi_hover": { "enabled": true },
-                        "jedi_references": { "enabled": true },
-                        "jedi_signature_help": { "enabled": true },
-                        "jedi_symbols": { "enabled": true, "all_scopes": true },
-                        "mccabe": { "enabled": false, "threshold": 15 },
-                        "preload": { "enabled": true },
-                        "pycodestyle": { "enabled": false },
-                        "pydocstyle": {
-                            "enabled": false,
-                            "match": "(?!test_).*\\.py",
-                            "matchDir": "[^\\.].*"
-                        },
-                        "pyflakes": { "enabled": false },
-                        "rope_completion": { "enabled": true },
-                        "pyls-mypy": {"enabled": false, "live_mode": false},
-                        "yapf": { "enabled": true }
-                    }
-                }
-            }
-        }
-    },
-    "python.formatting.provider": "yapf",
-    "python.runLinting": false,
+    "python.formatting.provider": "autopep8",
+    "python.analysis.typeCheckingMode": "off",
     "python.linting.enabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintArgs": ["--disable", "C,R,W"],
+    "pyright.organizeimports.provider": "pyright",
     "python.linting.flake8Enabled": false,
     "python.linting.flake8Args": ["--ignore=E128,E126,E261,E501,E302,E225,E226,F401,E402,E701"],
     "python.linting.flake8Args.comment": {
@@ -58,6 +21,7 @@
         "E701": "multiple statements on one line",
         "E261": "2 space before inline comment"
     },
+    "diagnostic.enable": true,
     "diagnostic.warningSign": ">",
     "diagnostic.errorSign": "x"
 }
