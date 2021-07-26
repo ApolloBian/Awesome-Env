@@ -47,6 +47,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'mhinz/vim-startify'
 " Git
     Plug 'airblade/vim-gitgutter' " display line status on the left
+    Plug 'APZelos/blamer.nvim'
 " File browsing
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': {-> fzf#install()}}
     Plug 'junegunn/fzf.vim'
@@ -165,6 +166,10 @@ else
           \   'cache_enabled': 1,
           \ }
 endif
+
+" quick open vimrc
+command Cfg :e $MYVIMRC
+
 " workarounds for background disappears when scrolling
 let &t_ut=''
 " zsh style command completion
@@ -214,6 +219,9 @@ nnoremap <leader>ww :e $HOME/vimwiki/index.md \| cd %:h <CR>
 " smooth movement for half PageUp PageDown
 " noremap <silent> <c-u> :call smooth_scroll#up(float2nr(&scroll * 0.9), 16, 1)<CR>
 " noremap <silent> <c-d> :call smooth_scroll#down(float2nr(&scroll * 1.0), 16, 1)<CR>
+
+nnoremap <silent> <C-u> <PageUp>
+nnoremap <silent> <C-d> <PageDown>
 
 " set splitright          " Vertical splits use right half of screen
 " set listchars=tab:▸\ ,space:·,eol:¬             " for more info, type :help listchars
@@ -652,6 +660,7 @@ set updatetime=50
 let g:airline#extensions#hunks#non_zero_only = 1
 command GGU GitGutterUndoHunk
 command GGN GitGutterNextHunk
+command GGS GitGutterStageHunk
 
 " ===== Plugin vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
@@ -810,6 +819,8 @@ else
 if has('mac')
     let g:coc_node_path = '/usr/local/bin/node'
 endif
+
+command CCM CocCommand
 
 " set completeopt-=preview
 " TextEdit might fail if hidden is not set.
