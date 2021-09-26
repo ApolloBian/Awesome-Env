@@ -5,12 +5,20 @@
     "coc.source.word.filetypes": ["text", "markdown"],
     "coc.source.around.enable": false,
     "coc.source.buffer.enable": false,
+    "languageserver": {
+        "efm": {
+            "command": "efm-langserver",
+            "filetypes": [ "vim", "eruby", "markdown" ]
+        }
+    },
+    "python.pythonPath": "/Users/tianling/.pyenv/shims/python",
     "python.formatting.provider": "autopep8",
     "python.analysis.typeCheckingMode": "off",
     "python.linting.enabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintArgs": ["--disable", "C,R,W"],
     "pyright.organizeimports.provider": "pyright",
+    "python.formatting.autopep8Args": ["--max-line-length=120"],
     "python.linting.flake8Enabled": false,
     "python.linting.flake8Args": ["--ignore=E128,E126,E261,E501,E302,E225,E226,F401,E402,E701"],
     "python.linting.flake8Args.comment": {
@@ -22,6 +30,8 @@
         "E261": "2 space before inline comment"
     },
     "diagnostic.enable": true,
+    "diagnostic.hintSign": ">",
     "diagnostic.warningSign": ">",
-    "diagnostic.errorSign": "x"
+    "diagnostic.errorSign": "x",
+    "clangd.path": "/Users/tianling/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

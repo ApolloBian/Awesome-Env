@@ -28,6 +28,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'ap/vim-css-color'
     Plug 'severin-lemaignan/vim-minimap'
 " Color Scheme
+    Plug 'projekt0n/github-nvim-theme'
     Plug 'nanotech/jellybeans.vim'
     Plug 'cocopon/iceberg.vim'
     Plug 'ApolloBian/Retro.vim'
@@ -49,6 +50,9 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'airblade/vim-gitgutter' " display line status on the left
     Plug 'APZelos/blamer.nvim'
 " File browsing
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': {-> fzf#install()}}
     Plug 'junegunn/fzf.vim'
     " Plug 'ctrlpvim/ctrlp.vim'
@@ -252,6 +256,43 @@ let &t_EI = "\<Esc>[2 q"
 " autocmd VimLeave * silent !print -n '\033[4 q'
 " highlight Cursor guifg=white guibg=black
 
+" Auto save & load session
+" fu! SaveSess()
+"     execute 'so ' . getcwd() . '/.session.vim'
+"     if bufexists(1)
+"         execute 'mksession! ' . getcwd() . '/.session.vim'
+"     endif
+" endfunction
+
+" fu! RestoreSess()
+" if filereadable(getcwd() . '/.session.vim')
+"     execute 'so ' . getcwd() . '/.session.vim'
+"     if bufexists(1)
+"         for l in range(1, bufnr('$'))
+"             if bufwinnr(l) == -1
+"                 exec 'sbuffer ' . l
+"             endif
+"         endfor
+"     endif
+" endif
+" endfunction
+fu! SaveSess()
+    if filereadable(getcwd() . '/.session.vim')
+        execute 'mksession! ' . getcwd() . '/.session.vim'
+    endif
+endfunction
+
+fu! RestoreSess()
+if filereadable(getcwd() . '/.session.vim')
+    if filereadable(getcwd() . '/.session.vim')
+        execute 'so ' . getcwd() . '/.session.vim'
+    endif
+endif
+endfunction
+
+autocmd VimLeave * call SaveSess()
+autocmd VimEnter * nested call RestoreSess()
+
 
 " file templates for py, bash, etc
 autocmd BufNewFile *.py 0r ~/.config/nvim/templates/python.py
@@ -259,7 +300,20 @@ autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/bash.sh
 
 
 set background=light
+hi clear Cursor
 colorscheme retro
+
+" lua << EOF
+" require("github-theme").setup({
+"   themeStyle = "light",
+"   functionStyle = "italic",
+"   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+
+"   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+"   colors = {hint = "orange", error = "#ff0000"}
+" })
+" EOF
+
 let g:lightline = {
             \'colorscheme': {},
             \'component': {},
@@ -905,7 +959,8 @@ endfunction
 hi CocHighlightText guifg=Black guibg=#A4E57E
 hi link CocHighlightRead  CocHighlightText
 hi link CocHighlightWrite  CocHighlightText
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" disable autohight for now
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 " Symbol renaming.
@@ -1026,3 +1081,28 @@ autocmd filetype text,tex,markdown set shiftwidth=2
 
 " ==== vim-floaterm
 command IPython :FloatermNew --width=0.7 --height=0.6 --autoclose=2 ipython
+
+" " ===== telescope
+" lua << EOF
+" local actions = require('telescope.actions')
+" require('telescope').setup({
+"   defaults = {
+"     layout_strategy = "vertical",
+"     layout_config = {
+"         height = 30,
+"         prompt_position = 'bottom',
+"     },
+"     mappings = {
+"       i = {
+"         ["<esc>"] = actions.close, -- Does not work
+"       },
+"     },
+"   },
+" })
+" EOF
+" nnoremap <c-b> :Telescope buffers <CR>
+" nnoremap <c-t> :Telescope current_buffer_tags <CR>
+" " nnoremap <leader>tt :Tags <CR>
+" nnoremap <c-p> :Telescope find_files <CR>
+" " TODO: silversearcher-ag:
+" " https://github.com/nvim-telescope/telescope.nvim/issues/18

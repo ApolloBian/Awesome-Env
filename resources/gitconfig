@@ -1,29 +1,38 @@
+#vim:ft=gitcofig
 [color]
-	ui = true
+ui = true
+
 [user]
-	email = bian_tianling@icloud.com
+email = bian_tianling@icloud.com
 
 [merge]
-    tool = vimdiff
-    conflictstyle=diff3
-    prompt=false
+tool = nvimdiff
+conflictstyle=diff3
+prompt=false
+
 [mergetool]
-    keepTemporaries = false
-    prompt = false
+keepTemporaries = false
+prompt = false
 
 [diff]
-    tool = vimdiff
-    guitool = p4merge
+tool = nvimdiff
+guitool = p4merge
+
+[difftool "nvimdiff"]
+cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [core]
-	autocrlf = input
-    editor = vim
+autocrlf = input
+editor = vim
+
 [push]
-	default = upstream
+default = upstream
+
 [merg]
-	conflictstyle = diff3
+conflictstyle = diff3
+
 [alias]
-    cm = commit
-    st = status
-    co = checkout
-    br = branch
+cm = commit
+st = status
+co = checkout
+br = branch
