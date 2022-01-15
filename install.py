@@ -16,7 +16,7 @@ def parse_args():
 
 def detect_platform():
     uname = ' '.join(platform.uname())
-    print(uname)
+    print('UNAME: {}'.format(uname))
     return uname
 
 def add_dirname(f):
@@ -57,7 +57,6 @@ def parse_profile(profile_name):
 
 if __name__ == '__main__':
     args = parse_args()
-    os.system('git submodule update --init --recursive')
     """
     Installation sequence:
         1. Detect platform:
@@ -65,13 +64,14 @@ if __name__ == '__main__':
         2. Parse respective profiles, DEFAULT LOC: ./profiles
         3. according to parse result, execute a sequence of scripts
     """
+
+
+    # manually confirm profile to continue
     if not args.profile:
         # Detect platform
         uname = detect_platform()
         # Determine profile name
         selected_profile = select_profile(uname, args.no_sudo, args.server)
-        print(selected_profile)
-        if raw_input("confirm? [y/N]") != 'y': exit(0)
         # Parse profile
         if selected_profile is None:
             logging.error("Unrecognized system, please use custom profile!")
@@ -79,6 +79,11 @@ if __name__ == '__main__':
     else:
         selected_profile = args.profile
     module_list = parse_profile(selected_profile)
+
+    if raw_input("confirm? [y/N]") != 'y': exit(0)
+
+    # update git
+    os.system('git submodule update --init --recursive')
 
     failed_script = []
     for i, module in zip(map(lambda script: os.system("bash %s" % script), module_list), module_list):
